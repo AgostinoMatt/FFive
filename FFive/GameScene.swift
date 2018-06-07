@@ -11,6 +11,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    private var bestBagelInTheWorld = 0
+    
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
