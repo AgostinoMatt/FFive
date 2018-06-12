@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F733993E20D09136003074CE /* FightScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733993D20D09136003074CE /* FightScene.sks */; };
 		F73D877620CF4A1A00C5755A /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D877520CF4A1A00C5755A /* MyUtils.swift */; };
 		F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F73D877720CF4BF600C5755A /* backgroundtile.sks */; };
 		F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F63820C8BB2200039367 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F733993D20D09136003074CE /* FightScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FightScene.sks; sourceTree = "<group>"; };
 		F73D877520CF4A1A00C5755A /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		F73D877720CF4BF600C5755A /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = backgroundtile.sks; sourceTree = "<group>"; };
 		F772F63520C8BB2200039367 /* FFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F733993C20D090C1003074CE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F772F63A20C8BB2200039367 /* GameScene.sks */,
+				F772F63C20C8BB2200039367 /* Actions.sks */,
+				F733993D20D09136003074CE /* FightScene.sks */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		F772F62C20C8BB2200039367 = {
 			isa = PBXGroup;
 			children = (
@@ -64,14 +76,13 @@
 		F772F63720C8BB2200039367 /* FFive */ = {
 			isa = PBXGroup;
 			children = (
+				F772F64520C8BB2600039367 /* Assets.xcassets */,
+				F733993C20D090C1003074CE /* Scenes */,
 				F73D877520CF4A1A00C5755A /* MyUtils.swift */,
 				F772F63820C8BB2200039367 /* AppDelegate.swift */,
-				F772F63A20C8BB2200039367 /* GameScene.sks */,
-				F772F63C20C8BB2200039367 /* Actions.sks */,
 				F772F63E20C8BB2200039367 /* GameScene.swift */,
 				F772F64020C8BB2200039367 /* GameViewController.swift */,
 				F772F64220C8BB2200039367 /* Main.storyboard */,
-				F772F64520C8BB2600039367 /* Assets.xcassets */,
 				F772F64720C8BB2600039367 /* LaunchScreen.storyboard */,
 				F73D877720CF4BF600C5755A /* backgroundtile.sks */,
 				F772F64A20C8BB2600039367 /* Info.plist */,
@@ -140,6 +151,7 @@
 				F772F64420C8BB2200039367 /* Main.storyboard in Resources */,
 				F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */,
 				F772F63B20C8BB2200039367 /* GameScene.sks in Resources */,
+				F733993E20D09136003074CE /* FightScene.sks in Resources */,
 				F772F64620C8BB2600039367 /* Assets.xcassets in Resources */,
 				F772F64920C8BB2600039367 /* LaunchScreen.storyboard in Resources */,
 				F772F63D20C8BB2200039367 /* Actions.sks in Resources */,
