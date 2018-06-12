@@ -73,8 +73,8 @@
 				F772F64220C8BB2200039367 /* Main.storyboard */,
 				F772F64520C8BB2600039367 /* Assets.xcassets */,
 				F772F64720C8BB2600039367 /* LaunchScreen.storyboard */,
-				F772F64A20C8BB2600039367 /* Info.plist */,
 				F73D877720CF4BF600C5755A /* backgroundtile.sks */,
+				F772F64A20C8BB2600039367 /* Info.plist */,
 			);
 			path = FFive;
 			sourceTree = "<group>";
