@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F733993E20D09136003074CE /* FightScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733993D20D09136003074CE /* FightScene.sks */; };
 		F733994020D098C7003074CE /* MainCharFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733993F20D098C7003074CE /* MainCharFight.sks */; };
+		F733994220D0A41E003074CE /* Player2Fight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733994120D0A41E003074CE /* Player2Fight.sks */; };
 		F73D877620CF4A1A00C5755A /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D877520CF4A1A00C5755A /* MyUtils.swift */; };
 		F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F73D877720CF4BF600C5755A /* backgroundtile.sks */; };
 		F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F63820C8BB2200039367 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		F733993D20D09136003074CE /* FightScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FightScene.sks; sourceTree = "<group>"; };
 		F733993F20D098C7003074CE /* MainCharFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainCharFight.sks; sourceTree = "<group>"; };
+		F733994120D0A41E003074CE /* Player2Fight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Player2Fight.sks; sourceTree = "<group>"; };
 		F73D877520CF4A1A00C5755A /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		F73D877720CF4BF600C5755A /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = backgroundtile.sks; sourceTree = "<group>"; };
 		F772F63520C8BB2200039367 /* FFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +58,7 @@
 				F772F63C20C8BB2200039367 /* Actions.sks */,
 				F733993D20D09136003074CE /* FightScene.sks */,
 				F733993F20D098C7003074CE /* MainCharFight.sks */,
+				F733994120D0A41E003074CE /* Player2Fight.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F733994220D0A41E003074CE /* Player2Fight.sks in Resources */,
 				F772F64420C8BB2200039367 /* Main.storyboard in Resources */,
 				F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */,
 				F772F63B20C8BB2200039367 /* GameScene.sks in Resources */,
