@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F733993E20D09136003074CE /* FightScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733993D20D09136003074CE /* FightScene.sks */; };
+		F733994020D098C7003074CE /* MainCharFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733993F20D098C7003074CE /* MainCharFight.sks */; };
 		F73D877620CF4A1A00C5755A /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D877520CF4A1A00C5755A /* MyUtils.swift */; };
 		F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F73D877720CF4BF600C5755A /* backgroundtile.sks */; };
 		F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F63820C8BB2200039367 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		F733993D20D09136003074CE /* FightScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FightScene.sks; sourceTree = "<group>"; };
+		F733993F20D098C7003074CE /* MainCharFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainCharFight.sks; sourceTree = "<group>"; };
 		F73D877520CF4A1A00C5755A /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		F73D877720CF4BF600C5755A /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = backgroundtile.sks; sourceTree = "<group>"; };
 		F772F63520C8BB2200039367 /* FFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,7 @@
 				F772F63A20C8BB2200039367 /* GameScene.sks */,
 				F772F63C20C8BB2200039367 /* Actions.sks */,
 				F733993D20D09136003074CE /* FightScene.sks */,
+				F733993F20D098C7003074CE /* MainCharFight.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				F772F63B20C8BB2200039367 /* GameScene.sks in Resources */,
 				F733993E20D09136003074CE /* FightScene.sks in Resources */,
 				F772F64620C8BB2600039367 /* Assets.xcassets in Resources */,
+				F733994020D098C7003074CE /* MainCharFight.sks in Resources */,
 				F772F64920C8BB2600039367 /* LaunchScreen.storyboard in Resources */,
 				F772F63D20C8BB2200039367 /* Actions.sks in Resources */,
 			);
