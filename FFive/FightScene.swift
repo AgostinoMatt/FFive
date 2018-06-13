@@ -9,3 +9,6 @@
 import SpriteKit
 
 
+class FightScene: SKScene{
+
+}
