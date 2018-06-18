@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3DF105C20D4430300852581 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DF105B20D4430300852581 /* Player.swift */; };
 		F71D91B220D3598E00A298B4 /* GirlWithHairFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B120D3598E00A298B4 /* GirlWithHairFight.sks */; };
 		F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B320D35BC600A298B4 /* ZombieFight.sks */; };
 		F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B520D35CB200A298B4 /* HeadlessFight.sks */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3DF105B20D4430300852581 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F71D91B120D3598E00A298B4 /* GirlWithHairFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GirlWithHairFight.sks; sourceTree = "<group>"; };
 		F71D91B320D35BC600A298B4 /* ZombieFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ZombieFight.sks; sourceTree = "<group>"; };
 		F71D91B520D35CB200A298B4 /* HeadlessFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeadlessFight.sks; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				F73D877720CF4BF600C5755A /* backgroundtile.sks */,
 				F772F64A20C8BB2600039367 /* Info.plist */,
 				F752B2AC20D1B15F00CA7566 /* FightScene.swift */,
+				A3DF105B20D4430300852581 /* Player.swift */,
 			);
 			path = FFive;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				F772F64120C8BB2200039367 /* GameViewController.swift in Sources */,
 				F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */,
 				F73D877620CF4A1A00C5755A /* MyUtils.swift in Sources */,
+				A3DF105C20D4430300852581 /* Player.swift in Sources */,
 				F752B2AD20D1B15F00CA7566 /* FightScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
