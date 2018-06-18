@@ -16,7 +16,7 @@ class Player: SKSpriteNode {
     }
     
     init() {
-        let texture = SKTexture(pixelImageNamed: "hero8")
+        let texture = SKTexture(imageNamed: "hero8")
         super.init(texture: texture, color: .white,
                    size: texture.size())
         name = "Player"

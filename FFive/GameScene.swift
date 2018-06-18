@@ -54,7 +54,7 @@ class GameScene: SKScene {
 
 
 
-let characterOfMain = SKSpriteNode(fileNamed: "hero1fight")
+let characterOfMain = SKSpriteNode(imageNamed: "hero1fight")
 let characterOfMainMovePointsPerSec: CGFloat = 480.0
 let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
 let characterOfMainAnimation: SKAction
@@ -115,7 +115,7 @@ override func didMove(to view: SKView) {
     
     characterOfMain.position = CGPoint(x: 400, y: 400)
     //zombie.run(SKAction.repeatForever(zombieAnimation))
-    startcharacterOfMainAnimation()
+    //startcharacterOfMainAnimation()
     addChild(characterOfMain)
     //spawnEnemy()
     run(SKAction.repeatForever(
@@ -132,7 +132,7 @@ override func didMove(to view: SKView) {
     addChild(cameraNode)
     camera = cameraNode
     cameraNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
-    override func didMove(to view: SKView) {
+    func didMove(to view: SKView) {
         backgroundColor = SKColor.black
         
         characterOfMain.position = CGPoint(x: 400, y: 400)
@@ -154,7 +154,7 @@ override func didMove(to view: SKView) {
         cameraNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
     }
     
-    override func update(_ currentTime: TimeInterval) {
+    func update(_ currentTime: TimeInterval) {
         if lastUpdateTime > 0 {
             deltaTime = currentTime - lastUpdateTime
         }
@@ -221,7 +221,7 @@ override func didMove(to view: SKView) {
         moveCharacterOfMainToward(location: touchLocation)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
         }
