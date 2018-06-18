@@ -57,7 +57,7 @@ class GameScene: SKScene {
 let characterOfMain = SKSpriteNode(imageNamed: "hero1fight")
 let characterOfMainMovePointsPerSec: CGFloat = 480.0
 let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
-let characterOfMainAnimation: SKAction
+//let characterOfMainAnimation: SKAction
 var velocity = CGPoint.zero
 var lastUpdateTime: TimeInterval = 0
 var deltaTime: TimeInterval = 0
@@ -83,7 +83,7 @@ override init(size: CGSize) {
     let playableMargin = (size.height - playableHeight) / 2.0
     playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
     
-    var textures: [SKTexture] = []
+    //var textures: [SKTexture] = []
  
     /*for i in 1...4 {
      textures.append(SKTexture(imageNamed: "zombie\(i)"))
