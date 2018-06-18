@@ -11,7 +11,7 @@ import SpriteKit
 class GameScene: SKScene {
     
 
-    var background: SKTileMapNode!
+    /*var background: SKTileMapNode!
     var player = Player()
     let characterOfMain:SKSpriteNode
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
@@ -50,10 +50,10 @@ class GameScene: SKScene {
         //zombieAnimation = SKAction.animate(with: textures, timePerFrame: 0.1)
         super.init(size: size)
     }
-}
+}*/
 
 
-/*
+
 let characterOfMain = SKSpriteNode(fileNamed: "hero1fight")
 let characterOfMainMovePointsPerSec: CGFloat = 480.0
 let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
@@ -230,4 +230,3 @@ override func didMove(to view: SKView) {
         sceneTouched(touchLocation: touchLocation)
     }
 }
- */
