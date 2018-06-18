@@ -10,30 +10,27 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-<<<<<<< HEAD
+
     var background: SKTileMapNode!
     var player = Player()
-=======
     let characterOfMain:SKSpriteNode
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
-    //let characterOfMainAnimation: SKAction
+    let characterOfMainAnimation: SKAction
     var velocity = CGPoint.zero
     var lastUpdateTime: TimeInterval = 0
     var deltaTime: TimeInterval = 0
     var lastTouchLocation: CGPoint?
->>>>>>> d04639f9620ff7b76493ed89214ef841d3554b31
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        background =
-            childNode(withName: "Newtiles") as! SKTileMapNode
+        background = childNode(withName: "Newtiles") as! SKTileMapNode
     }
     
-<<<<<<< HEAD
+    
     override func didMove(to view: SKView) {
         addChild(player)
-=======
+        
     override init(size: CGSize) {
         let maxAspectRatio: CGFloat = 16.0/9.0
         let playableHeight = size.width / maxAspectRatio
@@ -52,7 +49,6 @@ class GameScene: SKScene {
         
         //zombieAnimation = SKAction.animate(with: textures, timePerFrame: 0.1)
         super.init(size: size)
->>>>>>> d04639f9620ff7b76493ed89214ef841d3554b31
     }
 }
 
@@ -88,8 +84,7 @@ override init(size: CGSize) {
     playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
     
     var textures: [SKTexture] = []
-    
-<<<<<<< HEAD
+ 
     /*for i in 1...4 {
      textures.append(SKTexture(imageNamed: "zombie\(i)"))
      }
@@ -137,7 +132,6 @@ override func didMove(to view: SKView) {
     addChild(cameraNode)
     camera = cameraNode
     cameraNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
-=======
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
         
@@ -235,6 +229,5 @@ override func didMove(to view: SKView) {
         let touchLocation = touch.location(in: self)
         sceneTouched(touchLocation: touchLocation)
     }
->>>>>>> d04639f9620ff7b76493ed89214ef841d3554b31
 }
  */
