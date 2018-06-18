@@ -132,29 +132,9 @@ override func didMove(to view: SKView) {
     addChild(cameraNode)
     camera = cameraNode
     cameraNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
-    func didMove(to view: SKView) {
-        backgroundColor = SKColor.black
-        
-        characterOfMain.position = CGPoint(x: 400, y: 400)
-        //startcharacterOfMainAnimation()
-        addChild(characterOfMain)
-        /*run(SKAction.repeatForever(
-            SKAction.sequence([SKAction.run() { [unowned self] in
-               // self.spawnEnemy()
-                }, SKAction.wait(forDuration: 2.0)])))
-        run(SKAction.repeatForever(
-            SKAction.sequence([SKAction.run() { [unowned self] in
-                // self.spawnCat()
-                }, SKAction.wait(forDuration: 1.0)])))*/
-        
-        //playBackgroundMusic(filename: "backgroundMusic.mp3")
-        
-        addChild(cameraNode)
-        camera = cameraNode
-        cameraNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
     }
     
-    func update(_ currentTime: TimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         if lastUpdateTime > 0 {
             deltaTime = currentTime - lastUpdateTime
         }
@@ -221,7 +201,7 @@ override func didMove(to view: SKView) {
         moveCharacterOfMainToward(location: touchLocation)
     }
     
-    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
         }
