@@ -14,7 +14,7 @@ class GameScene: SKScene {
     var characterOfMain: SKSpriteNode!
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
-    //let characterOfMainAnimation: SKAction
+    var characterOfMainAnimation: SKAction!
     var velocity = CGPoint.zero
     var lastUpdateTime: TimeInterval = 0
     var deltaTime: TimeInterval = 0
@@ -44,11 +44,43 @@ class GameScene: SKScene {
         let playableMargin = (size.height - playableHeight) / 2.0
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
         
+        var texturesUp: [SKTexture] = []
+        var texturesRight: [SKTexture] = []
+        var texturesDown: [SKTexture] = []
+        var textureLeft: [SKTexture] = []
+        
+        for i in 1...3 {
+            texturesUp.append(SKTexture(imageNamed: "hero\(i)"))
+        }
+        texturesUp.append(texturesUp[3])
+        texturesUp.append(texturesUp[2])
+        texturesUp.append(texturesUp[1])
+        
+        for i in 4...6{
+            texturesRight.append(SKTexture(imageNamed: "hero\(i)"))
+        }
+        texturesRight.append(texturesRight[4])
+        texturesRight.append(texturesRight[5])
+        texturesRight.append(texturesRight[6])
+        for i in 7...9{
+            texturesDown.append(SKTexture(imageNamed: "hero\(i)"))
+        }
+        texturesDown.append(texturesDown[7])
+        texturesDown.append(texturesDown[8])
+        texturesDown.append(texturesDown[9])
+        characterOfMainAnimation = 	SKAction.animate(with: texturesDown, timePerFrame: 0.1)
+        
+        for i in 10...12{
+            textureLeft.append(SKTexture(imageNamed: "hero\(i)"))
+        }
+        textureLeft.append(textureLeft[10])
+        textureLeft.append(textureLeft[11])
+        textureLeft.append(textureLeft[12])
+        
         characterOfMain = SKSpriteNode(imageNamed: "hero8")
         
     }
     
-
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
      
