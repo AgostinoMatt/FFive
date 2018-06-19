@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30F103620D88080006E542F /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F103520D88080006E542F /* Player.swift */; };
 		F73D877620CF4A1A00C5755A /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D877520CF4A1A00C5755A /* MyUtils.swift */; };
 		F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F73D877720CF4BF600C5755A /* backgroundtile.sks */; };
 		F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F63820C8BB2200039367 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A30F103520D88080006E542F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F73D877520CF4A1A00C5755A /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		F73D877720CF4BF600C5755A /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = backgroundtile.sks; sourceTree = "<group>"; };
 		F772F63520C8BB2200039367 /* FFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,9 +47,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A30F103420D87FFC006E542F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F772F63A20C8BB2200039367 /* GameScene.sks */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		F772F62C20C8BB2200039367 = {
 			isa = PBXGroup;
 			children = (
+				A30F103420D87FFC006E542F /* Scenes */,
 				F772F63720C8BB2200039367 /* FFive */,
 				F772F63620C8BB2200039367 /* Products */,
 			);
@@ -66,7 +77,6 @@
 			children = (
 				F73D877520CF4A1A00C5755A /* MyUtils.swift */,
 				F772F63820C8BB2200039367 /* AppDelegate.swift */,
-				F772F63A20C8BB2200039367 /* GameScene.sks */,
 				F772F63C20C8BB2200039367 /* Actions.sks */,
 				F772F63E20C8BB2200039367 /* GameScene.swift */,
 				F772F64020C8BB2200039367 /* GameViewController.swift */,
@@ -75,6 +85,7 @@
 				F772F64720C8BB2600039367 /* LaunchScreen.storyboard */,
 				F73D877720CF4BF600C5755A /* backgroundtile.sks */,
 				F772F64A20C8BB2600039367 /* Info.plist */,
+				A30F103520D88080006E542F /* Player.swift */,
 			);
 			path = FFive;
 			sourceTree = "<group>";
@@ -156,6 +167,7 @@
 				F772F63F20C8BB2200039367 /* GameScene.swift in Sources */,
 				F772F64120C8BB2200039367 /* GameViewController.swift in Sources */,
 				F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */,
+				A30F103620D88080006E542F /* Player.swift in Sources */,
 				F73D877620CF4A1A00C5755A /* MyUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
