@@ -14,11 +14,12 @@ class GameScene: SKScene {
    var background: SKTileMapNode!
     var player = Player()
     
+    /*
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         background =
             childNode(withName: "background") as! SKTileMapNode
-    }
+    }*/
 /*
     let characterOfMain:SKSpriteNode
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
