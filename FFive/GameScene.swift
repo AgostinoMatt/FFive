@@ -59,7 +59,7 @@ class GameScene: SKScene {
      
         addChild(cameraNode)
         camera = cameraNode
-        cameraNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        cameraNode.position = CGPoint(x: size.width / 1.5, y: size.height / 1.5)
         }
      
         override func update(_ currentTime: TimeInterval) {
