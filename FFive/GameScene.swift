@@ -17,7 +17,7 @@ class GameScene: SKScene {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         background =
-            childNode(withName: "backgroundtile") as! SKTileMapNode
+            childNode(withName: "background") as! SKTileMapNode
     }
 /*
     let characterOfMain:SKSpriteNode
