@@ -11,14 +11,14 @@ import SpriteKit
 class GameScene: SKScene {
     
 
-   /* var background: SKTileMapNode!
+   var background: SKTileMapNode!
     var player = Player()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         background =
             childNode(withName: "background") as! SKTileMapNode
-    }*/
+    }
 /*
     let characterOfMain:SKSpriteNode
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
@@ -57,7 +57,7 @@ class GameScene: SKScene {
 }*/
 
 
-
+/*
     let characterOfMain = SKSpriteNode(imageNamed: "hero1fight")
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
@@ -171,4 +171,5 @@ class GameScene: SKScene {
             let touchLocation = touch.location(in: self)
             sceneTouched(touchLocation: touchLocation)
         }
+ */
 }
