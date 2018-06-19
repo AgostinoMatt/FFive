@@ -11,14 +11,14 @@ import SpriteKit
 class GameScene: SKScene {
     
 
-    var background: SKTileMapNode!
+   /* var background: SKTileMapNode!
     var player = Player()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         background =
             childNode(withName: "background") as! SKTileMapNode
-    }
+    }*/
 /*
     let characterOfMain:SKSpriteNode
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
@@ -57,7 +57,7 @@ class GameScene: SKScene {
 }*/
 
 
-/*
+
     let characterOfMain = SKSpriteNode(imageNamed: "hero1fight")
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
@@ -87,7 +87,7 @@ class GameScene: SKScene {
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight) / 2.0
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
-        //background = childNode(withName: "Newtiles") as! SKTileMapNode
+        //
      
         super.init(size: size)
     }
@@ -95,39 +95,18 @@ class GameScene: SKScene {
     required init?(coder aDecoder: NSCoder){
      
         super.init(coder: aDecoder)
+        background = childNode(withName: "background") as! SKTileMapNode
+        
         //fatalError("init(coder:) has not been implemented")
     }
-*/
 
-/*
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
      
-        /*for i in 0...1 {
-         8let background = backgroundNode()
-         //background.anchorPoint = CGPoint.zero //CGPoint(x: 0.5, y: 0.5)
-         //background.position = CGPoint.zero //CGPoint(x: size.width / 2, y: size.height / 2)
-         background.position = CGPoint(x: CGFloat(i) *
-         background.size.width, y: 0)
-         background.zPosition = -1
-         addChild(background)
-         }*/
      
         characterOfMain.position = CGPoint(x: 400, y: 400)
-        //zombie.run(SKAction.repeatForever(zombieAnimation))
         //startcharacterOfMainAnimation()
         addChild(characterOfMain)
-        //spawnEnemy()
-        /*run(SKAction.repeatForever(
-            SKAction.sequence([SKAction.run() { [unowned self] in
-                 self.spawnEnemy()
-                }, SKAction.wait(forDuration: 2.0)])))
-        run(SKAction.repeatForever(
-            SKAction.sequence([SKAction.run() { [unowned self] in
-                 self.spawnCat()
-                }, SKAction.wait(forDuration: 1.0)])))*/
-     
-        //playBackgroundMusic(filename: "backgroundMusic.mp3")
      
         addChild(cameraNode)
         camera = cameraNode
@@ -165,24 +144,7 @@ class GameScene: SKScene {
             let direction = CGPoint(x: location.x - characterOfMain.position.x, y: location.y - characterOfMain.position.y).normalized()
      
             velocity = CGPoint(x: direction.x * characterOfMainMovePointsPerSec, y: direction.y * characterOfMainMovePointsPerSec)
-            //startZombieAnimation()
         }
-     
-        /*func moveCamera(){
-            let backgroundVelocity = CGPoint(x: cameraMovePointPerSec, y: 0)
-            let amountToMove = backgroundVelocity * CGFloat(deltaTime)
-            cameraNode.position += amountToMove
-     
-            enumerateChildNodes(withName: "background") {node, stop in
-                let background = node as! SKSpriteNode
-                if background.position.x + background.size.width < self.cameraRect.origin.x {
-                    background.position = CGPoint(
-                        x: background.position.x + background.size.width * 2,
-                        y: background.position.y)
-                    stop.pointee = true
-                }
-            }
-        }*/
      
         func move(sprite: SKSpriteNode, velocity: CGPoint) {
             let amountToMove = velocity * CGFloat(deltaTime) //CGPoint(x: velocity.x * CGFloat(deltaTime), y: velocity.y * CGFloat(deltaTime))
@@ -209,5 +171,4 @@ class GameScene: SKScene {
             let touchLocation = touch.location(in: self)
             sceneTouched(touchLocation: touchLocation)
         }
- */
 }
