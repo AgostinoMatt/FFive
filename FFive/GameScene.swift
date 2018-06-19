@@ -62,6 +62,7 @@ var velocity = CGPoint.zero
 var lastUpdateTime: TimeInterval = 0
 var deltaTime: TimeInterval = 0
 var lastTouchLocation: CGPoint?
+var background: SKTileMapNode!
 
 let playableRect: CGRect
 
@@ -77,26 +78,20 @@ var cameraRect: CGRect {
         playableRect.height)
 }
 
-override init(size: CGSize) {
+    override init(size: CGSize) {
     let maxAspectRatio: CGFloat = 16.0/9.0
     let playableHeight = size.width / maxAspectRatio
     let playableMargin = (size.height - playableHeight) / 2.0
     playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+    //background = childNode(withName: "Newtiles") as! SKTileMapNode
     
-    //var textures: [SKTexture] = []
- 
-    /*for i in 1...4 {
-     textures.append(SKTexture(imageNamed: "zombie\(i)"))
-     }
-     textures.append(textures[2])
-     textures.append(textures[1])
-     
-     zombieAnimation = SKAction.animate(with: textures, timePerFrame: 0.1)*/
     super.init(size: size)
 }
 
-required init(coder aDecoder: NSCoder){
-    fatalError("init(coder:) has not been implemented")
+required init?(coder aDecoder: NSCoder){
+    
+    super.init(coder: aDecoder)
+    //fatalError("init(coder:) has not been implemented")
 }
 
 
@@ -104,7 +99,7 @@ override func didMove(to view: SKView) {
     backgroundColor = SKColor.black
     
     /*for i in 0...1 {
-     let background = backgroundNode()
+     8let background = backgroundNode()
      //background.anchorPoint = CGPoint.zero //CGPoint(x: 0.5, y: 0.5)
      //background.position = CGPoint.zero //CGPoint(x: size.width / 2, y: size.height / 2)
      background.position = CGPoint(x: CGFloat(i) *
@@ -118,14 +113,14 @@ override func didMove(to view: SKView) {
     //startcharacterOfMainAnimation()
     addChild(characterOfMain)
     //spawnEnemy()
-    run(SKAction.repeatForever(
+    /*run(SKAction.repeatForever(
         SKAction.sequence([SKAction.run() { [unowned self] in
-            // self.spawnEnemy()
+             self.spawnEnemy()
             }, SKAction.wait(forDuration: 2.0)])))
     run(SKAction.repeatForever(
         SKAction.sequence([SKAction.run() { [unowned self] in
-            // self.spawnCat()
-            }, SKAction.wait(forDuration: 1.0)])))
+             self.spawnCat()
+            }, SKAction.wait(forDuration: 1.0)])))*/
     
     //playBackgroundMusic(filename: "backgroundMusic.mp3")
     
