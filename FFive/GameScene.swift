@@ -11,8 +11,8 @@ import SpriteKit
 class GameScene: SKScene {
     
 
-   var background: SKTileMapNode!
-    var player = Player()
+   //var background: SKTileMapNode!
+    //var player = Player()
     
     /*
     required init?(coder aDecoder: NSCoder) {
@@ -58,8 +58,8 @@ class GameScene: SKScene {
 }*/
 
 
-/*
-    let characterOfMain = SKSpriteNode(imageNamed: "hero1fight")
+
+    var characterOfMain: SKSpriteNode!
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
     //let characterOfMainAnimation: SKAction
@@ -69,37 +69,35 @@ class GameScene: SKScene {
     var lastTouchLocation: CGPoint?
     var background: SKTileMapNode!
 
-    let playableRect: CGRect
+    var playableRect: CGRect!
 
     let cameraNode = SKCameraNode()
     let cameraMovePointPerSec: CGFloat = 200.0
     var cameraRect: CGRect {
-        let x = cameraNode.position.x - size.width / 2 + (size.width - //current pos subtract half of screen width
-            playableRect.width) / 2
-        let y = cameraNode.position.y - size.height / 2 + (size.height - // add half of scren width
-            playableRect.height) / 2
+        let x = cameraNode.position.x - size.width / 2 + (size.width - playableRect.width) / 2
+        let y = cameraNode.position.y - size.height / 2 + (size.height - playableRect.height) / 2
      
         return CGRect(x: x, y: y, width: playableRect.width, height:
             playableRect.height)
     }
 
-        override init(size: CGSize) {
+    required init?(coder aDecoder: NSCoder){
+        
+        
+        super.init(coder: aDecoder)
+       
+        background = childNode(withName: "background") as? SKTileMapNode
         let maxAspectRatio: CGFloat = 16.0/9.0
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight) / 2.0
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
-        //
-     
-        super.init(size: size)
-    }
-
-    required init?(coder aDecoder: NSCoder){
-     
-        super.init(coder: aDecoder)
-        background = childNode(withName: "background") as! SKTileMapNode
+        
+        characterOfMain = SKSpriteNode(imageNamed: "hero8")
         
         //fatalError("init(coder:) has not been implemented")
+        
     }
+    
 
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
@@ -128,15 +126,12 @@ class GameScene: SKScene {
                 if diff.length() < characterOfMainMovePointsPerSec * CGFloat(deltaTime) {
                     characterOfMain.position = lastTouchLocation
                     velocity = CGPoint.zero
-                    //stopZombieAnimation()
                 }
                 else {
                     move(sprite: characterOfMain, velocity: velocity)
                     rotate(sprite: characterOfMain, direction: velocity, rotateRadiansPerSec: characterOfMainRotateRadiansPerSec)
                 }
             }
-            //boundsCheck()
-            //moveCamera()
      
             cameraNode.position = characterOfMain.position
         }
@@ -148,12 +143,11 @@ class GameScene: SKScene {
         }
      
         func move(sprite: SKSpriteNode, velocity: CGPoint) {
-            let amountToMove = velocity * CGFloat(deltaTime) //CGPoint(x: velocity.x * CGFloat(deltaTime), y: velocity.y * CGFloat(deltaTime))
-            sprite.position += amountToMove //CGPoint(x: sprite.position.x + amountToMove.x, y: sprite.position.y + amountToMove.y)
+            let amountToMove = velocity * CGFloat(deltaTime)
+            sprite.position += amountToMove
         }
      
         func rotate(sprite: SKSpriteNode, direction: CGPoint, rotateRadiansPerSec: CGFloat) {
-            //sprite.zRotation = direction.angle //atan2(direction.y, direction.x)
             let shortest = shortestAngleBetween(angle1: sprite.zRotation, angle2: direction.angle)
             let amountToRotate = min(rotateRadiansPerSec * CGFloat(deltaTime), abs(shortest))
             sprite.zRotation += shortest.sign() * amountToRotate
@@ -172,5 +166,5 @@ class GameScene: SKScene {
             let touchLocation = touch.location(in: self)
             sceneTouched(touchLocation: touchLocation)
         }
- */
+ 
 }
