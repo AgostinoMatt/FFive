@@ -10,7 +10,7 @@ import SpriteKit
 
 class FightScene: SKScene {
     
-    var lastUpdateTime: TimeInterval = 0
+    /*var lastUpdateTime: TimeInterval = 0
     var deltaTime: TimeInterval = 0
     var background: SKTileMapNode!
     
@@ -36,6 +36,6 @@ class FightScene: SKScene {
         let playableHeight = size.width / maxAspectRatio
         let playableMargin = (size.height - playableHeight) / 2.0
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
-    }
+    }*/
 }
 

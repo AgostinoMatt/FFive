@@ -9,8 +9,8 @@
 import SpriteKit
 
 class GameScene: SKScene {
-
-
+    
+    
     var characterOfMain: SKSpriteNode!
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
@@ -24,24 +24,24 @@ class GameScene: SKScene {
     var texturesRight: [SKTexture] = []
     var texturesDown: [SKTexture] = []
     var textureLeft: [SKTexture] = []
-
+    
     var playableRect: CGRect!
-
+    
     let cameraNode = SKCameraNode()
     let cameraMovePointPerSec: CGFloat = 200.0
     var cameraRect: CGRect {
         let x = cameraNode.position.x - size.width / 2 + (size.width - playableRect.width) / 2
         let y = cameraNode.position.y - size.height / 2 + (size.height - playableRect.height) / 2
-     
+        
         return CGRect(x: x, y: y, width: playableRect.width, height:
             playableRect.height)
     }
-
+    
     required init?(coder aDecoder: NSCoder){
         
         
         super.init(coder: aDecoder)
-       
+        
         background = childNode(withName: "background") as? SKTileMapNode
         let maxAspectRatio: CGFloat = 16.0/9.0
         let playableHeight = size.width / maxAspectRatio
@@ -75,71 +75,80 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
-     
-     
-        characterOfMain.position = CGPoint(x: 400, y: 400)
-        startCharacterOfMainAnimation()
-        addChild(characterOfMain)
         
-        /*if lastTouchLocation?.angle >  {
-            characterOfMainAnimation = SKAction.animate(with: texturesRight, timePerFrame: 0.1)
-        }*/
-        //else if velocity.x < velocity.y
-     
+        
+        characterOfMain.position = CGPoint(x: 400, y: 400)
+        addChild(characterOfMain)
         addChild(cameraNode)
         camera = cameraNode
         cameraNode.position = CGPoint(x: size.width / 1.5, y: size.height / 1.5)
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        if lastUpdateTime > 0 {
+            deltaTime = currentTime - lastUpdateTime
         }
-     
-        override func update(_ currentTime: TimeInterval) {
-            if lastUpdateTime > 0 {
-                deltaTime = currentTime - lastUpdateTime
+        else {
+            deltaTime = 0
+        }
+        lastUpdateTime = currentTime
+        
+        if let lastTouchLocation = lastTouchLocation {
+            let diff = lastTouchLocation - characterOfMain.position
+            if diff.length() < characterOfMainMovePointsPerSec * CGFloat(deltaTime) {
+                characterOfMain.position = lastTouchLocation
+                velocity = CGPoint.zero
+                stopCharacterOfMainAnimation()
             }
             else {
-                deltaTime = 0
+                move(sprite: characterOfMain, velocity: velocity)
             }
-            lastUpdateTime = currentTime
-     
-            if let lastTouchLocation = lastTouchLocation {
-                let diff = lastTouchLocation - characterOfMain.position
-                if diff.length() < characterOfMainMovePointsPerSec * CGFloat(deltaTime) {
-                    characterOfMain.position = lastTouchLocation
-                    velocity = CGPoint.zero
-                    stopCharacterOfMainAnimation()
+        }
+        
+        cameraNode.position = characterOfMain.position
+    }
+    
+    func moveCharacterOfMainToward(location: CGPoint) {
+        let direction = CGPoint(x: location.x - characterOfMain.position.x, y: location.y - characterOfMain.position.y).normalized()
+        
+        velocity = CGPoint(x: direction.x * characterOfMainMovePointsPerSec, y: direction.y * characterOfMainMovePointsPerSec)
+        if lastTouchLocation != nil {
+            if lastTouchLocation!.x > cameraRect.width * 0.6   {
+                characterOfMainAnimation = SKAction.animate(with: texturesRight, timePerFrame: 0.1)
+            }
+            else if lastTouchLocation!.x < cameraRect.width * 0.3 {
+                characterOfMainAnimation = SKAction.animate(with: textureLeft, timePerFrame: 0.1)
+            }
+            else if lastTouchLocation!.x > cameraRect.width * 0.3 && lastTouchLocation!.x < cameraRect.width * 0.6 {
+                if lastTouchLocation!.y > cameraRect.height * 0.5 {
+                    characterOfMainAnimation = SKAction.animate(with: texturesUp, timePerFrame: 0.1)
                 }
                 else {
-                    move(sprite: characterOfMain, velocity: velocity)
+                    characterOfMainAnimation = SKAction.animate(with: texturesDown, timePerFrame: 0.1)
                 }
             }
-     
-            cameraNode.position = characterOfMain.position
         }
-     
-        func moveCharacterOfMainToward(location: CGPoint) {
-            let direction = CGPoint(x: location.x - characterOfMain.position.x, y: location.y - characterOfMain.position.y).normalized()
-     
-            velocity = CGPoint(x: direction.x * characterOfMainMovePointsPerSec, y: direction.y * characterOfMainMovePointsPerSec)
-            startCharacterOfMainAnimation()
+        startCharacterOfMainAnimation()
+    }
+    
+    func move(sprite: SKSpriteNode, velocity: CGPoint) {
+        let amountToMove = velocity * CGFloat(deltaTime)
+        sprite.position += amountToMove
+    }
+    
+    func sceneTouched(touchLocation: CGPoint) {
+        lastTouchLocation = touchLocation
+        moveCharacterOfMainToward(location: touchLocation)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
         }
-     
-        func move(sprite: SKSpriteNode, velocity: CGPoint) {
-            let amountToMove = velocity * CGFloat(deltaTime)
-            sprite.position += amountToMove
-        }
-     
-        func sceneTouched(touchLocation: CGPoint) {
-            lastTouchLocation = touchLocation
-            moveCharacterOfMainToward(location: touchLocation)
-        }
-     
-        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            guard let touch = touches.first else {
-                return
-            }
-     
-            let touchLocation = touch.location(in: self)
-            sceneTouched(touchLocation: touchLocation)
-        }
+        
+        let touchLocation = touch.location(in: self)
+        sceneTouched(touchLocation: touchLocation)
+    }
     
     func startCharacterOfMainAnimation() {
         if characterOfMain.action(forKey: "animation") == nil {
@@ -150,5 +159,5 @@ class GameScene: SKScene {
     func stopCharacterOfMainAnimation() {
         characterOfMain.removeAction(forKey: "animation")
     }
- 
+    
 }
