@@ -31,6 +31,12 @@ class GameViewController: UIViewController {
         }
     }
 
+    @IBAction func buttonClick(_ sender: Any) {
+        let fightScene = storyboard?.instantiateViewController(withIdentifier: "FightScene") as! FightScene
+        
+        self.navigationController?.pushViewController(fightScene, animated: true)
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
