@@ -103,13 +103,13 @@
 				F772F63820C8BB2200039367 /* AppDelegate.swift */,
 				F772F63E20C8BB2200039367 /* GameScene.swift */,
 				F772F64020C8BB2200039367 /* GameViewController.swift */,
+				F74E532420DAB73F006AD624 /* FightScene.swift */,
+				F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */,
+				A3DF105B20D4430300852581 /* Player.swift */,
 				F772F64220C8BB2200039367 /* Main.storyboard */,
 				F772F64720C8BB2600039367 /* LaunchScreen.storyboard */,
 				F73D877720CF4BF600C5755A /* backgroundtile.sks */,
 				F772F64A20C8BB2600039367 /* Info.plist */,
-				F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */,
-				A3DF105B20D4430300852581 /* Player.swift */,
-				F74E532420DAB73F006AD624 /* FightScene.swift */,
 			);
 			path = FFive;
 			sourceTree = "<group>";

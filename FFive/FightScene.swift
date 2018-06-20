@@ -9,6 +9,5 @@
 import SpriteKit
 
 class FightScene: SKScene {
-    <#code#>
 }
 
