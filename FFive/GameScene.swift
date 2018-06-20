@@ -20,6 +20,10 @@ class GameScene: SKScene {
     var deltaTime: TimeInterval = 0
     var lastTouchLocation: CGPoint?
     var background: SKTileMapNode!
+    var texturesUp: [SKTexture] = []
+    var texturesRight: [SKTexture] = []
+    var texturesDown: [SKTexture] = []
+    var textureLeft: [SKTexture] = []
 
     var playableRect: CGRect!
 
@@ -44,38 +48,34 @@ class GameScene: SKScene {
         let playableMargin = (size.height - playableHeight) / 2.0
         playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
         
-        var texturesUp: [SKTexture] = []
-        var texturesRight: [SKTexture] = []
-        var texturesDown: [SKTexture] = []
-        var textureLeft: [SKTexture] = []
         
         for i in 1...3 {
             texturesUp.append(SKTexture(imageNamed: "hero\(i)"))
         }
-        texturesUp.append(texturesUp[3])
-        texturesUp.append(texturesUp[2])
+        //texturesUp.append(texturesUp[3])
+        //texturesUp.append(texturesUp[2])
         texturesUp.append(texturesUp[1])
         
         for i in 4...6{
             texturesRight.append(SKTexture(imageNamed: "hero\(i)"))
         }
-        texturesRight.append(texturesRight[4])
-        texturesRight.append(texturesRight[5])
-        texturesRight.append(texturesRight[6])
+        //texturesRight.append(texturesRight[4])
+        //texturesRight.append(texturesRight[5])
+        texturesRight.append(texturesRight[1])
         for i in 7...9{
             texturesDown.append(SKTexture(imageNamed: "hero\(i)"))
         }
-        texturesDown.append(texturesDown[7])
-        texturesDown.append(texturesDown[8])
-        texturesDown.append(texturesDown[9])
+        //texturesDown.append(texturesDown[7])
+        //texturesDown.append(texturesDown[8])
+        texturesDown.append(texturesDown[1])
         characterOfMainAnimation = 	SKAction.animate(with: texturesDown, timePerFrame: 0.1)
         
         for i in 10...12{
             textureLeft.append(SKTexture(imageNamed: "hero\(i)"))
         }
-        textureLeft.append(textureLeft[10])
-        textureLeft.append(textureLeft[11])
-        textureLeft.append(textureLeft[12])
+        //textureLeft.append(textureLeft[10])
+        //textureLeft.append(textureLeft[11])
+        textureLeft.append(textureLeft[1])
         
         characterOfMain = SKSpriteNode(imageNamed: "hero8")
         
@@ -86,8 +86,18 @@ class GameScene: SKScene {
      
      
         characterOfMain.position = CGPoint(x: 400, y: 400)
-        //startcharacterOfMainAnimation()
+        startCharacterOfMainAnimation()
         addChild(characterOfMain)
+        
+        if velocity.x > velocity.y {
+            if velocity.x > 0 {
+                characterOfMainAnimation = SKAction.animate(with: texturesRight, timePerFrame: 0.1)
+            }
+            else if velocity.x < velocity.y {
+                characterOfMainAnimation = SKAction.animate(with: textureLeft, timePerFrame: 0.1)
+            }
+        }
+        //else if velocity.x < velocity.y
      
         addChild(cameraNode)
         camera = cameraNode
@@ -108,6 +118,7 @@ class GameScene: SKScene {
                 if diff.length() < characterOfMainMovePointsPerSec * CGFloat(deltaTime) {
                     characterOfMain.position = lastTouchLocation
                     velocity = CGPoint.zero
+                    stopCharacterOfMainAnimation()
                 }
                 else {
                     move(sprite: characterOfMain, velocity: velocity)
@@ -121,6 +132,7 @@ class GameScene: SKScene {
             let direction = CGPoint(x: location.x - characterOfMain.position.x, y: location.y - characterOfMain.position.y).normalized()
      
             velocity = CGPoint(x: direction.x * characterOfMainMovePointsPerSec, y: direction.y * characterOfMainMovePointsPerSec)
+            startCharacterOfMainAnimation()
         }
      
         func move(sprite: SKSpriteNode, velocity: CGPoint) {
@@ -141,5 +153,15 @@ class GameScene: SKScene {
             let touchLocation = touch.location(in: self)
             sceneTouched(touchLocation: touchLocation)
         }
+    
+    func startCharacterOfMainAnimation() {
+        if characterOfMain.action(forKey: "animation") == nil {
+            characterOfMain.run(SKAction.repeatForever(characterOfMainAnimation), withKey: "animation")
+        }
+    }
+    
+    func stopCharacterOfMainAnimation() {
+        characterOfMain.removeAction(forKey: "animation")
+    }
  
 }
