@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func buttonClick(_ sender: Any) {
-        let fightScene = storyboard?.instantiateViewController(withIdentifier: "FightScene") as! FightScene
+        let fightScene = storyboard?.instantiateViewController(withIdentifier: "FightSceneViewController") as! FightSceneViewController
         
         self.navigationController?.pushViewController(fightScene, animated: true)
     }
