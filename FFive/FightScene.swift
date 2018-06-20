@@ -35,5 +35,5 @@ class FightScene: UIViewController{
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+    // change to fight scene controller 
 }
