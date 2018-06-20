@@ -52,29 +52,21 @@ class GameScene: SKScene {
         for i in 1...3 {
             texturesUp.append(SKTexture(imageNamed: "hero\(i)"))
         }
-        //texturesUp.append(texturesUp[3])
-        //texturesUp.append(texturesUp[2])
         texturesUp.append(texturesUp[1])
         
         for i in 4...6{
             texturesRight.append(SKTexture(imageNamed: "hero\(i)"))
         }
-        //texturesRight.append(texturesRight[4])
-        //texturesRight.append(texturesRight[5])
         texturesRight.append(texturesRight[1])
         for i in 7...9{
             texturesDown.append(SKTexture(imageNamed: "hero\(i)"))
         }
-        //texturesDown.append(texturesDown[7])
-        //texturesDown.append(texturesDown[8])
         texturesDown.append(texturesDown[1])
         characterOfMainAnimation = 	SKAction.animate(with: texturesDown, timePerFrame: 0.1)
         
         for i in 10...12{
             textureLeft.append(SKTexture(imageNamed: "hero\(i)"))
         }
-        //textureLeft.append(textureLeft[10])
-        //textureLeft.append(textureLeft[11])
         textureLeft.append(textureLeft[1])
         
         characterOfMain = SKSpriteNode(imageNamed: "hero8")
@@ -89,14 +81,9 @@ class GameScene: SKScene {
         startCharacterOfMainAnimation()
         addChild(characterOfMain)
         
-        if velocity.x > velocity.y {
-            if velocity.x > 0 {
-                characterOfMainAnimation = SKAction.animate(with: texturesRight, timePerFrame: 0.1)
-            }
-            else if velocity.x < velocity.y {
-                characterOfMainAnimation = SKAction.animate(with: textureLeft, timePerFrame: 0.1)
-            }
-        }
+        /*if lastTouchLocation?.angle >  {
+            characterOfMainAnimation = SKAction.animate(with: texturesRight, timePerFrame: 0.1)
+        }*/
         //else if velocity.x < velocity.y
      
         addChild(cameraNode)
