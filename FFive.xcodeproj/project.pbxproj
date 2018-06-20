@@ -16,7 +16,8 @@
 		F733994220D0A41E003074CE /* Player2Fight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733994120D0A41E003074CE /* Player2Fight.sks */; };
 		F73D877620CF4A1A00C5755A /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D877520CF4A1A00C5755A /* MyUtils.swift */; };
 		F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F73D877720CF4BF600C5755A /* backgroundtile.sks */; };
-		F752B2AD20D1B15F00CA7566 /* FightScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752B2AC20D1B15F00CA7566 /* FightScene.swift */; };
+		F74E532520DAB73F006AD624 /* FightScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E532420DAB73F006AD624 /* FightScene.swift */; };
+		F752B2AD20D1B15F00CA7566 /* FightSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */; };
 		F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F63820C8BB2200039367 /* AppDelegate.swift */; };
 		F772F63B20C8BB2200039367 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F772F63A20C8BB2200039367 /* GameScene.sks */; };
 		F772F63D20C8BB2200039367 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F772F63C20C8BB2200039367 /* Actions.sks */; };
@@ -37,7 +38,8 @@
 		F733994120D0A41E003074CE /* Player2Fight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Player2Fight.sks; sourceTree = "<group>"; };
 		F73D877520CF4A1A00C5755A /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		F73D877720CF4BF600C5755A /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = backgroundtile.sks; sourceTree = "<group>"; };
-		F752B2AC20D1B15F00CA7566 /* FightScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightScene.swift; sourceTree = "<group>"; };
+		F74E532420DAB73F006AD624 /* FightScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightScene.swift; sourceTree = "<group>"; };
+		F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightSceneViewController.swift; sourceTree = "<group>"; };
 		F772F63520C8BB2200039367 /* FFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F772F63820C8BB2200039367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F772F63A20C8BB2200039367 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -105,8 +107,9 @@
 				F772F64720C8BB2600039367 /* LaunchScreen.storyboard */,
 				F73D877720CF4BF600C5755A /* backgroundtile.sks */,
 				F772F64A20C8BB2600039367 /* Info.plist */,
-				F752B2AC20D1B15F00CA7566 /* FightScene.swift */,
+				F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */,
 				A3DF105B20D4430300852581 /* Player.swift */,
+				F74E532420DAB73F006AD624 /* FightScene.swift */,
 			);
 			path = FFive;
 			sourceTree = "<group>";
@@ -194,9 +197,10 @@
 				F772F63F20C8BB2200039367 /* GameScene.swift in Sources */,
 				F772F64120C8BB2200039367 /* GameViewController.swift in Sources */,
 				F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */,
+				F74E532520DAB73F006AD624 /* FightScene.swift in Sources */,
 				F73D877620CF4A1A00C5755A /* MyUtils.swift in Sources */,
 				A3DF105C20D4430300852581 /* Player.swift in Sources */,
-				F752B2AD20D1B15F00CA7566 /* FightScene.swift in Sources */,
+				F752B2AD20D1B15F00CA7566 /* FightSceneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

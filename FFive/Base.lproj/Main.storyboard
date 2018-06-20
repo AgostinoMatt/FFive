@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="334" y="107"/>
         </scene>
-        <!--Fight Scene-->
+        <!--Fight Scene View Controller-->
         <scene sceneID="6Fz-AJ-vPR">
             <objects>
-                <viewController storyboardIdentifier="FightScene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Db4-cN-77K" customClass="FightScene" customModule="FFive" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FightSceneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Db4-cN-77K" customClass="FightSceneViewController" customModule="FFive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="caq-qI-2m1" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
