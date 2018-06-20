@@ -11,11 +11,8 @@ import SpriteKit
 
 class Enemy: SKSpriteNode {
     
-    var enemyHealth = 100
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Use init()")
-    }
+    
     
     
 }
