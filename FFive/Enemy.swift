@@ -9,10 +9,13 @@
 import Foundation
 import SpriteKit
 
+enum EnemyStats {
+    static var enemyHealth: Int = 60
+    static var enemyAttack: Int = 5
+}
+
 class Enemy: SKSpriteNode {
     
-    var enemyHealth = 100
-    var enemyAttack = 20
     
     
     
