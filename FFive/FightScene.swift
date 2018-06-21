@@ -10,7 +10,9 @@ import SpriteKit
 
 class FightScene: SKScene {
     
-    var playerTurn = []
+    var playerTurn = 0
+    
+    var enemyAlive = true
     
     let playableRect: CGRect
     
@@ -24,8 +26,48 @@ class FightScene: SKScene {
             playableRect.height)
     }
     
+    while(enemyAlive = true) {
+    
+        let characterOfMain = 0
+        let partyMember2 = 1
+        let girlWithHair = 2
+        let enemy 1 = 3
+        let enemy 2 = 4
+        let enemy 3 = 5
+    
+        var charMain: MainCharacter!
+        var partyMember2: SecondCharacter!
+        var girl: Girl!
+    
+        var enemy1: Enemy1!
+        var enemy2: Enemy2!
+        var enemy3: Enemy3!
+    
+        switch playerTurn {
+
+            case 0:
+            player.attack()
+            playerTurn += 1
+            case 1:
+            player.magicAttack()
+            playerTurn += 1
+
+            case 2:
+            escape()
+            }
+
+        if enemyTurn{
+        attack()
+    let wait = SKAction.wait(forDuration: 2)
+    
+        playerTurn +=1
+        }
     
     
+    }
     
 }
 
+
+
+ 
