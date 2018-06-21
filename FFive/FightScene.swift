@@ -10,7 +10,8 @@ import SpriteKit
 
 class FightScene: SKScene {
     
-    var playerTurn = 0
+    var playerTurn[]
+    
     
     
     

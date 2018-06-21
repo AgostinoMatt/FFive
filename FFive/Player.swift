@@ -11,6 +11,11 @@ import SpriteKit
 
 class Player: SKSpriteNode {
     
+    var playerHealth = 100
+    var playerAttack = 10
+    
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("Use init()")
     }
