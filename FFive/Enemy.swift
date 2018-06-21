@@ -12,7 +12,8 @@ import SpriteKit
 class Enemy: SKSpriteNode {
     
     var enemyHealth = 100
-    var enemyAttack
+    var enemyAttack = 20
+    
     
     
 }
