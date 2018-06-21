@@ -9,12 +9,13 @@
 import Foundation
 import SpriteKit
 
+enum PlayerStats {
+    static var playerHealth: Int = 100
+    static var playerAttack: Int = 10
+    static var playerMagic: Int = 10
+}
+
 class Player: SKSpriteNode {
-    
-    var playerHealth = 100
-    var playerAttack = 10
-    
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("Use init()")
