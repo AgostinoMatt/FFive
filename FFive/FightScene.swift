@@ -9,61 +9,59 @@
 import SpriteKit
 
 class FightScene: SKScene {
+    var charMain: SKSpriteNode!
+    var secondCharacter: SKReferenceNode!
+    var girl: SKReferenceNode!
     
-    var playerTurn = 0
-    
+    var enemies: [SKReferenceNode] = []
+    var playerTurn: Bool = true
     var enemyAlive = true
     
-    let playableRect: CGRect
-    
-    let cameraNode = SKCameraNode()
-    let cameraMovePointPerSec: CGFloat = 200.0
-    var cameraRect: CGRect {
-        let x = cameraNode.position.x - size.width / 2 + (size.width - playableRect.width) / 2
-        let y = cameraNode.position.y - size.height / 2 + (size.height - playableRect.height) / 2
+    override func didMove(to view: SKView) {
         
-        return CGRect(x: x, y: y, width: playableRect.width, height:
-            playableRect.height)
+        charMain = childNode(withName: "MainCharacter")?.childNode(withName: "//character") as! SKSpriteNode
+        
+        isPaused = true
+        isPaused = false
+        
+        enumerateChildNodes(withName: "//*") { node, _ in
+            if let char = node as? SKReferenceNode {
+                char.isPaused = true
+            }
+        }
+        
+        enumerateChildNodes(withName: "//Enemy*") { node, _ in
+            if let enemy = node as? SKReferenceNode {
+                self.enemies.append(enemy)
+            }
+        }
+        
+        charMain.isPaused = false
     }
     
-    while(enemyAlive = true) {
-    
-        let characterOfMain = 0
-        let partyMember2 = 1
-        let girlWithHair = 2
-        let enemy 1 = 3
-        let enemy 2 = 4
-        let enemy 3 = 5
-    
-        var charMain: MainCharacter!
-        var partyMember2: SecondCharacter!
-        var girl: Girl!
-    
-        var enemy1: Enemy1!
-        var enemy2: Enemy2!
-        var enemy3: Enemy3!
-    
-        switch playerTurn {
-
-            case 0:
-            player.attack()
-            playerTurn += 1
-            case 1:
-            player.magicAttack()
-            playerTurn += 1
-
-            case 2:
-            escape()
-            }
-
-        if enemyTurn{
-        attack()
-    let wait = SKAction.wait(forDuration: 2)
-    
-        playerTurn +=1
+    override func update(_ currentTime: TimeInterval) {
+        if playerTurn {
+            playerFight()
+            print(charMain.hasActions())
         }
+        else {
+            enemyFight()
+            print("enemies")
+        }
+    }
     
+    func playerFight(){
+        if !charMain.hasActions() {
+            playerTurn = false
+            enemies[0].isPaused = false
+        }
+    }
     
+    func enemyFight() {
+        if !enemies[0].hasActions() {
+            charMain.isPaused = false
+            playerTurn = true
+        }
     }
     
 }
