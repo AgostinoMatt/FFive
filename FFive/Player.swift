@@ -10,9 +10,11 @@ import Foundation
 import SpriteKit
 
 enum PlayerStats {
-    static var playerHealth: Int = 100
-    static var playerAttack: Int = 10
-    static var playerMagic: Int = 10
+    static var playerHealth: Int = 100 + (level * 10)
+    static var playerAttack: Int = 10 + level
+    static var playerMagic: Int = 10 + level
+    static var exp: Int = 0
+    static var level: Int = 1
 }
 
 class Player: SKSpriteNode {
