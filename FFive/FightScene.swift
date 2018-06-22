@@ -8,6 +8,14 @@
 
 import SpriteKit
 
+protocol InteractiveNode {
+    func interact()
+}
+
+protocol EventListenerNode {
+    func didMoveToScene()
+}
+
 class FightScene: SKScene {
     var charMain: SKSpriteNode!
     var secondCharacter: SKReferenceNode!
@@ -38,6 +46,8 @@ class FightScene: SKScene {
         
         charMain.isPaused = false
     }
+    
+    
     
     override func update(_ currentTime: TimeInterval) {
         if playerTurn {

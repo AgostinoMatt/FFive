@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3871B4120DD478C00FE64ED /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3871B4020DD478C00FE64ED /* ButtonNode.swift */; };
 		A393D0EE20DAE4480099C639 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393D0ED20DAE4480099C639 /* Enemy.swift */; };
 		A3DF105C20D4430300852581 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DF105B20D4430300852581 /* Player.swift */; };
 		F71D91B220D3598E00A298B4 /* GirlWithHairFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B120D3598E00A298B4 /* GirlWithHairFight.sks */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3871B4020DD478C00FE64ED /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		A393D0ED20DAE4480099C639 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		A3DF105B20D4430300852581 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F71D91B120D3598E00A298B4 /* GirlWithHairFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GirlWithHairFight.sks; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				F772F64720C8BB2600039367 /* LaunchScreen.storyboard */,
 				F73D877720CF4BF600C5755A /* backgroundtile.sks */,
 				F772F64A20C8BB2600039367 /* Info.plist */,
+				A3871B4020DD478C00FE64ED /* ButtonNode.swift */,
 			);
 			path = FFive;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				F74E532520DAB73F006AD624 /* FightScene.swift in Sources */,
 				F74E533420DAD82E006AD624 /* CGPoint+Extensions.swift in Sources */,
 				F74E533820DAD82E006AD624 /* SKAction+SpecialEffects.swift in Sources */,
+				A3871B4120DD478C00FE64ED /* ButtonNode.swift in Sources */,
 				A393D0EE20DAE4480099C639 /* Enemy.swift in Sources */,
 				F74E533D20DAD82E006AD624 /* SKTTimingFunctions.swift in Sources */,
 				F74E533920DAD82E006AD624 /* SKColor+Extensions.swift in Sources */,
