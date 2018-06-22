@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import UIKit
 
 protocol InteractiveNode {
     func interact()
@@ -30,6 +31,7 @@ class FightScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+<<<<<<< HEAD
         MainChar = SKSpriteNode(imageNamed: "hero10")
         MainChar.position = CGPoint(x: (size.width / 4) * 3 , y: size.width / 3)
         MainChar.zPosition = 20
@@ -53,6 +55,9 @@ class FightScene: SKScene {
         SecondSword.zPosition = 20
         SecondSword.name = "secondSword"
         addChild(SecondSword)
+=======
+        charMain = childNode(withName: ".//MainCharacter/character") as! SKSpriteNode
+>>>>>>> d834e2438692a986a761d6d594025e297f56a463
         
         isPaused = true
         isPaused = false
@@ -68,7 +73,15 @@ class FightScene: SKScene {
                 self.enemies.append(enemy)
             }
         }
+<<<<<<< HEAD
         //charMain.isPaused = false
+=======
+        
+        charMain.isPaused = false
+        
+    
+    
+>>>>>>> d834e2438692a986a761d6d594025e297f56a463
     }
     
     

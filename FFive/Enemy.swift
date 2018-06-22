@@ -9,14 +9,29 @@
 import Foundation
 import SpriteKit
 
-enum EnemyStats {
-    static var enemyHealth: Int = 60
-    static var enemyAttack: Int = 5
-}
+
 
 class Enemy: SKSpriteNode {
     
+    enum EnemyStats {
+        static var enemyHealth: Int = 100 + (level * 10)
+        static var enemyAttack: Int = 10 + level
+        static var enemyMagic: Int = 10 + level
+        static var expGiven: Int = 0
+        static var level: Int = 1
+    }
     
+    var Description: String{
+        return " Enemy has\(enemyHealth) and can do \(enemyAttack) damage"
+
+        func attackPlayer() {
+            //TODO
+        }
+        
+        let someEnemy = Enemy()
+        print("Enemy: \(someEnemy.description)")
+    }
     
     
 }
+
