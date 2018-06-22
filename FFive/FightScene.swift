@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import UIKit
 
 protocol InteractiveNode {
     func interact()
@@ -27,7 +28,7 @@ class FightScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        charMain = childNode(withName: "MainCharacter")?.childNode(withName: "//character") as! SKSpriteNode
+        charMain = childNode(withName: ".//MainCharacter/character") as! SKSpriteNode
         
         isPaused = true
         isPaused = false
@@ -45,6 +46,9 @@ class FightScene: SKScene {
         }
         
         charMain.isPaused = false
+        
+    
+    
     }
     
     
