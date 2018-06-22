@@ -14,7 +14,6 @@
 		F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B320D35BC600A298B4 /* ZombieFight.sks */; };
 		F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B520D35CB200A298B4 /* HeadlessFight.sks */; };
 		F733993E20D09136003074CE /* FightScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733993D20D09136003074CE /* FightScene.sks */; };
-		F733994020D098C7003074CE /* MainCharFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733993F20D098C7003074CE /* MainCharFight.sks */; };
 		F733994220D0A41E003074CE /* Player2Fight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733994120D0A41E003074CE /* Player2Fight.sks */; };
 		F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F73D877720CF4BF600C5755A /* backgroundtile.sks */; };
 		F74E532520DAB73F006AD624 /* FightScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E532420DAB73F006AD624 /* FightScene.swift */; };
@@ -48,7 +47,6 @@
 		F71D91B320D35BC600A298B4 /* ZombieFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ZombieFight.sks; sourceTree = "<group>"; };
 		F71D91B520D35CB200A298B4 /* HeadlessFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeadlessFight.sks; sourceTree = "<group>"; };
 		F733993D20D09136003074CE /* FightScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FightScene.sks; sourceTree = "<group>"; };
-		F733993F20D098C7003074CE /* MainCharFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainCharFight.sks; sourceTree = "<group>"; };
 		F733994120D0A41E003074CE /* Player2Fight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Player2Fight.sks; sourceTree = "<group>"; };
 		F73D877720CF4BF600C5755A /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = backgroundtile.sks; sourceTree = "<group>"; };
 		F74E532420DAB73F006AD624 /* FightScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightScene.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			children = (
 				F772F63A20C8BB2200039367 /* GameScene.sks */,
 				F733993D20D09136003074CE /* FightScene.sks */,
-				F733993F20D098C7003074CE /* MainCharFight.sks */,
 				F733994120D0A41E003074CE /* Player2Fight.sks */,
 				F71D91B120D3598E00A298B4 /* GirlWithHairFight.sks */,
 				F71D91B320D35BC600A298B4 /* ZombieFight.sks */,
@@ -225,7 +222,6 @@
 				F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */,
 				F733993E20D09136003074CE /* FightScene.sks in Resources */,
 				F772F64620C8BB2600039367 /* Assets.xcassets in Resources */,
-				F733994020D098C7003074CE /* MainCharFight.sks in Resources */,
 				F772F64920C8BB2600039367 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

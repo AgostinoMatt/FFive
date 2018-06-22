@@ -6,7 +6,7 @@
 //  Copyright © 2018 Matt Agostino. All rights reserved.
 //
 
-import SpriteKit
+/*import SpriteKit
 
 class ButtonNode: SKSpriteNode, InteractiveNode, EventListenerNode {
     func didMoveToScene() {
@@ -26,5 +26,6 @@ class ButtonNode: SKSpriteNode, InteractiveNode, EventListenerNode {
         super.touchesEnded(touches, with: event)
         print("button pressed")
         interact()
+        }
     }
-}
+}*/

@@ -17,17 +17,42 @@ protocol EventListenerNode {
 }
 
 class FightScene: SKScene {
-    var charMain: SKSpriteNode!
-    var secondCharacter: SKReferenceNode!
+    var MainChar: SKSpriteNode!
+    var Second: SKSpriteNode!
     var girl: SKReferenceNode!
+    var MainSword: SKSpriteNode!
+    var SecondSword: SKSpriteNode!
     
     var enemies: [SKReferenceNode] = []
     var playerTurn: Bool = true
     var enemyAlive = true
     
+    
     override func didMove(to view: SKView) {
         
-        charMain = childNode(withName: "MainCharacter")?.childNode(withName: "//character") as! SKSpriteNode
+        MainChar = SKSpriteNode(imageNamed: "hero10")
+        MainChar.position = CGPoint(x: (size.width / 4) * 3 , y: size.width / 3)
+        MainChar.zPosition = 20
+        MainChar.name = "Main"
+        addChild(MainChar)
+        
+        MainSword = SKSpriteNode(imageNamed: "sword1")
+        MainSword.position = CGPoint(x: MainChar.position.x - 11, y: MainChar.position.y - 7)
+        MainSword.zPosition = 10
+        MainSword.name = "mainSword"
+        addChild(MainSword)
+        
+        Second = SKSpriteNode(imageNamed: "greyFight")
+        Second.position = CGPoint(x: (size.width / 4) * 3 + 50 , y: size.width / 2)
+        Second.zPosition = 10
+        Second.name = "second"
+        addChild(Second)
+        
+        SecondSword = SKSpriteNode(imageNamed: "buster")
+        SecondSword.position = CGPoint(x: Second.position.x , y: Second.position.y)
+        SecondSword.zPosition = 20
+        SecondSword.name = "secondSword"
+        addChild(SecondSword)
         
         isPaused = true
         isPaused = false
@@ -43,8 +68,7 @@ class FightScene: SKScene {
                 self.enemies.append(enemy)
             }
         }
-        
-        charMain.isPaused = false
+        //charMain.isPaused = false
     }
     
     
@@ -52,7 +76,7 @@ class FightScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         if playerTurn {
             playerFight()
-            print(charMain.hasActions())
+            //print(charMain.hasActions())
         }
         else {
             enemyFight()
@@ -61,19 +85,54 @@ class FightScene: SKScene {
     }
     
     func playerFight(){
-        if !charMain.hasActions() {
-            playerTurn = false
-            enemies[0].isPaused = false
-        }
+       
     }
     
     func enemyFight() {
-        if !enemies[0].hasActions() {
-            charMain.isPaused = false
-            playerTurn = true
-        }
+        
     }
     
+    func MainCharAnim() {
+        let moveForward = SKAction.moveBy(x: -30, y: 0, duration: 0.25)
+        let moveBack = SKAction.moveBy(x: 30, y: 0, duration: 0.75)
+        MainChar.run(SKAction.sequence([moveForward, moveBack]))
+        MainCharSword()
+    }
+    
+    func MainCharSword(){
+        let rotateForward = SKAction.rotate(byAngle: CGFloat(450).degreesToRadians(), duration: 0.5)
+        let rotateBack = rotateForward.reversed()
+        MainSword.run(SKAction.sequence([rotateForward, rotateBack]))
+    }
+    
+    func SecondPlayerAnim() {
+        let moveForward = SKAction.moveBy(x: -40, y: 0, duration: 0.4)
+        let wait = SKAction.wait(forDuration: 0.2)
+        let moveBack = SKAction.moveBy(x: -40, y: 0, duration: 0.6)
+        Second.run(SKAction.sequence([moveForward, wait, moveBack]))
+    }
+    
+    func SecondWeapond(){
+        run(SKAction.rotate(byAngle: CGFloat(720).degreesToRadians(), duration: 1))
+    }
+    
+    
+    /*func spawnEnemy() {
+        let cameraSpace = cameraRect
+        let enemy = SKSpriteNode(imageNamed: "enemy")
+        enemy.position = CGPoint(
+            x: cameraSpace.maxX + enemy.size.width / 2,
+            y: CGFloat.random(
+                min: cameraSpace.minY + enemy.size.height / 2,
+                max: cameraSpace.maxY - enemy.size.height / 2))
+        enemy.zPosition = 1
+        enemy.name = "enemy"
+        addChild(enemy)
+        
+        let actionMove = SKAction.moveBy(x: -(size.width + enemy.size.width), y: 0, duration: 2.5)
+        let actionRemove = SKAction.removeFromParent()
+        enemy.run(SKAction.sequence([actionMove, actionRemove]))
+    }*/
 }
 
 
