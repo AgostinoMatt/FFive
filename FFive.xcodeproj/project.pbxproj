@@ -20,7 +20,6 @@
 		F74E533D20DAD82E006AD624 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E533120DAD82D006AD624 /* SKTTimingFunctions.swift */; };
 		F74E533E20DAD82E006AD624 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E533220DAD82D006AD624 /* Vector3.swift */; };
 		F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F63820C8BB2200039367 /* AppDelegate.swift */; };
-		F772F63F20C8BB2200039367 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F63E20C8BB2200039367 /* GameScene.swift */; };
 		F772F64120C8BB2200039367 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F64020C8BB2200039367 /* GameViewController.swift */; };
 		F772F64420C8BB2200039367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F772F64220C8BB2200039367 /* Main.storyboard */; };
 		F772F64620C8BB2600039367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F772F64520C8BB2600039367 /* Assets.xcassets */; };
@@ -37,7 +36,8 @@
 		F7AD728120DE87A5003C9F5E /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AD726020DE87A3003C9F5E /* MyUtils.swift */; };
 		F7AD728220DE87A5003C9F5E /* FightScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AD726120DE87A3003C9F5E /* FightScene.swift */; };
 		F7AD728320DE87A5003C9F5E /* FightSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AD726220DE87A3003C9F5E /* FightSceneViewController.swift */; };
-		F7AD728420DE87A5003C9F5E /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F7AD726320DE87A3003C9F5E /* backgroundtile.sks */; };
+		F7AD729420DEA926003C9F5E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AD729320DEA926003C9F5E /* GameScene.swift */; };
+		F7AD729620DEA9B0003C9F5E /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F7AD729520DEA9B0003C9F5E /* backgroundtile.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +55,6 @@
 		F74E533220DAD82D006AD624 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		F772F63520C8BB2200039367 /* FFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F772F63820C8BB2200039367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F772F63E20C8BB2200039367 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		F772F64020C8BB2200039367 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F772F64320C8BB2200039367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F772F64520C8BB2600039367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,7 +72,8 @@
 		F7AD726020DE87A3003C9F5E /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyUtils.swift; path = ../../FFive2/FFive/FFive/MyUtils.swift; sourceTree = "<group>"; };
 		F7AD726120DE87A3003C9F5E /* FightScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightScene.swift; path = ../../FFive2/FFive/FFive/FightScene.swift; sourceTree = "<group>"; };
 		F7AD726220DE87A3003C9F5E /* FightSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightSceneViewController.swift; path = ../../FFive2/FFive/FFive/FightSceneViewController.swift; sourceTree = "<group>"; };
-		F7AD726320DE87A3003C9F5E /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = backgroundtile.sks; path = ../../FFive2/FFive/FFive/backgroundtile.sks; sourceTree = "<group>"; };
+		F7AD729320DEA926003C9F5E /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		F7AD729520DEA9B0003C9F5E /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = backgroundtile.sks; path = ../../test/FFive/FFive/backgroundtile.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +125,7 @@
 		F772F63720C8BB2200039367 /* FFive */ = {
 			isa = PBXGroup;
 			children = (
+				F7AD729520DEA9B0003C9F5E /* backgroundtile.sks */,
 				F74E532620DAD82D006AD624 /* SKTUtils */,
 				F772F64520C8BB2600039367 /* Assets.xcassets */,
 				F7AD725820DE87A2003C9F5E /* Scenes */,
@@ -132,9 +133,8 @@
 				F7AD725020DE87A1003C9F5E /* Characters.swift */,
 				F7AD726120DE87A3003C9F5E /* FightScene.swift */,
 				F7AD726220DE87A3003C9F5E /* FightSceneViewController.swift */,
-				F772F63E20C8BB2200039367 /* GameScene.swift */,
+				F7AD729320DEA926003C9F5E /* GameScene.swift */,
 				F772F64020C8BB2200039367 /* GameViewController.swift */,
-				F7AD726320DE87A3003C9F5E /* backgroundtile.sks */,
 				F7AD726020DE87A3003C9F5E /* MyUtils.swift */,
 				F7AD724E20DE87A1003C9F5E /* GameViewController.swift */,
 				F772F64220C8BB2200039367 /* Main.storyboard */,
@@ -221,10 +221,10 @@
 				F7AD727D20DE87A5003C9F5E /* Mage.sks in Resources */,
 				F7AD728020DE87A5003C9F5E /* ZombieFight.sks in Resources */,
 				F772F64420C8BB2200039367 /* Main.storyboard in Resources */,
-				F7AD728420DE87A5003C9F5E /* backgroundtile.sks in Resources */,
 				F7AD727B20DE87A5003C9F5E /* GameScene.sks in Resources */,
 				F772F64620C8BB2600039367 /* Assets.xcassets in Resources */,
 				F7AD727A20DE87A5003C9F5E /* FightScene.sks in Resources */,
+				F7AD729620DEA9B0003C9F5E /* backgroundtile.sks in Resources */,
 				F7AD727F20DE87A5003C9F5E /* Warrior.sks in Resources */,
 				F7AD727E20DE87A5003C9F5E /* Player2Fight.sks in Resources */,
 				F772F64920C8BB2600039367 /* LaunchScreen.storyboard in Resources */,
@@ -239,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F74E533520DAD82E006AD624 /* CGVector+Extensions.swift in Sources */,
-				F772F63F20C8BB2200039367 /* GameScene.swift in Sources */,
 				F74E533A20DAD82E006AD624 /* SKNode+Extensions.swift in Sources */,
 				F7AD728320DE87A5003C9F5E /* FightSceneViewController.swift in Sources */,
 				F772F64120C8BB2200039367 /* GameViewController.swift in Sources */,
@@ -249,6 +248,7 @@
 				F7AD728120DE87A5003C9F5E /* MyUtils.swift in Sources */,
 				F7AD727320DE87A5003C9F5E /* GameViewController.swift in Sources */,
 				F74E533420DAD82E006AD624 /* CGPoint+Extensions.swift in Sources */,
+				F7AD729420DEA926003C9F5E /* GameScene.swift in Sources */,
 				F74E533820DAD82E006AD624 /* SKAction+SpecialEffects.swift in Sources */,
 				F7AD728220DE87A5003C9F5E /* FightScene.swift in Sources */,
 				F74E533D20DAD82E006AD624 /* SKTTimingFunctions.swift in Sources */,
