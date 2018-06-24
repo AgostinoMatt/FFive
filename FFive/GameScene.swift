@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     var characterOfMain: SKSpriteNode!
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
-    //let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
+    let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
     var characterOfMainAnimation: SKAction!
     var velocity = CGPoint.zero
     var lastUpdateTime: TimeInterval = 0
