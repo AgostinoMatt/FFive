@@ -10,7 +10,9 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    
+    var CharMain = Player()
+    var SecondChar = Player()
+    var Girl = Player()
     var characterOfMain: SKSpriteNode!
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
@@ -75,7 +77,6 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
-        
         
         characterOfMain.position = CGPoint(x: 400, y: 400)
         addChild(characterOfMain)
