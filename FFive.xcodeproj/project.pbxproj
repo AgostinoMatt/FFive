@@ -38,6 +38,7 @@
 		F7AD728220DE87A5003C9F5E /* FightScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AD726120DE87A3003C9F5E /* FightScene.swift */; };
 		F7AD728320DE87A5003C9F5E /* FightSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AD726220DE87A3003C9F5E /* FightSceneViewController.swift */; };
 		F7AD728420DE87A5003C9F5E /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F7AD726320DE87A3003C9F5E /* backgroundtile.sks */; };
+		F7AD728620DE87A5003C9F5E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7AD726520DE87A4003C9F5E /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		F7AD726120DE87A3003C9F5E /* FightScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightScene.swift; path = ../../FFive2/FFive/FFive/FightScene.swift; sourceTree = "<group>"; };
 		F7AD726220DE87A3003C9F5E /* FightSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FightSceneViewController.swift; path = ../../FFive2/FFive/FFive/FightSceneViewController.swift; sourceTree = "<group>"; };
 		F7AD726320DE87A3003C9F5E /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = backgroundtile.sks; path = ../../FFive2/FFive/FFive/backgroundtile.sks; sourceTree = "<group>"; };
+		F7AD726520DE87A4003C9F5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../FFive2/FFive/FFive/Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				F7AD726220DE87A3003C9F5E /* FightSceneViewController.swift */,
 				F772F63E20C8BB2200039367 /* GameScene.swift */,
 				F772F64020C8BB2200039367 /* GameViewController.swift */,
+				F7AD726520DE87A4003C9F5E /* Info.plist */,
 				F7AD726320DE87A3003C9F5E /* backgroundtile.sks */,
 				F7AD726020DE87A3003C9F5E /* MyUtils.swift */,
 				F7AD724E20DE87A1003C9F5E /* GameViewController.swift */,
@@ -221,6 +224,7 @@
 				F7AD727D20DE87A5003C9F5E /* Mage.sks in Resources */,
 				F7AD728020DE87A5003C9F5E /* ZombieFight.sks in Resources */,
 				F772F64420C8BB2200039367 /* Main.storyboard in Resources */,
+				F7AD728620DE87A5003C9F5E /* Info.plist in Resources */,
 				F7AD728420DE87A5003C9F5E /* backgroundtile.sks in Resources */,
 				F7AD727B20DE87A5003C9F5E /* GameScene.sks in Resources */,
 				F772F64620C8BB2600039367 /* Assets.xcassets in Resources */,
