@@ -49,7 +49,7 @@ class Mage : SKSpriteNode, Character {
         let moveUp = SKAction.moveBy(x: 50, y: 40, duration: 0.5)
         let moveDown = moveUp.reversed()
         let rotateUp = SKAction.rotate(toAngle: CGFloat(145).degreesToRadians(), duration: 0.5)
-        let rotateDown = SKAction.rotate(byAngle: CGFloat(-90).degreesToRadians(), duration: 0.5)
+        let rotateDown = SKAction.rotate(byAngle: CGFloat(90).degreesToRadians(), duration: 0.5)
         let wait = SKAction.wait(forDuration: 0.5)
         let done = SKAction.run() {
             self.removeAllActions()
