@@ -7,124 +7,68 @@
 //
 
 import SpriteKit
-import UIKit
-
-protocol InteractiveNode {
-    func interact()
-}
-
-protocol EventListenerNode {
-    func didMoveToScene()
-}
 
 class FightScene: SKScene {
-    var MainChar: SKSpriteNode!
-    var Second: SKSpriteNode!
+    var charMain: Warrior!
+    var charMage: Mage!
+    var charHeavy: Heavy!
+    var enemy1: Zombie!
+    var enemy2: Headless!
+    var enemy3: Zombie!
+    var secondCharacter: SKReferenceNode!
     var girl: SKReferenceNode!
-    var MainSword: SKSpriteNode!
-    var SecondSword: SKSpriteNode!
     
     var enemies: [SKReferenceNode] = []
     var playerTurn: Bool = true
     var enemyAlive = true
     
-    
     override func didMove(to view: SKView) {
         
-
-        MainChar = SKSpriteNode(imageNamed: "hero10")
-        MainChar.position = CGPoint(x: (size.width / 4) * 3 , y: size.width / 3)
-        MainChar.zPosition = 20
-        MainChar.name = "Main"
-        addChild(MainChar)
+        charMain = childNode(withName: "MainCharacter//character") as! Warrior
+        charMage = childNode(withName: "Girl//character//character") as! Mage
+        charHeavy = childNode(withName: "SecondPlayer//character") as! Heavy
+        enemy1 = childNode(withName: "Enemy1//character") as! Zombie
+        enemy2 = childNode(withName: "Enemy2//character") as! Headless
+        enemy3 = childNode(withName: "Enemy3//character") as! Zombie
         
-        MainSword = SKSpriteNode(imageNamed: "sword1")
-        MainSword.position = CGPoint(x: MainChar.position.x - 11, y: MainChar.position.y - 7)
-        MainSword.zPosition = 10
-        MainSword.name = "mainSword"
-        addChild(MainSword)
-        
-        Second = SKSpriteNode(imageNamed: "greyFight")
-        Second.position = CGPoint(x: (size.width / 4) * 3 + 50 , y: size.width / 2)
-        Second.zPosition = 10
-        Second.name = "second"
-        addChild(Second)
-        
-        SecondSword = SKSpriteNode(imageNamed: "buster")
-        SecondSword.position = CGPoint(x: Second.position.x , y: Second.position.y)
-        SecondSword.zPosition = 20
-        SecondSword.name = "secondSword"
-        addChild(SecondSword)
-        
-        //charMain = childNode(withName: ".//MainCharacter/character") as! SKSpriteNode
-        
-        isPaused = true
-        isPaused = false
-        
-        enumerateChildNodes(withName: "//*") { node, _ in
-            if let char = node as? SKReferenceNode {
-                char.isPaused = true
-            }
-        }
+//        isPaused = true
+//        isPaused = false
+//
+//        enumerateChildNodes(withName: "//*") { node, _ in
+//            if let char = node as? SKReferenceNode {
+//                char.isPaused = true
+//            }
+//        }
         
         enumerateChildNodes(withName: "//Enemy*") { node, _ in
             if let enemy = node as? SKReferenceNode {
                 self.enemies.append(enemy)
             }
         }
+//        playerFight()
+//        charMain.isPaused = false
+    }
     
+    override func update(_ currentTime: TimeInterval) {
+        if playerTurn {
+            playerFight()
+            playerTurn = false
+        }
+        else {
+            enemyFight()
+        }
+    }
     
     func playerFight(){
-       
+        if !charMain.hasActions() {
+            charMain.runAnimation()
+            charMage.runAnimation()
+        }
     }
     
     func enemyFight() {
         
     }
-    
-    func MainCharAnim() {
-        let moveForward = SKAction.moveBy(x: -30, y: 0, duration: 0.25)
-        let moveBack = SKAction.moveBy(x: 30, y: 0, duration: 0.75)
-        MainChar.run(SKAction.sequence([moveForward, moveBack]))
-        MainCharSword()
-    }
-    
-    func MainCharSword(){
-        let rotateForward = SKAction.rotate(byAngle: CGFloat(450).degreesToRadians(), duration: 0.5)
-        let rotateBack = rotateForward.reversed()
-        MainSword.run(SKAction.sequence([rotateForward, rotateBack]))
-    }
-    
-    func SecondPlayerAnim() {
-        let moveForward = SKAction.moveBy(x: -40, y: 0, duration: 0.4)
-        let wait = SKAction.wait(forDuration: 0.2)
-        let moveBack = SKAction.moveBy(x: -40, y: 0, duration: 0.6)
-        Second.run(SKAction.sequence([moveForward, wait, moveBack]))
-    }
-    
-    func SecondWeapond(){
-        run(SKAction.rotate(byAngle: CGFloat(720).degreesToRadians(), duration: 1))
-    }
-    
-    
-    /*func spawnEnemy() {
-        let cameraSpace = cameraRect
-        let enemy = SKSpriteNode(imageNamed: "enemy")
-        enemy.position = CGPoint(
-            x: cameraSpace.maxX + enemy.size.width / 2,
-            y: CGFloat.random(
-                min: cameraSpace.minY + enemy.size.height / 2,
-                max: cameraSpace.maxY - enemy.size.height / 2))
-        enemy.zPosition = 1
-        enemy.name = "enemy"
-        addChild(enemy)
-        
-        let actionMove = SKAction.moveBy(x: -(size.width + enemy.size.width), y: 0, duration: 2.5)
-        let actionRemove = SKAction.removeFromParent()
-        enemy.run(SKAction.sequence([actionMove, actionRemove]))
-    }*/
-    }
-    
 }
 
 
