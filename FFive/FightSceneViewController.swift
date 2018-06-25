@@ -32,6 +32,12 @@ class FightSceneViewController: UIViewController{
         }
     }
     
+    @IBAction func buttonAttack(_ sender: UIButton) {
+    }
+    @IBAction func buttonMagic(_ sender: UIButton) {
+    }
+    @IBAction func buttonRun(_ sender: UIButton) {
+    }
     override var prefersStatusBarHidden: Bool {
         return true
     }
