@@ -135,8 +135,8 @@
 		F772F63720C8BB2200039367 /* FFive */ = {
 			isa = PBXGroup;
 			children = (
-				F74E532620DAD82D006AD624 /* SKTUtils */,
 				F772F64520C8BB2600039367 /* Assets.xcassets */,
+				F74E532620DAD82D006AD624 /* SKTUtils */,
 				F733993C20D090C1003074CE /* Scenes */,
 				F772F63820C8BB2200039367 /* AppDelegate.swift */,
 				F76FDC9720E068F500392F27 /* Characters.swift */,

@@ -25,7 +25,7 @@ class FightScene: SKScene {
     override func didMove(to view: SKView) {
         
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
-        charMage = childNode(withName: "Girl//character//character") as! Mage
+        charMage = childNode(withName: "Girl//character") as! Mage
         charHeavy = childNode(withName: "SecondPlayer//character") as! Heavy
         enemy1 = childNode(withName: "Enemy1//character") as! Zombie
         enemy2 = childNode(withName: "Enemy2//character") as! Headless
