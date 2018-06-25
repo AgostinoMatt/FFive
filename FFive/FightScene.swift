@@ -63,11 +63,14 @@ class FightScene: SKScene {
         if !charMain.hasActions() {
             charMain.runAnimation()
             charMage.runAnimation()
+            charHeavy.runAnimation()
         }
     }
     
     func enemyFight() {
-        
+        if !enemy1.hasActions(){
+            enemy1.runAnimation()
+        }
     }
 }
 
