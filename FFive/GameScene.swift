@@ -153,7 +153,7 @@ class GameScene: SKScene {
         }
         if let touch = touches.first {
             touchPos = touch.location(in: view)
-            print(touchPos)
+            //print(touchPos)
         }
         
         let touchLocation = touch.location(in: self)
