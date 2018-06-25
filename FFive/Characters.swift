@@ -121,10 +121,10 @@ class Headless: SKSpriteNode, Character {
     
     var textures: [SKTexture] = []
     
-    for i in 1...7 {
+    /*for i in 1...7 {
         textures.append(SKTexture(imageNamed: "head\(i)"))
     }
-    textures.append(texture[1])
+    textures.append(texture[1])*/
     
     func runAnimation() {
         let moveRight = SKAction.moveBy(x: 60, y: 0, duration: 1)
