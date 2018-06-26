@@ -10,8 +10,6 @@ import SpriteKit
 import GameplayKit
 import UIKit
 
-
-
 class FightSceneViewController: UIViewController{
     
     var fightScene: FightScene!
@@ -31,7 +29,6 @@ class FightSceneViewController: UIViewController{
                 
                 view.showsFPS = true
                 view.showsNodeCount = true
-            
         }
     }
     

@@ -8,7 +8,6 @@
 
 import SpriteKit
 
-
 class FightScene: SKScene {
     var charMain: Warrior!
     var charMage: Mage!
