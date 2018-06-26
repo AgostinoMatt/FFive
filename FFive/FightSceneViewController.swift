@@ -34,15 +34,15 @@ class FightSceneViewController: UIViewController{
     
     @IBAction func buttonAttack(_ sender: UIButton) {
         fightScene.playerFight()
-        print("Attack!!!")
+        print("Attack!")
     }
  
     @IBAction func buttonMagic(_ sender: UIButton) {
-        print("PooOOOf!!...")
+        print("Magic!...")
         //hihihihi
     }
     @IBAction func buttonRun(_ sender: UIButton) {
-        print("Run To The Hills!")
+        print("Run Away!")
         self.navigationController?.popViewController(animated: true)
     }
     
