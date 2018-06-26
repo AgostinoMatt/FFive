@@ -13,6 +13,8 @@ import UIKit
 
 
 class FightSceneViewController: UIViewController{
+    
+    var fightScene: FightScene!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +34,9 @@ class FightSceneViewController: UIViewController{
             }
         }
     }
-
-    var fightScene = FightScene()
     
     @IBAction func buttonAttack(_ sender: UIButton) {
-        fightScene.playerFight()
+        fightScene?.playerFight()
         print("Attack!!!")
     }
  

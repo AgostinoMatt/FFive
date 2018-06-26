@@ -22,6 +22,7 @@ class FightScene: SKScene {
     var enemies: [SKReferenceNode] = []
     var playerTurn: Bool = true
     var enemyAlive = true
+    var playerNumber = 1
     
     override func didMove(to view: SKView) {
         
@@ -65,9 +66,21 @@ class FightScene: SKScene {
     func playerFight(){
     
         if !charMain.hasActions() {
-            charMain.runAnimation()
-            charMage.runAnimation()
-            charHeavy.runAnimation()
+            if playerNumber == 1{
+                charMain.runAnimation()
+                playerNumber += 1
+                print(playerNumber)
+            }
+            else if playerNumber == 2 {
+                charMage.runAnimation()
+                playerNumber += 1
+                print(playerNumber)
+            }
+            else if playerNumber == 3 {
+                charHeavy.runAnimation()
+                playerNumber += 1
+                print(playerNumber)
+            }
             print("turn1")
         }
     }

@@ -12,7 +12,7 @@ class GameScene: SKScene {
     
     
     var characterOfMain: SKSpriteNode!
-    let characterOfMainMovePointsPerSec: CGFloat = 480.0
+    let characterOfMainMovePointsPerSec: CGFloat = 400.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
     var characterOfMainAnimation: SKAction!
     var velocity = CGPoint.zero
@@ -117,13 +117,13 @@ class GameScene: SKScene {
         
         velocity = CGPoint(x: direction.x * characterOfMainMovePointsPerSec, y: direction.y * characterOfMainMovePointsPerSec)
         if lastTouchLocation != nil {
-            if touchPos!.x > 400  {
+            if touchPos!.x > 420  {
                 characterOfMainAnimation = SKAction.animate(with: texturesRight, timePerFrame: 0.1)
             }
-            else if touchPos!.x < 200 {
+            else if touchPos!.x < 180 {
                 characterOfMainAnimation = SKAction.animate(with: textureLeft, timePerFrame: 0.1)
             }
-            else if touchPos!.x > 200 && touchPos!.x < 400 {
+            else if touchPos!.x > 180 && touchPos!.x < 420 {
                 if touchPos!.y < 187 {
                     characterOfMainAnimation = SKAction.animate(with: texturesUp, timePerFrame: 0.1)
                 }
