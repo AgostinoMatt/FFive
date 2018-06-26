@@ -23,6 +23,7 @@ class FightScene: SKScene {
     var playerTurn: Bool = true
     var enemyAlive = true
     
+    
     override func didMove(to view: SKView) {
         
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
@@ -70,11 +71,13 @@ class FightScene: SKScene {
             charHeavy.runAnimation()
             print("turn1")
         }
+        
     }
     
     func enemyFight() {
         if !enemy1.hasActions(){
             enemy1.runAnimation()
+            print("turn2")
         }
     }
 }

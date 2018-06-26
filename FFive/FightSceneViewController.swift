@@ -16,6 +16,9 @@ protocol BattleProtocol {
 }
 
 class FightSceneViewController: UIViewController{
+    
+    var fightScene: FightScene!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +39,14 @@ class FightSceneViewController: UIViewController{
         }
     }
 
+    
     @IBAction func buttonAttack(_ sender: UIButton) {
-        print("Attack!!!")
+        fightScene?.playerFight()
+        
+        print("attack")
+        
     }
+    
  
     @IBAction func buttonMagic(_ sender: UIButton) {
         print("PooOOOf!!...")
