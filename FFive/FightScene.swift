@@ -67,22 +67,22 @@ class FightScene: SKScene {
         if playerNumber == 1{
             if !charMain.hasActions() {
                 charMain.runAnimation()
-                playerNumber += 1
                 print(playerNumber)
+                playerNumber += 1
             }
         }
         else if playerNumber == 2 {
             if !charMage.hasActions(){
                 charMage.runAnimation()
-                playerNumber += 1
                 print(playerNumber)
+                playerNumber += 1
             }
         }
         else if playerNumber == 3 {
                 if !charHeavy.hasActions(){
                 charHeavy.runAnimation()
-                playerNumber += 1
                 print(playerNumber)
+                playerNumber += 1
             }
         }
         print("players")

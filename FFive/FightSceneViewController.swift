@@ -21,23 +21,24 @@ class FightSceneViewController: UIViewController{
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "FightScene") {
+            fightScene = SKScene(fileNamed: "FightScene") as! FightScene
                 // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
+                fightScene.scaleMode = .aspectFill
                 
                 // Present the scene
-                view.presentScene(scene)
+                view.presentScene(fightScene)
                 view.ignoresSiblingOrder = true
                 
                 view.showsFPS = true
                 view.showsNodeCount = true
-            }
+            
         }
     }
     
     @IBAction func buttonAttack(_ sender: UIButton) {
-        fightScene?.playerFight()
+        fightScene.playerFight()
         print("Attack!!!")
+        //fightScene.playerNumber += 1
     }
  
     @IBAction func buttonMagic(_ sender: UIButton) {

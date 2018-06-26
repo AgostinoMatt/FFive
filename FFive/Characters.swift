@@ -88,6 +88,7 @@ class Heavy: SKSpriteNode, Character {
             item.run(SKAction.sequence([rotate]))
         }
         isPaused = false
+        print("heavy")
     }
     
 }
