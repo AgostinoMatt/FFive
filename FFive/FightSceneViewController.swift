@@ -39,7 +39,7 @@ class FightSceneViewController: UIViewController{
  
     @IBAction func buttonMagic(_ sender: UIButton) {
         print("PooOOOf!!...")
-        
+        //hihihihi
     }
     @IBAction func buttonRun(_ sender: UIButton) {
         print("Run To The Hills!")
