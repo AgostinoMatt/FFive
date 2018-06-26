@@ -10,6 +10,10 @@ import SpriteKit
 import GameplayKit
 import UIKit
 
+protocol BattleProtocol {
+    func playerFight()
+    
+}
 
 class FightSceneViewController: UIViewController{
 

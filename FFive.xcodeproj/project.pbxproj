@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A3462AFF20E1BB7800929414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3462AFD20E1BB7800929414 /* Assets.xcassets */; };
 		A3462B0120E1BBAE00929414 /* OverWorld.sks in Resources */ = {isa = PBXBuildFile; fileRef = A3462B0020E1BBAE00929414 /* OverWorld.sks */; };
 		F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B320D35BC600A298B4 /* ZombieFight.sks */; };
 		F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B520D35CB200A298B4 /* HeadlessFight.sks */; };
@@ -41,7 +40,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A3462AFD20E1BB7800929414 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3462B0020E1BBAE00929414 /* OverWorld.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OverWorld.sks; sourceTree = "<group>"; };
 		F71D91B320D35BC600A298B4 /* ZombieFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ZombieFight.sks; sourceTree = "<group>"; };
 		F71D91B520D35CB200A298B4 /* HeadlessFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeadlessFight.sks; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				F71D91B320D35BC600A298B4 /* ZombieFight.sks */,
 				F71D91B520D35CB200A298B4 /* HeadlessFight.sks */,
 				A3462B0020E1BBAE00929414 /* OverWorld.sks */,
-				A3462AFD20E1BB7800929414 /* Assets.xcassets */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -221,7 +218,6 @@
 				F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */,
 				F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */,
 				F772F63B20C8BB2200039367 /* GameScene.sks in Resources */,
-				A3462AFF20E1BB7800929414 /* Assets.xcassets in Resources */,
 				F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */,
 				F76FDC9A20E0691B00392F27 /* Warrior.sks in Resources */,
 				F76FDCA220E069CF00392F27 /* Mage.sks in Resources */,
