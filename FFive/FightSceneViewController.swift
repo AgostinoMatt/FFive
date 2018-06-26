@@ -10,10 +10,7 @@ import SpriteKit
 import GameplayKit
 import UIKit
 
-protocol BattleProtocol {
-    func playerFight()
-    
-}
+
 
 class FightSceneViewController: UIViewController{
 
@@ -37,7 +34,13 @@ class FightSceneViewController: UIViewController{
     }
 
     @IBAction func buttonAttack(_ sender: UIButton) {
+        if FightScene().playerFight() != nil{
+            FightScene().playerFight()
+            
+        }
+       
         print("Attack!!!")
+       
     }
  
     @IBAction func buttonMagic(_ sender: UIButton) {
