@@ -38,7 +38,6 @@ class FightSceneViewController: UIViewController{
     @IBAction func buttonAttack(_ sender: UIButton) {
         fightScene.playerFight()
         print("Attack!!!")
-        //fightScene.playerNumber += 1
     }
  
     @IBAction func buttonMagic(_ sender: UIButton) {

@@ -111,6 +111,7 @@ class Zombie: SKSpriteNode, Character {
              SKAction.group([moveLeft, spin]),
              done]))
         isPaused = false
+        
     }
 }
 
