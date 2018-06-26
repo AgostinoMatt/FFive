@@ -59,6 +59,7 @@ class FightScene: SKScene {
             enemyFight()
         }
     }
+    // var stuffFlufff
     
     
     func playerFight(){
