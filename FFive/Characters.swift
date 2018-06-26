@@ -82,11 +82,12 @@ class Heavy: SKSpriteNode, Character {
         let wait = SKAction.wait(forDuration: 0.2)
         let done = SKAction.run() {
             self.removeAllActions()
-        }
+            }
         run(SKAction.sequence([moveLeft, wait, moveRight, done]))
         if let item = childNode(withName: "item") as? SKSpriteNode {
-            item.run(SKAction.sequence([rotate]))
-        }
+            item.run(SKAction.rotate(byAngle: 720, duration: 1))
+            }
+        isPaused = true
         isPaused = false
         print("heavy")
     }

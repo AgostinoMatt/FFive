@@ -52,7 +52,7 @@ class FightScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         if playerTurn {
-            playerFight()
+            //playerFight()
             playerTurn = false
         }
         else {
@@ -102,7 +102,7 @@ class FightScene: SKScene {
                 playerNumber += 1
             }
         }
-        if playerNumber == 5 {
+        else if playerNumber == 5 {
             if !enemy2.hasActions(){
                 enemy2.runAnimation()
                 if attackNum == 1 {
@@ -117,7 +117,7 @@ class FightScene: SKScene {
                 playerNumber += 1
             }
         }
-        if playerNumber == 6 {
+        else if playerNumber == 6 {
             if !enemy3.hasActions(){
                 enemy3.runAnimation()
                 if attackNum == 1 {
