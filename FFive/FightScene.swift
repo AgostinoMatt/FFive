@@ -8,6 +8,7 @@
 
 import SpriteKit
 
+
 class FightScene: SKScene {
     var charMain: Warrior!
     var charMage: Mage!
@@ -59,7 +60,9 @@ class FightScene: SKScene {
         }
     }
     
+    
     func playerFight(){
+    
         if !charMain.hasActions() {
             charMain.runAnimation()
             charMage.runAnimation()

@@ -31,13 +31,18 @@ class FightSceneViewController: UIViewController{
             }
         }
     }
-    
+
     @IBAction func buttonAttack(_ sender: UIButton) {
+        print("Attack!!!")
     }
+ 
     @IBAction func buttonMagic(_ sender: UIButton) {
+        print("PooOOOf!!...")
+        
     }
     @IBAction func buttonRun(_ sender: UIButton) {
-    }
+        print("Run To The Hills!")    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
