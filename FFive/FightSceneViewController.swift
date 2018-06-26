@@ -45,7 +45,9 @@ class FightSceneViewController: UIViewController{
         
     }
     @IBAction func buttonRun(_ sender: UIButton) {
-        print("Run To The Hills!")    }
+        print("Run To The Hills!")
+        self.navigationController?.popViewController(animated: true)
+    }
     
     override var prefersStatusBarHidden: Bool {
         return true

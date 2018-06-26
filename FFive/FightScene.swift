@@ -58,6 +58,7 @@ class FightScene: SKScene {
         else {
             enemyFight()
         }
+        
     }
     
     
@@ -67,6 +68,7 @@ class FightScene: SKScene {
             charMain.runAnimation()
             charMage.runAnimation()
             charHeavy.runAnimation()
+            print("turn1")
         }
     }
     
