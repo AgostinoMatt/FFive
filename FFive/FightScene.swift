@@ -22,7 +22,7 @@ class FightScene: SKScene {
     var enemies: [SKReferenceNode] = []
     var playerTurn: Bool = true
     var enemyAlive = true
-    var playerNumber = 1
+    var  playerNumber = 1
     
     override func didMove(to view: SKView) {
         
@@ -64,30 +64,76 @@ class FightScene: SKScene {
     
     
     func playerFight(){
-    
-        if !charMain.hasActions() {
-            if playerNumber == 1{
+        if playerNumber == 1{
+            if !charMain.hasActions() {
                 charMain.runAnimation()
                 playerNumber += 1
                 print(playerNumber)
             }
-            else if playerNumber == 2 {
+        }
+        else if playerNumber == 2 {
+            if !charMage.hasActions(){
                 charMage.runAnimation()
                 playerNumber += 1
                 print(playerNumber)
             }
-            else if playerNumber == 3 {
+        }
+        else if playerNumber == 3 {
+                if !charHeavy.hasActions(){
                 charHeavy.runAnimation()
                 playerNumber += 1
                 print(playerNumber)
             }
-            print("turn1")
         }
+        print("players")
     }
     
     func enemyFight() {
-        if !enemy1.hasActions(){
-            enemy1.runAnimation()
+        let attackNum = Int.random(1...3)
+        if playerNumber == 4 {
+            if !enemy1.hasActions(){
+                enemy1.runAnimation()
+                if attackNum == 1 {
+                    charMain.health = charMain.health - enemy1.attack
+                }
+                else if attackNum == 2 {
+                    charMage.health = charMage.health - enemy1.attack
+                }
+                else if attackNum == 3 {
+                    charHeavy.health = charHeavy.attack - enemy1.attack
+                }
+                playerNumber += 1
+            }
+        }
+        if playerNumber == 5 {
+            if !enemy2.hasActions(){
+                enemy2.runAnimation()
+                if attackNum == 1 {
+                    charMain.health = charMain.health - enemy1.attack
+                }
+                else if attackNum == 2 {
+                    charMage.health = charMage.health - enemy1.attack
+                }
+                else if attackNum == 3 {
+                    charHeavy.health = charHeavy.attack - enemy1.attack
+                }
+                playerNumber += 1
+            }
+        }
+        if playerNumber == 6 {
+            if !enemy3.hasActions(){
+                enemy3.runAnimation()
+                if attackNum == 1 {
+                    charMain.health = charMain.health - enemy1.attack
+                }
+                else if attackNum == 2 {
+                    charMage.health = charMage.health - enemy1.attack
+                }
+                else if attackNum == 3 {
+                    charHeavy.health = charHeavy.attack - enemy1.attack
+                }
+                playerNumber = 1
+            }
         }
     }
 }
