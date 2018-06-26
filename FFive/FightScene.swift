@@ -58,7 +58,6 @@ class FightScene: SKScene {
         else {
             enemyFight()
         }
-        
     }
     
     

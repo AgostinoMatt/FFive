@@ -33,14 +33,11 @@ class FightSceneViewController: UIViewController{
         }
     }
 
+    var fightScene = FightScene()
+    
     @IBAction func buttonAttack(_ sender: UIButton) {
-        if FightScene().playerFight() != nil{
-            FightScene().playerFight()
-            
-        }
-       
+        fightScene.playerFight()
         print("Attack!!!")
-       
     }
  
     @IBAction func buttonMagic(_ sender: UIButton) {
