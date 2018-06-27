@@ -26,6 +26,9 @@
 		F74E533E20DAD82E006AD624 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E533220DAD82D006AD624 /* Vector3.swift */; };
 		F752B2AD20D1B15F00CA7566 /* FightSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */; };
 		F75EFC1120E4508D002C4A3E /* Nexit.sks in Resources */ = {isa = PBXBuildFile; fileRef = F75EFC1020E4508D002C4A3E /* Nexit.sks */; };
+		F75EFC1320E45366002C4A3E /* NexitScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F75EFC1220E45366002C4A3E /* NexitScene.sks */; };
+		F75EFC1520E45598002C4A3E /* NexitSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75EFC1420E45598002C4A3E /* NexitSceneViewController.swift */; };
+		F75EFC1720E456AD002C4A3E /* NexitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75EFC1620E456AD002C4A3E /* NexitScene.swift */; };
 		F76FDC9820E068F500392F27 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76FDC9720E068F500392F27 /* Characters.swift */; };
 		F76FDC9A20E0691B00392F27 /* Warrior.sks in Resources */ = {isa = PBXBuildFile; fileRef = F76FDC9920E0691B00392F27 /* Warrior.sks */; };
 		F76FDC9C20E0695E00392F27 /* FightScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76FDC9B20E0695E00392F27 /* FightScene.swift */; };
@@ -60,6 +63,9 @@
 		F74E533220DAD82D006AD624 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightSceneViewController.swift; sourceTree = "<group>"; };
 		F75EFC1020E4508D002C4A3E /* Nexit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Nexit.sks; sourceTree = "<group>"; };
+		F75EFC1220E45366002C4A3E /* NexitScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NexitScene.sks; sourceTree = "<group>"; };
+		F75EFC1420E45598002C4A3E /* NexitSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexitSceneViewController.swift; sourceTree = "<group>"; };
+		F75EFC1620E456AD002C4A3E /* NexitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexitScene.swift; sourceTree = "<group>"; };
 		F76FDC9720E068F500392F27 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		F76FDC9920E0691B00392F27 /* Warrior.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Warrior.sks; sourceTree = "<group>"; };
 		F76FDC9B20E0695E00392F27 /* FightScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightScene.swift; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 				F71D91B520D35CB200A298B4 /* HeadlessFight.sks */,
 				A3462B0020E1BBAE00929414 /* OverWorld.sks */,
 				F75EFC1020E4508D002C4A3E /* Nexit.sks */,
+				F75EFC1220E45366002C4A3E /* NexitScene.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -154,6 +161,8 @@
 				F772F64720C8BB2600039367 /* LaunchScreen.storyboard */,
 				F73D877720CF4BF600C5755A /* backgroundtile.sks */,
 				F772F64A20C8BB2600039367 /* Info.plist */,
+				F75EFC1420E45598002C4A3E /* NexitSceneViewController.swift */,
+				F75EFC1620E456AD002C4A3E /* NexitScene.swift */,
 			);
 			path = FFive;
 			sourceTree = "<group>";
@@ -217,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F733994220D0A41E003074CE /* Player2Fight.sks in Resources */,
+				F75EFC1320E45366002C4A3E /* NexitScene.sks in Resources */,
 				F772F64420C8BB2200039367 /* Main.storyboard in Resources */,
 				F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */,
 				F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */,
@@ -240,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F74E533520DAD82E006AD624 /* CGVector+Extensions.swift in Sources */,
+				F75EFC1720E456AD002C4A3E /* NexitScene.swift in Sources */,
 				F76FDC9820E068F500392F27 /* Characters.swift in Sources */,
 				F74E533A20DAD82E006AD624 /* SKNode+Extensions.swift in Sources */,
 				F772F64120C8BB2200039367 /* GameViewController.swift in Sources */,
@@ -251,6 +262,7 @@
 				F74E533D20DAD82E006AD624 /* SKTTimingFunctions.swift in Sources */,
 				F74E533920DAD82E006AD624 /* SKColor+Extensions.swift in Sources */,
 				F74E533620DAD82E006AD624 /* Int+Extensions.swift in Sources */,
+				F75EFC1520E45598002C4A3E /* NexitSceneViewController.swift in Sources */,
 				F76FDCA020E0699F00392F27 /* GameScene.swift in Sources */,
 				F74E533B20DAD82E006AD624 /* SKTAudio.swift in Sources */,
 				F74E533320DAD82E006AD624 /* CGFloat+Extensions.swift in Sources */,

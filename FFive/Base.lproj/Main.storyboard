@@ -39,6 +39,21 @@
             </objects>
             <point key="canvasLocation" x="333.28335832083962" y="106.40000000000001"/>
         </scene>
+        <!--Nexit Scene View Controller-->
+        <scene sceneID="16C-dj-PGS">
+            <objects>
+                <viewController storyboardIdentifier="NexitSceneViewController" id="QV3-o3-gMv" customClass="NexitSceneViewController" customModule="FFive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qYK-uO-LPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oGL-Vf-smi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8d6-yM-KU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="-681"/>
+        </scene>
         <!--Fight Scene View Controller-->
         <scene sceneID="6Fz-AJ-vPR">
             <objects>
