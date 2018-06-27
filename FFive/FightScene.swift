@@ -52,17 +52,18 @@ class FightScene: SKScene {
     
     func playerFight(){
         
+        
+        
         //if the playerNumber is equal to 1, run character Of Main actions & animations. Increase playerNumber by 1
         if playerNumber == 1{
             if !charMain.hasActions() {
                 charMain.runAnimation()
                 print(playerNumber)
                 
-                run(SKAction.sequence([SKAction.wait(forDuration:0.2)])
                     playerNumber += 1
-                )
+                }
             }
-        }
+        
         //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
         else if playerNumber == 2 {
             if !charMage.hasActions(){
