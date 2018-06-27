@@ -46,9 +46,7 @@ class FightScene: SKScene {
             playerTurn = false
         }
         else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
-                self.enemyFight()
-            })
+            enemyFight()
         }
     }
     
@@ -56,17 +54,14 @@ class FightScene: SKScene {
         
         //if the playerNumber is equal to 1, run character Of Main actions & animations. Increase playerNumber by 1
         if playerNumber == 1{
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
-                if !self.charMain.hasActions() {
-                    self.charMain.runAnimation()
-                    print(self.playerNumber)
-                    self.playerNumber += 1
-                }
-            })
+            if !charMain.hasActions() {
+                charMain.runAnimation()
+                print(playerNumber)
+                playerNumber += 1
+            }
         }
         //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
-        if playerNumber == 2 {
+        else if playerNumber == 2 {
             if !charMage.hasActions(){
                 charMage.runAnimation()
                 print(playerNumber)
@@ -74,76 +69,71 @@ class FightScene: SKScene {
             }
         }
         //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
-        if playerNumber == 3 {
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
-                if !self.charHeavy.hasActions(){
-                    self.charHeavy.runAnimation()
-                    print(self.playerNumber)
-                    self.playerNumber += 1
-                }
-                print("players")
-            })
-            
+        else if playerNumber == 3 {
+                if !charHeavy.hasActions(){
+                charHeavy.runAnimation()
+                print(playerNumber)
+                playerNumber += 1
+            }
         }
+        print("players")
     }
     
-    
-        // enemyFight method to make enemies randomly attack the player's party members
-        func enemyFight() {
-            let attackNum = Int.random(1...3) //attackNum set to a random integer
-    
-        //if statement to determine which enemy is attacking and if they have actions run those actions & animations
-            if playerNumber == 4 {
-                if !enemy1.hasActions(){
-                    enemy1.runAnimation()
-                    if attackNum == 1 {
-                        charMain.health = charMain.health - enemy1.attack
-                    }
-                    else if attackNum == 2 {
-                        charMage.health = charMage.health - enemy1.attack
-                    }
-                    else if attackNum == 3 {
-                        charHeavy.health = charHeavy.attack - enemy1.attack
-                    }
-                    playerNumber += 1
+    // enemyFight method to make enemies randomly attack the player's party members
+    func enemyFight() {
+        let attackNum = Int.random(1...3) //attackNum set to a random integer
+        
+    //if statement to determine which enemy is attacking and if they have actions run those actions & animations
+        if playerNumber == 4 {
+            if !enemy1.hasActions(){
+                enemy1.runAnimation()
+                if attackNum == 1 {
+                    charMain.health = charMain.health - enemy1.attack
                 }
-            }
-        //enemy2 actions & animations
-            else if playerNumber == 5 {
-                if !enemy2.hasActions(){
-                    enemy2.runAnimation()
-                    if attackNum == 1 {
-                        charMain.health = charMain.health - enemy1.attack
-                    }
-                    else if attackNum == 2 {
-                        charMage.health = charMage.health - enemy1.attack
-                    }
-                    else if attackNum == 3 {
-                        charHeavy.health = charHeavy.attack - enemy1.attack
-                    }
-                    playerNumber += 1
+                else if attackNum == 2 {
+                    charMage.health = charMage.health - enemy1.attack
                 }
-            }
-        //enemy3 actions & animations
-            else if playerNumber == 6 {
-                if !enemy3.hasActions(){
-                    enemy3.runAnimation()
-                    if attackNum == 1 {
-                        charMain.health = charMain.health - enemy1.attack
-                    }
-                    else if attackNum == 2 {
-                        charMage.health = charMage.health - enemy1.attack
-                    }
-                    else if attackNum == 3 {
-                        charHeavy.health = charHeavy.attack - enemy1.attack
-                    }
-                    playerNumber = 1
+                else if attackNum == 3 {
+                    charHeavy.health = charHeavy.attack - enemy1.attack
                 }
+                playerNumber += 1
             }
         }
+    //enemy2 actions & animations
+        else if playerNumber == 5 {
+            if !enemy2.hasActions(){
+                enemy2.runAnimation()
+                if attackNum == 1 {
+                    charMain.health = charMain.health - enemy1.attack
+                }
+                else if attackNum == 2 {
+                    charMage.health = charMage.health - enemy1.attack
+                }
+                else if attackNum == 3 {
+                    charHeavy.health = charHeavy.attack - enemy1.attack
+                }
+                playerNumber += 1
+            }
+        }
+    //enemy3 actions & animations
+        else if playerNumber == 6 {
+            if !enemy3.hasActions(){
+                enemy3.runAnimation()
+                if attackNum == 1 {
+                    charMain.health = charMain.health - enemy1.attack
+                }
+                else if attackNum == 2 {
+                    charMage.health = charMage.health - enemy1.attack
+                }
+                else if attackNum == 3 {
+                    charHeavy.health = charHeavy.attack - enemy1.attack
+                }
+                playerNumber = 1
+            }
+        }
+    }
 }
 
 
 
-
+ 
