@@ -49,7 +49,7 @@ class Mage : SKSpriteNode, Character {
         let moveUp = SKAction.moveBy(x: 50, y: 40, duration: 0.5)
         let moveDown = moveUp.reversed()
         let rotateUp = SKAction.rotate(toAngle: CGFloat(145).degreesToRadians(), duration: 0.5)
-        let rotateDown = SKAction.rotate(byAngle: CGFloat(0).degreesToRadians(), duration: 0.5)
+        let rotateDown = SKAction.rotate(byAngle: CGFloat(-90).degreesToRadians(), duration: 0.5)
         let wait = SKAction.wait(forDuration: 0.5)
         let done = SKAction.run() {
             self.removeAllActions()
@@ -78,7 +78,6 @@ class Heavy: SKSpriteNode, Character {
     func runAnimation() {
         let moveLeft = SKAction.moveBy(x: -40, y: 0, duration: 0.4)
         let moveRight = SKAction.moveBy(x: 40, y: 0, duration: 0.6)
-        let rotate = SKAction.rotate(byAngle: 720, duration: 1)
         let wait = SKAction.wait(forDuration: 0.2)
         let done = SKAction.run() {
             self.removeAllActions()
@@ -87,9 +86,7 @@ class Heavy: SKSpriteNode, Character {
         if let item = childNode(withName: "item") as? SKSpriteNode {
             item.run(SKAction.rotate(byAngle: 720, duration: 1))
             }
-        isPaused = true
         isPaused = false
-        print("heavy")
     }
     
 }
@@ -104,12 +101,13 @@ class Zombie: SKSpriteNode, Character {
         let moveRight = SKAction.moveBy(x: 30, y: 20, duration: 0.5)
         let moveLeft = moveRight.reversed()
         let spin = SKAction.rotate(byAngle: 720, duration: 1)
+        let spinBack = spin.reversed()
         let done = SKAction.run() {
             self.removeAllActions()
         }
         run(SKAction.sequence(
             [SKAction.group([moveRight, spin]),
-             SKAction.group([moveLeft, spin]),
+             SKAction.group([moveLeft, spinBack]),
              done]))
         isPaused = false
         
@@ -123,6 +121,7 @@ class Headless: SKSpriteNode, Character {
     var exp: Int = 30
     
     var textures: [SKTexture] = []
+    //var textures2: [SKTexture] = []
     
     required init?(coder aDecoder: NSCoder) {
         
@@ -132,16 +131,26 @@ class Headless: SKSpriteNode, Character {
             textures.append(SKTexture(imageNamed: "head\(i)"))
         }
         textures.append(textures[1])
+        
+        /*for j in 5...7 {
+            textures2.append(SKTexture(imageNamed: "head\(j)"))
+        }
+        textures2.append(textures[1])*/
+        
     }
     
     func runAnimation() {
         let moveRight = SKAction.moveBy(x: 60, y: 0, duration: 1)
         let moveLeft = moveRight.reversed()
-        let wait = SKAction.wait(forDuration: 0.5)
+        //let wait = SKAction.wait(forDuration: 0.3)
+        //let animateForward = SKAction.group([SKAction.animate(with: textures, timePerFrame: 0.5), moveRight])
+        //let animateBack = animateForward.reversed()
+        //let animateBack = SKAction.group([SKAction.animate(with: textures2, timePerFrame: 0.5), moveLeft])
         let done = SKAction.run() {
             self.removeAllActions()
         }
-        run(SKAction.sequence([SKAction.group([SKAction.animate(with: textures, timePerFrame: 0.5),moveRight]),wait,moveLeft,done]))
+        //run(SKAction.sequence(animateForward, animateBack ,done))
+        run(SKAction.sequence([SKAction.group([SKAction.animate(with: textures, timePerFrame: 0.5),moveRight]),moveLeft,done]))
         isPaused = false
     }
 }
