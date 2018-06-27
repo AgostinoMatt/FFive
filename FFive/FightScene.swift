@@ -57,7 +57,10 @@ class FightScene: SKScene {
             if !charMain.hasActions() {
                 charMain.runAnimation()
                 print(playerNumber)
-                playerNumber += 1
+                
+                run(SKAction.sequence([SKAction.wait(forDuration:0.2)])
+                    playerNumber += 1
+                )
             }
         }
         //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
