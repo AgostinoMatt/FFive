@@ -9,6 +9,8 @@
 import SpriteKit
 
 class FightScene: SKScene {
+
+// Variables
     var charMain: Warrior!
     var charMage: Mage!
     var charHeavy: Heavy!
@@ -32,27 +34,15 @@ class FightScene: SKScene {
         enemy2 = childNode(withName: "Enemy2//character") as! Headless
         enemy3 = childNode(withName: "Enemy3//character") as! Zombie
         
-//        isPaused = true
-//        isPaused = false
-//
-//        enumerateChildNodes(withName: "//*") { node, _ in
-//            if let char = node as? SKReferenceNode {
-//                char.isPaused = true
-//            }
-//        }
-        
         enumerateChildNodes(withName: "//Enemy*") { node, _ in
             if let enemy = node as? SKReferenceNode {
                 self.enemies.append(enemy)
             }
         }
-//        playerFight()
-//        charMain.isPaused = false
     }
     
     override func update(_ currentTime: TimeInterval) {
         if playerTurn {
-            //playerFight()
             playerTurn = false
         }
         else {
@@ -61,6 +51,8 @@ class FightScene: SKScene {
     }
     
     func playerFight(){
+        
+        //if the playerNumber is equal to 1, run character Of Maina actions & animations. Increase playerNumber by 1
         if playerNumber == 1{
             if !charMain.hasActions() {
                 charMain.runAnimation()
@@ -68,6 +60,7 @@ class FightScene: SKScene {
                 playerNumber += 1
             }
         }
+        //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
         else if playerNumber == 2 {
             if !charMage.hasActions(){
                 charMage.runAnimation()
@@ -75,6 +68,7 @@ class FightScene: SKScene {
                 playerNumber += 1
             }
         }
+        //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
         else if playerNumber == 3 {
                 if !charHeavy.hasActions(){
                 charHeavy.runAnimation()
@@ -85,8 +79,11 @@ class FightScene: SKScene {
         print("players")
     }
     
+    // enemyFight method to make enemies randomly attack the player's party members
     func enemyFight() {
-        let attackNum = Int.random(1...3)
+        let attackNum = Int.random(1...3) //attackNum set to a random integer
+        
+    //if statement to determine which enemy is attacking and if they have actions run those actions & animations
         if playerNumber == 4 {
             if !enemy1.hasActions(){
                 enemy1.runAnimation()
@@ -102,6 +99,7 @@ class FightScene: SKScene {
                 playerNumber += 1
             }
         }
+    //enemy2 actions & animations
         else if playerNumber == 5 {
             if !enemy2.hasActions(){
                 enemy2.runAnimation()
@@ -117,6 +115,7 @@ class FightScene: SKScene {
                 playerNumber += 1
             }
         }
+    //enemy3 actions & animations
         else if playerNumber == 6 {
             if !enemy3.hasActions(){
                 enemy3.runAnimation()
