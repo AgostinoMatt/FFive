@@ -55,6 +55,13 @@ class FightScene: SKScene {
     //let sequence = SKAction.sequence([actionAttack, wait])
     
     func playerFight(){
+        let wait = SKAction.wait(forDuration: 5)
+        let done = SKAction.run() {
+            self.removeAllActions()
+        }
+        let increment = playerNumber += 1
+    
+        
         
         //if the playerNumber is equal to 1, run character Of Main actions & animations. Increase playerNumber by 1
             if playerNumber == 1{
@@ -62,13 +69,8 @@ class FightScene: SKScene {
                     charMain.runAnimation()
                     print(playerNumber)
                 
-                    let wait = SKAction.wait(forDuration: 5)
-                    let done = SKAction.run {
-                        self.RemoverAllActions
-                        //playerNumber += 1
-                    }
-                    let sequence = SKAction.sequence([wait, done])
-                    
+                    //playerNumber += 1
+                    run(SKAction.sequence([wait, increment, done]))
                 }
             }
             
