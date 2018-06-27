@@ -52,7 +52,7 @@ class FightScene: SKScene {
     
     func playerFight(){
         
-        //if the playerNumber is equal to 1, run character Of Maina actions & animations. Increase playerNumber by 1
+        //if the playerNumber is equal to 1, run character Of Main actions & animations. Increase playerNumber by 1
         if playerNumber == 1{
             if !charMain.hasActions() {
                 charMain.runAnimation()
