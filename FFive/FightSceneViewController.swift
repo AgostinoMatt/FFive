@@ -33,7 +33,10 @@ class FightSceneViewController: UIViewController{
     }
     
     @IBAction func buttonAttack(_ sender: UIButton) {
+       //let wait = SKAction.wait(forDuration: 5)
         fightScene.playerFight()
+        //self.run(wait)
+        //playerNumber += 1
         print("Attack!")
     }
  

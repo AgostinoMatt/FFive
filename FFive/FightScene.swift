@@ -50,39 +50,51 @@ class FightScene: SKScene {
         }
     }
     
+    
+    
+    //let sequence = SKAction.sequence([actionAttack, wait])
+    
     func playerFight(){
         
-        
-        
         //if the playerNumber is equal to 1, run character Of Main actions & animations. Increase playerNumber by 1
-        if playerNumber == 1{
-            if !charMain.hasActions() {
-                charMain.runAnimation()
-                print(playerNumber)
+            if playerNumber == 1{
+                if !charMain.hasActions() {
+                    charMain.runAnimation()
+                    print(playerNumber)
                 
-                    playerNumber += 1
+                    let wait = SKAction.wait(forDuration: 5)
+                    let done = SKAction.run {
+                        self.RemoverAllActions
+                        //playerNumber += 1
+                    }
+                    let sequence = SKAction.sequence([wait, done])
+                    
                 }
             }
-        
-        //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
-        else if playerNumber == 2 {
-            if !charMage.hasActions(){
-                charMage.runAnimation()
-                print(playerNumber)
-                playerNumber += 1
+            
+            //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
+            else if playerNumber == 2 {
+                if !charMage.hasActions(){
+                    charMage.runAnimation()
+                    print(playerNumber)
+                  //  playerNumber += 1
+                }
             }
-        }
-        //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
-        else if playerNumber == 3 {
-                if !charHeavy.hasActions(){
-                charHeavy.runAnimation()
-                print(playerNumber)
-                playerNumber += 1
+            //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
+            else if playerNumber == 3 {
+                    if !charHeavy.hasActions(){
+                    charHeavy.runAnimation()
+                    print(playerNumber)
+                   // playerNumber += 1
+                }
             }
-        }
+
         print("players")
     }
-    
+    override func run(_ action: SKAction) {
+        playerNumber += 1
+    }
+   
     // enemyFight method to make enemies randomly attack the player's party members
     func enemyFight() {
         let attackNum = Int.random(1...3) //attackNum set to a random integer
