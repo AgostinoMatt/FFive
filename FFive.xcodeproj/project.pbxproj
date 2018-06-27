@@ -25,6 +25,7 @@
 		F74E533D20DAD82E006AD624 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E533120DAD82D006AD624 /* SKTTimingFunctions.swift */; };
 		F74E533E20DAD82E006AD624 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E533220DAD82D006AD624 /* Vector3.swift */; };
 		F752B2AD20D1B15F00CA7566 /* FightSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */; };
+		F75EFC1120E4508D002C4A3E /* Nexit.sks in Resources */ = {isa = PBXBuildFile; fileRef = F75EFC1020E4508D002C4A3E /* Nexit.sks */; };
 		F76FDC9820E068F500392F27 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76FDC9720E068F500392F27 /* Characters.swift */; };
 		F76FDC9A20E0691B00392F27 /* Warrior.sks in Resources */ = {isa = PBXBuildFile; fileRef = F76FDC9920E0691B00392F27 /* Warrior.sks */; };
 		F76FDC9C20E0695E00392F27 /* FightScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76FDC9B20E0695E00392F27 /* FightScene.swift */; };
@@ -58,6 +59,7 @@
 		F74E533120DAD82D006AD624 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		F74E533220DAD82D006AD624 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightSceneViewController.swift; sourceTree = "<group>"; };
+		F75EFC1020E4508D002C4A3E /* Nexit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Nexit.sks; sourceTree = "<group>"; };
 		F76FDC9720E068F500392F27 /* Characters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		F76FDC9920E0691B00392F27 /* Warrior.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Warrior.sks; sourceTree = "<group>"; };
 		F76FDC9B20E0695E00392F27 /* FightScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FightScene.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				F71D91B320D35BC600A298B4 /* ZombieFight.sks */,
 				F71D91B520D35CB200A298B4 /* HeadlessFight.sks */,
 				A3462B0020E1BBAE00929414 /* OverWorld.sks */,
+				F75EFC1020E4508D002C4A3E /* Nexit.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				F76FDC9E20E0697C00392F27 /* FightScene.sks in Resources */,
 				F772F64620C8BB2600039367 /* Assets.xcassets in Resources */,
 				A3462B0120E1BBAE00929414 /* OverWorld.sks in Resources */,
+				F75EFC1120E4508D002C4A3E /* Nexit.sks in Resources */,
 				F772F64920C8BB2600039367 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

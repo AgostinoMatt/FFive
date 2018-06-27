@@ -11,6 +11,7 @@ import SpriteKit
 protocol Character {
     var attack: Int { get set }
     var health: Int { get set }
+    var maxHealth: Int { get set }
     var magic: Int { get set }
     var exp: Int { get set }
     func runAnimation()
@@ -19,8 +20,9 @@ protocol Character {
 
 class Warrior : SKSpriteNode, Character {
     var attack: Int = 10
-    var health: Int = 100
-    var magic: Int = 0
+    var health: Int = 120
+    var maxHealth: Int = 120
+    var magic: Int = 10
     var exp: Int = 0
     
     func runAnimation() {
@@ -40,9 +42,10 @@ class Warrior : SKSpriteNode, Character {
 }
 
 class Mage : SKSpriteNode, Character {
-    var attack: Int = 0
+    var attack: Int = 5
     var health: Int = 100
-    var magic: Int = 10
+    var maxHealth: Int = 100
+    var magic: Int = 15
     var exp: Int = 0
     
     func runAnimation() {
@@ -72,7 +75,8 @@ class Mage : SKSpriteNode, Character {
 class Heavy: SKSpriteNode, Character {
     var attack: Int = 15
     var health: Int = 110
-    var magic: Int = 0
+    var maxHealth: Int = 110
+    var magic: Int = 5
     var exp: Int = 0
     
     func runAnimation() {
@@ -93,7 +97,8 @@ class Heavy: SKSpriteNode, Character {
 
 class Zombie: SKSpriteNode, Character {
     var attack: Int = 5
-    var health: Int = 30
+    var health: Int = 50
+    var maxHealth: Int = 50
     var magic: Int = 0
     var exp: Int = 30
     
@@ -116,7 +121,8 @@ class Zombie: SKSpriteNode, Character {
 
 class Headless: SKSpriteNode, Character {
     var attack: Int = 10
-    var health: Int = 20
+    var health: Int = 40
+    var maxHealth: Int = 40
     var magic: Int = 0
     var exp: Int = 30
     
@@ -155,6 +161,21 @@ class Headless: SKSpriteNode, Character {
     }
 }
 
+
+class Nexit: SKSpriteNode, Character {
+    var attack: Int = 40
+    var health: Int = 400
+    var maxHealth: Int = 400
+    var magic: Int = 0
+    var exp: Int = 1000
+    
+    func runAnimation() {
+        let moveRight = SKAction.moveBy(x: 100, y: 0, duration: 1)
+    }
+    
+    
+    
+}
 
 
 
