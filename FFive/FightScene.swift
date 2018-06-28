@@ -30,6 +30,8 @@ class FightScene: SKScene {
     override func didMove(to view: SKView) {
         
         //playBackgroundMusic(filename: "MortalKombat.mp3")
+        let healthLabel = SKLabelNode(fontNamed: "Upheaval")
+
 
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
         charMage = childNode(withName: "Girl//character") as! Mage
@@ -42,6 +44,17 @@ class FightScene: SKScene {
             if let enemy = node as? SKReferenceNode {
                 self.enemies.append(enemy)
             }
+            
+            
+            healthLabel.text = "Health: X"
+            healthLabel.fontColor = SKColor.black
+            healthLabel.fontSize = 100
+            healthLabel.zPosition = 100
+            healthLabel.position = CGPoint.zero
+            healthLabel.horizontalAlignmentMode = .left
+            healthLabel.verticalAlignmentMode = .bottom
+            
+            self.addChild(healthLabel)
         }
     }
     
@@ -116,7 +129,7 @@ class FightScene: SKScene {
                     charMage.health = charMage.health - enemy1.attack
                 }
                 else if attackNum == 3 {
-                    charHeavy.health = charHeavy.attack - enemy1.attack
+                    charHeavy.health = charHeavy.health - enemy1.attack
                 }
                 run(SKAction.afterDelay(3, runBlock: increment))            }
         }
@@ -131,7 +144,7 @@ class FightScene: SKScene {
                     charMage.health = charMage.health - enemy1.attack
                 }
                 else if attackNum == 3 {
-                    charHeavy.health = charHeavy.attack - enemy1.attack
+                    charHeavy.health = charHeavy.health - enemy1.attack
                 }
                 run(SKAction.afterDelay(3, runBlock: increment))            }
         }
@@ -146,7 +159,7 @@ class FightScene: SKScene {
                     charMage.health = charMage.health - enemy1.attack
                 }
                 else if attackNum == 3 {
-                    charHeavy.health = charHeavy.attack - enemy1.attack
+                    charHeavy.health = charHeavy.health - enemy1.attack
                 }
                 run(SKAction.afterDelay(3, runBlock: increment))            }
         }

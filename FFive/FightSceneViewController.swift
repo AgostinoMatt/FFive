@@ -13,7 +13,6 @@ import UIKit
 class FightSceneViewController: UIViewController{
     
     var fightScene: FightScene!
-    let healthLabel = SKLabelNode(fontNamed: "Upheaval")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,27 +29,15 @@ class FightSceneViewController: UIViewController{
                 
                 view.showsFPS = true
                 view.showsNodeCount = true
-                        
-            healthLabel.text = "Health: X"
-            healthLabel.fontColor = SKColor.black
-            healthLabel.fontSize = 100
-            healthLabel.zPosition = 100
-            healthLabel.position = CGPoint.zero
-            healthLabel.horizontalAlignmentMode = .left
-            healthLabel.verticalAlignmentMode = .bottom
-           // healthLabel.position
         }
     }
     
-   
-    
-    
     @IBAction func buttonAttack(_ sender: UIButton) {
-       //let wait = SKAction.wait(forDuration: 5)
         fightScene.playerFight()
-        //self.run(wait)
-        //playerNumber += 1
         print("Attack!")
+
+        //playerNumber += 1
+        
     }
  
     @IBAction func buttonMagic(_ sender: UIButton) {
