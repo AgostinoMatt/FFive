@@ -27,7 +27,7 @@
 		F74E533D20DAD82E006AD624 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E533120DAD82D006AD624 /* SKTTimingFunctions.swift */; };
 		F74E533E20DAD82E006AD624 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E533220DAD82D006AD624 /* Vector3.swift */; };
 		F752B2AD20D1B15F00CA7566 /* FightSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */; };
-		F75EFC1120E4508D002C4A3E /* Nexit.sks in Resources */ = {isa = PBXBuildFile; fileRef = F75EFC1020E4508D002C4A3E /* Nexit.sks */; };
+		F75EFC1120E4508D002C4A3E /* NexitFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F75EFC1020E4508D002C4A3E /* NexitFight.sks */; };
 		F75EFC1320E45366002C4A3E /* NexitScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F75EFC1220E45366002C4A3E /* NexitScene.sks */; };
 		F75EFC1520E45598002C4A3E /* NexitSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75EFC1420E45598002C4A3E /* NexitSceneViewController.swift */; };
 		F75EFC1720E456AD002C4A3E /* NexitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75EFC1620E456AD002C4A3E /* NexitScene.swift */; };
@@ -66,7 +66,7 @@
 		F74E533120DAD82D006AD624 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		F74E533220DAD82D006AD624 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		F752B2AC20D1B15F00CA7566 /* FightSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightSceneViewController.swift; sourceTree = "<group>"; };
-		F75EFC1020E4508D002C4A3E /* Nexit.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Nexit.sks; sourceTree = "<group>"; };
+		F75EFC1020E4508D002C4A3E /* NexitFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NexitFight.sks; sourceTree = "<group>"; };
 		F75EFC1220E45366002C4A3E /* NexitScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NexitScene.sks; sourceTree = "<group>"; };
 		F75EFC1420E45598002C4A3E /* NexitSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexitSceneViewController.swift; sourceTree = "<group>"; };
 		F75EFC1620E456AD002C4A3E /* NexitScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexitScene.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				F71D91B320D35BC600A298B4 /* ZombieFight.sks */,
 				F71D91B520D35CB200A298B4 /* HeadlessFight.sks */,
 				A3462B0020E1BBAE00929414 /* OverWorld.sks */,
-				F75EFC1020E4508D002C4A3E /* Nexit.sks */,
+				F75EFC1020E4508D002C4A3E /* NexitFight.sks */,
 				F75EFC1220E45366002C4A3E /* NexitScene.sks */,
 			);
 			path = Scenes;
@@ -253,7 +253,7 @@
 				F772F64620C8BB2600039367 /* Assets.xcassets in Resources */,
 				A317225120E471FA005E4728 /* MortalKombat.mp3 in Resources */,
 				A3462B0120E1BBAE00929414 /* OverWorld.sks in Resources */,
-				F75EFC1120E4508D002C4A3E /* Nexit.sks in Resources */,
+				F75EFC1120E4508D002C4A3E /* NexitFight.sks in Resources */,
 				F772F64920C8BB2600039367 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
