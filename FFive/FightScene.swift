@@ -22,6 +22,7 @@ class FightScene: SKScene {
     
     var enemies: [SKReferenceNode] = []
     var playerTurn: Bool = true
+    var canAttack: Bool = true
     var enemyAlive = true
     var playerNumber = 1
     
@@ -33,7 +34,7 @@ class FightScene: SKScene {
         let charMainLabel = SKLabelNode(fontNamed: "Upheaval")
         let charMageLabel = SKLabelNode(fontNamed: "Upheaval")
         let charHeavyLabel = SKLabelNode(fontNamed: "Upheaval")
-
+        
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
         charMage = childNode(withName: "Girl//character") as! Mage
         charHeavy = childNode(withName: "SecondPlayer//character") as! Heavy
@@ -70,15 +71,79 @@ class FightScene: SKScene {
     }
     
     func increment() {
-        print(playerNumber)
+        print("before increment \(playerNumber)")
         playerNumber += 1
+        if playerNumber <= 3 {
+            canAttack = true
+        }
+        
         if playerNumber == 7 {
             playerNumber = 0
         }
-        print(playerNumber)
-        print("incrementing playerNumber")
+        print("incrementing playerNumber \(playerNumber)")
+        
     }
     
+    
+    func attack() {
+        
+        var selectedEnemy: Character!
+        
+        repeat {
+            let attackNum = Int.random(1...4)
+            selectedEnemy = pickEnemy(attackNum)
+        }while(selectedEnemy!.health <= 0)
+        
+        if playerNumber == 1 {
+            selectedEnemy.health -= charMain.attack
+        }
+            
+        else if playerNumber == 2 {
+            
+            selectedEnemy.health -= charMage.attack
+        }
+        else if playerNumber == 3 {
+            
+            selectedEnemy.health -= charHeavy.attack
+        }
+        
+       if selectedEnemy.health < 0{
+            selectedEnemy.health = 0
+        }
+        print("zombie: \(enemy1.health)")
+        print("Headless: \(enemy2.health)")
+        print("Zombie: \(enemy3.health)")
+    }
+    
+    func magic() {
+        var selectedEnemy: Character!
+        
+        repeat {
+            let attackNum = Int.random(1...4)
+            selectedEnemy = pickEnemy(attackNum)
+        }while(selectedEnemy!.health <= 0)
+        
+        if playerNumber == 1 {
+            selectedEnemy.health -= charMain.magic
+            
+        }
+        else if playerNumber == 2 {
+            
+            selectedEnemy.health -= charMage.magic
+        }
+        else if playerNumber == 3 {
+            
+            selectedEnemy.health -= charHeavy.magic
+        }
+        
+        if selectedEnemy.health < 0{
+            selectedEnemy.health = 0
+        }
+        
+        print("zombie: \(enemy1.health)")
+        print("Headless: \(enemy2.health)")
+        print("Zombie: \(enemy3.health)")
+    }
     
     func playerFight(){
         
@@ -86,8 +151,7 @@ class FightScene: SKScene {
         if playerNumber == 1{
             if !charMain.hasActions() {
                 charMain.runAnimation()
-                run(SKAction.afterDelay(10, runBlock: increment))
-                
+                run(SKAction.afterDelay(2, runBlock: increment))
             }
         }
             
@@ -97,7 +161,7 @@ class FightScene: SKScene {
                 charMage.runAnimation()
                 //print(playerNumber)
                 //  playerNumber += 1
-                run(SKAction.afterDelay(3, runBlock: increment))
+                run(SKAction.afterDelay(2, runBlock: increment))
                 
             }
         }
@@ -105,7 +169,7 @@ class FightScene: SKScene {
         else if playerNumber == 3 {
             if !charHeavy.hasActions(){
                 charHeavy.runAnimation()
-                run(SKAction.afterDelay(3, runBlock: increment))
+                run(SKAction.afterDelay(2, runBlock: increment))
                 
                 // print(playerNumber)
                 
@@ -118,7 +182,7 @@ class FightScene: SKScene {
     
     // enemyFight method to make enemies randomly attack the player's party members
     func enemyFight() {
-        let attackNum = Int.random(1...3) //attackNum set to a random integer
+        let attackNum = Int.random(0...4) //attackNum set to a random integer
         
         //if statement to determine which enemy is attacking and if they have actions run those actions & animations
         if playerNumber == 4 {
@@ -164,6 +228,19 @@ class FightScene: SKScene {
                     charHeavy.health = charHeavy.health - enemy1.attack
                 }
                 run(SKAction.afterDelay(3, runBlock: increment))            }
+        }
+    }
+    
+    func pickEnemy(_ enemy: Int) -> Character?{
+        switch enemy {
+        case 1:
+            return enemy1
+        case 2:
+            return enemy2
+        case 3:
+            return enemy3
+        default:
+            return nil
         }
     }
 }

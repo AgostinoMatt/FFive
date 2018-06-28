@@ -33,19 +33,25 @@ class FightSceneViewController: UIViewController{
     }
     
     @IBAction func buttonAttack(_ sender: UIButton) {
-        fightScene.playerFight()
-        print("Attack!")
-
-        //playerNumber += 1
+        if fightScene.canAttack == true {
+            fightScene.playerFight()
+            fightScene.attack()
+            //print("Attack!")
+            fightScene.canAttack = false
+        }
         
     }
  
     @IBAction func buttonMagic(_ sender: UIButton) {
-        print("Magic!...")
-        //hihihihi
+        if fightScene.canAttack == true {
+            fightScene.playerFight()
+            fightScene.magic()
+            //print("Magic")
+            fightScene.canAttack = false
+        }
     }
     @IBAction func buttonRun(_ sender: UIButton) {
-        print("Run Away!")
+        //print("Run Away!")
         self.navigationController?.popViewController(animated: true)
     }
     
