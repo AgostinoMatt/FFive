@@ -38,6 +38,30 @@ class NexitScene: SKScene {
         print(playerNumber)
         print("incrementing playerNumber")
     }
+    func attack() {
+        if playerNumber == 1 {
+            charNexit.health = charNexit.health - charMain.attack
+        }
+        else if playerNumber == 2 {
+            charNexit.health = charNexit.health - charMage.attack
+        }
+        else if playerNumber == 3 {
+            charNexit.health = charNexit.health - charHeavy.attack
+        }
+    }
+    
+    func magic() {
+        if playerNumber == 1 {
+            charNexit.health = charNexit.health - charMain.magic
+        }
+        else if playerNumber == 2 {
+            charNexit.health = charNexit.health - charMage.magic
+            
+        }
+        else if playerNumber == 3 {
+            charNexit.health = charNexit.health - charHeavy.magic
+        }
+    }
     
     func playerFight(){
         

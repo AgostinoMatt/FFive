@@ -46,6 +46,24 @@
                     <view key="view" contentMode="scaleToFill" id="qYK-uO-LPQ">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDa-Rt-UX6" userLabel="Attack">
+                                <rect key="frame" x="311" y="248" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Attack"/>
+                                <connections>
+                                    <action selector="attackButton:" destination="QV3-o3-gMv" eventType="touchUpInside" id="vBN-IT-G9q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZ2-WO-3vE" userLabel="MagicAttack">
+                                <rect key="frame" x="288" y="286" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Magic Attack"/>
+                                <connections>
+                                    <action selector="magicButton:" destination="QV3-o3-gMv" eventType="touchUpInside" id="XOf-2z-U3w"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oGL-Vf-smi"/>
                     </view>
