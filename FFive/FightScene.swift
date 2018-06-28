@@ -54,8 +54,9 @@ class FightScene: SKScene {
         print(playerNumber)
         playerNumber += 1
         if playerNumber == 7 {
-            playerNumber = 1
+            playerNumber = 0
         }
+        print(playerNumber)
     print("incrementing playerNumber")
     }
     
@@ -65,8 +66,8 @@ class FightScene: SKScene {
             if playerNumber == 1{
                 if !charMain.hasActions() {
                     charMain.runAnimation()
-                    run(SKAction.afterDelay(3, runBlock: increment))
-                
+                    run(SKAction.afterDelay(10, runBlock: increment))
+                    
                 }
             }
             
@@ -74,15 +75,20 @@ class FightScene: SKScene {
             else if playerNumber == 2 {
                 if !charMage.hasActions(){
                     charMage.runAnimation()
-                    print(playerNumber)
+                    //print(playerNumber)
                   //  playerNumber += 1
+                    run(SKAction.afterDelay(3, runBlock: increment))
+
                 }
             }
             //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
             else if playerNumber == 3 {
                     if !charHeavy.hasActions(){
                     charHeavy.runAnimation()
-                    print(playerNumber)
+                    run(SKAction.afterDelay(3, runBlock: increment))
+
+                   // print(playerNumber)
+                        
                    // playerNumber += 1
                 }
             }
@@ -107,8 +113,7 @@ class FightScene: SKScene {
                 else if attackNum == 3 {
                     charHeavy.health = charHeavy.attack - enemy1.attack
                 }
-                playerNumber += 1
-            }
+                run(SKAction.afterDelay(3, runBlock: increment))            }
         }
     //enemy2 actions & animations
         else if playerNumber == 5 {
@@ -123,8 +128,7 @@ class FightScene: SKScene {
                 else if attackNum == 3 {
                     charHeavy.health = charHeavy.attack - enemy1.attack
                 }
-                playerNumber += 1
-            }
+                run(SKAction.afterDelay(3, runBlock: increment))            }
         }
     //enemy3 actions & animations
         else if playerNumber == 6 {
@@ -139,8 +143,7 @@ class FightScene: SKScene {
                 else if attackNum == 3 {
                     charHeavy.health = charHeavy.attack - enemy1.attack
                 }
-                playerNumber = 1
-            }
+                run(SKAction.afterDelay(3, runBlock: increment))            }
         }
     }
 }

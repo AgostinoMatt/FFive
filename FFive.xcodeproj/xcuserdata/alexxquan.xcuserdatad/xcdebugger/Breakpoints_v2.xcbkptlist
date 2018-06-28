@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FFive/FightSceneViewController.swift"
-            timestampString = "551837769.103832"
+            timestampString = "551838637.257501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "prefersStatusBarHidden"
-            landmarkType = "24">
+            landmarkName = "FightSceneViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
