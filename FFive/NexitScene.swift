@@ -31,10 +31,7 @@ class NexitScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        if playerTurn {
-            playerTurn = false
-        }
-        else {
+        if playerNumber <= 4{
             nexitFight()
         }
     }
@@ -43,7 +40,7 @@ class NexitScene: SKScene {
         print(playerNumber)
         playerNumber += 1
         if playerNumber == 5 {
-            playerNumber = 0
+            playerNumber = 1
         }
         print(playerNumber)
         print("incrementing playerNumber")
@@ -119,6 +116,7 @@ class NexitScene: SKScene {
                     charHeavy.health = charHeavy.health - charNexit.attack
                 }
                 run(SKAction.afterDelay(3, runBlock: increment))
+                //playerTurn = true
             }
         }
     }
