@@ -25,8 +25,12 @@ class FightScene: SKScene {
     var enemyAlive = true
     var  playerNumber = 1
     
+    
+    
     override func didMove(to view: SKView) {
         
+        //playBackgroundMusic(filename: "MortalKombat.mp3")
+
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
         charMage = childNode(withName: "Girl//character") as! Mage
         charHeavy = childNode(withName: "SecondPlayer//character") as! Heavy
@@ -59,6 +63,7 @@ class FightScene: SKScene {
         print(playerNumber)
     print("incrementing playerNumber")
     }
+    
     
     func playerFight(){
 
