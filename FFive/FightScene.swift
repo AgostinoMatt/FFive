@@ -23,16 +23,17 @@ class FightScene: SKScene {
     var enemies: [SKReferenceNode] = []
     var playerTurn: Bool = true
     var enemyAlive = true
-    var  playerNumber = 1
+    var playerNumber = 1
     
     
     
     override func didMove(to view: SKView) {
         
         //playBackgroundMusic(filename: "MortalKombat.mp3")
-        let healthLabel = SKLabelNode(fontNamed: "Upheaval")
-        
-        
+        let charMainLabel = SKLabelNode(fontNamed: "Upheaval")
+        let charMageLabel = SKLabelNode(fontNamed: "Upheaval")
+        let charHeavyLabel = SKLabelNode(fontNamed: "Upheaval")
+
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
         charMage = childNode(withName: "Girl//character") as! Mage
         charHeavy = childNode(withName: "SecondPlayer//character") as! Heavy
@@ -46,15 +47,17 @@ class FightScene: SKScene {
             }
         }
         
-        healthLabel.text = "Health: X"
-        healthLabel.fontColor = SKColor.black
-        healthLabel.fontSize = 100
-        healthLabel.zPosition = 100
-        healthLabel.position = CGPoint.zero
-        healthLabel.horizontalAlignmentMode = .left
-        healthLabel.verticalAlignmentMode = .bottom
+        charMainLabel.text = "Health: X"
+        charMainLabel.fontColor = SKColor.black
+        charMainLabel.fontSize = 30
+        charMainLabel.zPosition = 100
+        charMainLabel.position = CGPoint(x: 300, y: 250)
+        //healthLabel.horizontalAlignmentMode = .left
+        //healthLabel.verticalAlignmentMode = .bottom
         
-        self.addChild(healthLabel)
+        self.addChild(charMainLabel)
+        self.addChild(charMageLabel)
+        self.addChild(charHeavyLabel)
     }
     
     override func update(_ currentTime: TimeInterval) {
