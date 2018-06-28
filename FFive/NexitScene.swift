@@ -29,17 +29,24 @@ class NexitScene: SKScene {
         
     }
     
+    func increment() {
+        print(playerNumber)
+        playerNumber += 1
+        if playerNumber == 5 {
+            playerNumber = 0
+        }
+        print(playerNumber)
+        print("incrementing playerNumber")
+    }
+    
     func playerFight(){
-        
-        
         
         //if the playerNumber is equal to 1, run character Of Main actions & animations. Increase playerNumber by 1
         if playerNumber == 1{
             if !charMain.hasActions() {
                 charMain.runAnimation()
                 print(playerNumber)
-                
-                playerNumber += 1
+                run(SKAction.afterDelay(3, runBlock: increment))
             }
         }
             
@@ -48,7 +55,7 @@ class NexitScene: SKScene {
             if !charMage.hasActions(){
                 charMage.runAnimation()
                 print(playerNumber)
-                playerNumber += 1
+                run(SKAction.afterDelay(3, runBlock: increment))
             }
         }
             //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
@@ -56,13 +63,29 @@ class NexitScene: SKScene {
             if !charHeavy.hasActions(){
                 charHeavy.runAnimation()
                 print(playerNumber)
-                playerNumber += 1
+                run(SKAction.afterDelay(3, runBlock: increment))
             }
         }
         print("players")
     }
     
     func nexitFight() {
+        let attackNum = Int.random(1...3) //attackNum set to a random integer
         
+        if playerNumber == 4 {
+            if !charNexit.hasActions(){
+                charNexit.runAnimation()
+                if attackNum == 1 {
+                    charMain.health = charMain.health - charNexit.attack
+                }
+                else if attackNum == 2 {
+                    charMage.health = charMage.health - charNexit.attack
+                }
+                else if attackNum == 3 {
+                    charHeavy.health = charHeavy.health - charNexit.attack
+                }
+                run(SKAction.afterDelay(3, runBlock: increment))
+            }
+        }
     }
 }
