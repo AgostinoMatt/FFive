@@ -50,27 +50,23 @@ class FightScene: SKScene {
         }
     }
     
-    
-    
-    //let sequence = SKAction.sequence([actionAttack, wait])
+    func increment() {
+        print(playerNumber)
+        playerNumber += 1
+        if playerNumber == 7 {
+            playerNumber = 1
+        }
+    print("incrementing playerNumber")
+    }
     
     func playerFight(){
-        let wait = SKAction.wait(forDuration: 5)
-        let done = SKAction.run() {
-            self.removeAllActions()
-        }
-        let increment = playerNumber += 1
-    
-        
-        
+
         //if the playerNumber is equal to 1, run character Of Main actions & animations. Increase playerNumber by 1
             if playerNumber == 1{
                 if !charMain.hasActions() {
                     charMain.runAnimation()
-                    print(playerNumber)
+                    run(SKAction.afterDelay(3, runBlock: increment))
                 
-                    //playerNumber += 1
-                    run(SKAction.sequence([wait, increment, done]))
                 }
             }
             
@@ -92,9 +88,6 @@ class FightScene: SKScene {
             }
 
         print("players")
-    }
-    override func run(_ action: SKAction) {
-        playerNumber += 1
     }
    
     // enemyFight method to make enemies randomly attack the player's party members
