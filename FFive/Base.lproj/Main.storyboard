@@ -19,10 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTK-g6-Zrx">
-                                <rect key="frame" x="310.5" y="298" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="298.5" y="298" width="70" height="30"/>
+                                <state key="normal" title="encounter"/>
                                 <connections>
                                     <action selector="buttonClick:" destination="BV1-FR-VrT" eventType="touchUpInside" id="olC-bx-3Jb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqa-at-hq0">
+                                <rect key="frame" x="521" y="30" width="72" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Boss Fight"/>
+                                <connections>
+                                    <action selector="NexitScene:" destination="BV1-FR-VrT" eventType="touchUpInside" id="qSI-7d-Dg3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,7 +51,7 @@
         <scene sceneID="16C-dj-PGS">
             <objects>
                 <viewController storyboardIdentifier="NexitSceneViewController" id="QV3-o3-gMv" customClass="NexitSceneViewController" customModule="FFive" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qYK-uO-LPQ">
+                    <view key="view" contentMode="scaleToFill" id="qYK-uO-LPQ" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -67,6 +75,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oGL-Vf-smi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fbN-mp-uz5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8d6-yM-KU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

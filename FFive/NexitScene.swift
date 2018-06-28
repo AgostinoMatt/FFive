@@ -19,6 +19,7 @@ class NexitScene: SKScene {
     var charNexit: Nexit!
     var enemyAlive = true
     var  playerNumber = 1
+    var playerTurn: Bool = true
     
     override func didMove(to view: SKView) {
         
@@ -27,6 +28,15 @@ class NexitScene: SKScene {
         charHeavy = childNode(withName: "SecondPlayer//character") as! Heavy
         charNexit = childNode(withName: "Nexit//character") as! Nexit
         
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        if playerTurn {
+            playerTurn = false
+        }
+        else {
+            nexitFight()
+        }
     }
     
     func increment() {

@@ -19,7 +19,7 @@ class NexitSceneViewController: UIViewController{
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            nexitScene = SKScene(fileNamed: "NexitScene") as! NexitScene// change to scene for nexit
+            nexitScene = SKScene(fileNamed: "NexitScene") as! NexitScene
             // Set the scale mode to scale to fit the window
             nexitScene.scaleMode = .aspectFill
             

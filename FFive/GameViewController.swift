@@ -37,6 +37,12 @@ class GameViewController: UIViewController {
         self.navigationController?.pushViewController(fightScene, animated: true)
     }
     
+    @IBAction func NexitScene(_ sender: Any) {
+        let nexitScene = storyboard?.instantiateViewController(withIdentifier: "NexitSceneViewController") as! NexitSceneViewController
+        
+        self.navigationController?.pushViewController(nexitScene, animated: true)
+    }
+    @IBOutlet weak var NexitScene: UIButton!
     override var prefersStatusBarHidden: Bool {
         return true
     }
