@@ -31,7 +31,14 @@ class FightSceneViewController: UIViewController{
                 view.showsNodeCount = true
         }
     }
-    
+    /*
+    func update(_ currentTime: TimeInterval) {
+        if fightScene.sceneDone{
+            self.navigationController?.popViewController(animated: true)
+            print("afjladejfdljkajf")
+        }
+    }
+    */
     @IBAction func buttonAttack(_ sender: UIButton) {
         if fightScene.canAttack == true {
             fightScene.playerFight()

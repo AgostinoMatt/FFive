@@ -25,6 +25,7 @@ class FightScene: SKScene {
     var canAttack: Bool = true
     var enemyAlive = true
     var playerNumber = 1
+    var sceneDone: Bool = false
     
     let charMainLabel = SKLabelNode()
     let charMageLabel = SKLabelNode()
@@ -145,6 +146,13 @@ class FightScene: SKScene {
         
         var selectedEnemy: Character!
         
+        if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
+            win()
+        }
+        else if charMain.health == 0 && charMage.health == 0 && charHeavy.health == 0 {
+            lose()
+        }
+        
         repeat {
             let attackNum = Int.random(1...4)
             selectedEnemy = pickEnemy(attackNum)
@@ -252,20 +260,20 @@ class FightScene: SKScene {
             if enemy1.health <= 0 {
                 playerNumber += 1
             }
-            
-            if !enemy1.hasActions(){
-                enemy1.runAnimation()
-                if attackNum == 1 {
-                    charMain.health = charMain.health - enemy1.attack
+            else{
+                if !enemy1.hasActions(){
+                    enemy1.runAnimation()
+                    if attackNum == 1 {
+                        charMain.health = charMain.health - enemy1.attack
+                    }
+                    else if attackNum == 2 {
+                        charMage.health = charMage.health - enemy1.attack
+                    }
+                    else if attackNum == 3 {
+                        charHeavy.health = charHeavy.health - enemy1.attack
+                    }
+                    run(SKAction.afterDelay(3, runBlock: increment))
                 }
-                else if attackNum == 2 {
-                    charMage.health = charMage.health - enemy1.attack
-                }
-                else if attackNum == 3 {
-                    charHeavy.health = charHeavy.health - enemy1.attack
-                }
-                run(SKAction.afterDelay(3, runBlock: increment))
-                
             }
         }
             //enemy2 actions & animations
@@ -274,30 +282,30 @@ class FightScene: SKScene {
             if enemy2.health <= 0 {
                 playerNumber += 1
             }
-            
-            if !enemy2.hasActions(){
-                enemy2.runAnimation()
-                if attackNum == 1 {
-                    charMain.health = charMain.health - enemy1.attack
-                }
-                else if attackNum == 2 {
-                    charMage.health = charMage.health - enemy1.attack
-                }
-                else if attackNum == 3 {
-                    charHeavy.health = charHeavy.health - enemy1.attack
-                }
-                run(SKAction.afterDelay(3, runBlock: increment))
+            else{
                 
-                
-                
+                if !enemy2.hasActions(){
+                    enemy2.runAnimation()
+                    if attackNum == 1 {
+                        charMain.health = charMain.health - enemy1.attack
+                    }
+                    else if attackNum == 2 {
+                        charMage.health = charMage.health - enemy1.attack
+                    }
+                    else if attackNum == 3 {
+                        charHeavy.health = charHeavy.health - enemy1.attack
+                    }
+                    run(SKAction.afterDelay(3, runBlock: increment))
+                }
             }
         }
-                //enemy3 actions & animations
-            else if playerNumber == 6 {
-                
-                if enemy3.health <= 0 {
-                    playerNumber = 1
-                }
+            //enemy3 actions & animations
+        else if playerNumber == 6 {
+            
+            if enemy3.health <= 0 {
+                playerNumber = 1
+            }
+            else{
                 if !enemy3.hasActions(){
                     enemy3.runAnimation()
                     if attackNum == 1 {
@@ -312,20 +320,26 @@ class FightScene: SKScene {
                     run(SKAction.afterDelay(3, runBlock: increment))
                     
                 }
-                
             }
+        }
     }
+    
+    
+    
+    func win() {
+        charMain.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
+        charMage.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
+        charHeavy.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
+        print(" \(charMain.exp) ")
+        sceneDone = true
         
+    }
+    
+    func lose() {
+        sceneDone = true
         
-        
-        func win() {
-            
-        }
-        
-        func lose() {
-            
-        }
-        
+    }
+    
 }
 
 
