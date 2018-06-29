@@ -26,13 +26,12 @@ class FightScene: SKScene {
     var enemyAlive = true
     var playerNumber = 1
     
-    let charMainLabel = SKLabelNode(fontNamed: "Glimstick")
-    let charMageLabel = SKLabelNode(fontNamed: "Glimstick")
-    let charHeavyLabel = SKLabelNode(fontNamed: "Glimstick")
-    let enemy1Label = SKLabelNode(fontNamed: "Glimstick")
-    let enemy2Label = SKLabelNode(fontNamed: "Glimstick")
-    let enemy3Label = SKLabelNode(fontNamed: "Glimstick")
-    
+    let charMainLabel = SKLabelNode()
+    let charMageLabel = SKLabelNode()
+    let charHeavyLabel = SKLabelNode()
+    let enemy1Label = SKLabelNode()
+    let enemy2Label = SKLabelNode()
+    let enemy3Label = SKLabelNode()
     
     override func didMove(to view: SKView) {
         
