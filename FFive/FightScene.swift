@@ -230,7 +230,7 @@ class FightScene: SKScene {
         //if statement to determine which enemy is attacking and if they have actions run those actions & animations
         if playerNumber == 4 {
             
-            if enemy1.health <= 0 {
+            if enemy1.health >= 0 {
                 
                 if !enemy1.hasActions(){
                     enemy1.runAnimation()
