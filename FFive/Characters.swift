@@ -27,6 +27,18 @@ class Warrior : SKSpriteNode, Character {
     var magic: Int = 10
     var exp: Int = 0
     
+    func levelUp() {
+        if exp >= 200{
+            level += 1
+            attack += (level * 2)
+            health += (level * 5)
+            maxHealth += (level * 5)
+            magic += (level * 2)
+            exp -= 200
+        }
+    }
+    
+    
     func runAnimation() {
         let moveLeft = SKAction.moveBy(x: -30, y: 0, duration: 0.25)
         let moveRight = moveLeft.reversed()
@@ -50,6 +62,17 @@ class Mage : SKSpriteNode, Character {
     var maxHealth: Int = 100
     var magic: Int = 15
     var exp: Int = 0
+    
+    func levelUp() {
+        if exp >= 200{
+            level += 1
+            attack += (level * 2)
+            health += (level * 5)
+            maxHealth += (level * 5)
+            magic += (level * 2)
+            exp -= 200
+        }
+    }
     
     func runAnimation() {
         let moveUp = SKAction.moveBy(x: 50, y: 40, duration: 0.5)
@@ -83,17 +106,28 @@ class Heavy: SKSpriteNode, Character {
     var magic: Int = 5
     var exp: Int = 0
     
+    func levelUp() {
+        if exp >= 200{
+            level += 1
+            attack += (level * 2)
+            health += (level * 5)
+            maxHealth += (level * 5)
+            magic += (level * 2)
+            exp -= 200
+        }
+    }
+    
     func runAnimation() {
         let moveLeft = SKAction.moveBy(x: -40, y: 0, duration: 0.4)
         let moveRight = SKAction.moveBy(x: 40, y: 0, duration: 0.6)
         let wait = SKAction.wait(forDuration: 0.2)
         let done = SKAction.run() {
             self.removeAllActions()
-            }
+        }
         run(SKAction.sequence([moveLeft, wait, moveRight, done]))
         if let item = childNode(withName: "item") as? SKSpriteNode {
             item.run(SKAction.rotate(byAngle: 720, duration: 1))
-            }
+        }
         isPaused = false
     }
     
@@ -145,9 +179,9 @@ class Headless: SKSpriteNode, Character {
         textures.append(textures[1])
         
         /*for j in 5...7 {
-            textures2.append(SKTexture(imageNamed: "head\(j)"))
-        }
-        textures2.append(textures[1])*/
+         textures2.append(SKTexture(imageNamed: "head\(j)"))
+         }
+         textures2.append(textures[1])*/
         
     }
     
@@ -179,7 +213,6 @@ class Nexit: SKSpriteNode, Character {
     func runAnimation() {
         let moveRight = SKAction.moveBy(x: 100, y: 0, duration: 1)
     }
-    
     
     
 }
