@@ -26,14 +26,15 @@ class FightScene: SKScene {
     var enemyAlive = true
     var playerNumber = 1
     
-    
-    
     override func didMove(to view: SKView) {
         
         //playBackgroundMusic(filename: "MortalKombat.mp3")
-        let charMainLabel = SKLabelNode(fontNamed: "Upheaval")
-        let charMageLabel = SKLabelNode(fontNamed: "Upheaval")
-        let charHeavyLabel = SKLabelNode(fontNamed: "Upheaval")
+        let charMainLabel = SKLabelNode(fontNamed: "Glimstick")
+        let charMageLabel = SKLabelNode(fontNamed: "Glimstick")
+        let charHeavyLabel = SKLabelNode(fontNamed: "Glimstick")
+        let enemy1Label = SKLabelNode(fontNamed: "Glimstick")
+        let enemy2Label = SKLabelNode(fontNamed: "Glimstick")
+        let enemy3Label = SKLabelNode(fontNamed: "Glimstick")
         
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
         charMage = childNode(withName: "Girl//character") as! Mage
@@ -48,17 +49,50 @@ class FightScene: SKScene {
             }
         }
         
-        charMainLabel.text = "Health: X"
+        charMainLabel.text = "HP: \(charMain.maxHealth)/ \(charMain.health)"
         charMainLabel.fontColor = SKColor.black
-        charMainLabel.fontSize = 30
+        charMainLabel.fontSize = 20
         charMainLabel.zPosition = 100
-        charMainLabel.position = CGPoint(x: 300, y: 250)
+        charMainLabel.position = CGPoint(x: 375, y: -100)
         //healthLabel.horizontalAlignmentMode = .left
         //healthLabel.verticalAlignmentMode = .bottom
+        
+        charMageLabel.text = "HP: \(charMage.maxHealth)/ \(charMage.health)"
+        charMageLabel.fontColor = SKColor.black
+        charMageLabel.fontSize = 20
+        charMageLabel.zPosition = 100
+        charMageLabel.position = CGPoint(x: 375, y: 200)
+        
+        charHeavyLabel.text = "HP: \(charHeavy.maxHealth)/ \(charHeavy.health)"
+        charHeavyLabel.fontColor = SKColor.black
+        charHeavyLabel.fontSize = 20
+        charHeavyLabel.zPosition = 100
+        charHeavyLabel.position = CGPoint(x: 375, y: 50)
+        
+        enemy1Label.text = "HP: \(enemy1.maxHealth)/ \(enemy1.health)"
+        enemy1Label.fontColor = SKColor.black
+        enemy1Label.fontSize = 20
+        enemy1Label.zPosition = 100
+        enemy1Label.position = CGPoint(x: -400, y: -100)
+        
+        enemy2Label.text = "HP: \(enemy2.maxHealth)/ \(enemy2.health)"
+        enemy2Label.fontColor = SKColor.black
+        enemy2Label.fontSize = 20
+        enemy2Label.zPosition = 100
+        enemy2Label.position = CGPoint(x: -400, y: 50)
+        
+        enemy3Label.text = "HP: \(enemy3.maxHealth)/ \(enemy3.health)"
+        enemy3Label.fontColor = SKColor.black
+        enemy3Label.fontSize = 20
+        enemy3Label.zPosition = 100
+        enemy3Label.position = CGPoint(x: -400, y: 200)
         
         self.addChild(charMainLabel)
         self.addChild(charMageLabel)
         self.addChild(charHeavyLabel)
+        self.addChild(enemy1Label)
+        self.addChild(enemy2Label)
+        self.addChild(enemy3Label)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -68,22 +102,29 @@ class FightScene: SKScene {
         else {
             enemyFight()
         }
+        /*
+            charMainLabel.text = "HP: \(charMain.maxHealth)/ \(charMain.health)"
+            charMageLabel.text = "HP: \(charMage.maxHealth)/ \(charMage.health)"
+            charHeavyLabel.text = "HP: \(charHeavy.maxHealth)/ \(charHeavy.health)"
+         
+            enemy1Label.text = "HP: \(enemy1.maxHealth)/ \(enemy1.health)"
+            enemy2Label.text = "HP: \(enemy2.maxHealth)/ \(enemy2.health)"
+            enemy3Label.text = "HP: \(enemy3.maxHealth)/ \(enemy3.health)"
+         */
     }
     
-    func increment() {
-        print("before increment \(playerNumber)")
-        playerNumber += 1
-        if playerNumber <= 3 {
-            canAttack = true
+    func pickEnemy(_ enemy: Int) -> Character?{
+        switch enemy {
+        case 1:
+            return enemy1
+        case 2:
+            return enemy2
+        case 3:
+            return enemy3
+        default:
+            return nil
         }
-        
-        if playerNumber == 7 {
-            playerNumber = 0
-        }
-        print("incrementing playerNumber \(playerNumber)")
-        
     }
-    
     
     func attack() {
         
@@ -107,7 +148,7 @@ class FightScene: SKScene {
             selectedEnemy.health -= charHeavy.attack
         }
         
-       if selectedEnemy.health < 0{
+        if selectedEnemy.health < 0{
             selectedEnemy.health = 0
         }
         print("zombie: \(enemy1.health)")
@@ -186,6 +227,11 @@ class FightScene: SKScene {
         
         //if statement to determine which enemy is attacking and if they have actions run those actions & animations
         if playerNumber == 4 {
+            
+            if enemy1.health <= 0 {
+                playerNumber += 1
+            }
+            
             if !enemy1.hasActions(){
                 enemy1.runAnimation()
                 if attackNum == 1 {
@@ -201,6 +247,11 @@ class FightScene: SKScene {
         }
             //enemy2 actions & animations
         else if playerNumber == 5 {
+            
+            if enemy2.health <= 0 {
+                playerNumber += 1
+            }
+            
             if !enemy2.hasActions(){
                 enemy2.runAnimation()
                 if attackNum == 1 {
@@ -216,6 +267,11 @@ class FightScene: SKScene {
         }
             //enemy3 actions & animations
         else if playerNumber == 6 {
+            
+            if enemy3.health <= 0 {
+                playerNumber = 1
+            }
+            
             if !enemy3.hasActions(){
                 enemy3.runAnimation()
                 if attackNum == 1 {
@@ -231,18 +287,27 @@ class FightScene: SKScene {
         }
     }
     
-    func pickEnemy(_ enemy: Int) -> Character?{
-        switch enemy {
-        case 1:
-            return enemy1
-        case 2:
-            return enemy2
-        case 3:
-            return enemy3
-        default:
-            return nil
+    func increment() {
+        print("before increment \(playerNumber)")
+        playerNumber += 1
+        if playerNumber <= 3 {
+            canAttack = true
         }
+        
+        if playerNumber == 7 {
+            playerNumber = 0
+        }
+        print("incrementing playerNumber \(playerNumber)")
     }
+    
+    func win() {
+        
+    }
+    
+    func lose() {
+     
+    }
+    
 }
 
 

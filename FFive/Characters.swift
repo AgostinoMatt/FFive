@@ -38,7 +38,6 @@ class Warrior : SKSpriteNode, Character {
         }
     }
     
-    
     func runAnimation() {
         let moveLeft = SKAction.moveBy(x: -30, y: 0, duration: 0.25)
         let moveRight = moveLeft.reversed()
