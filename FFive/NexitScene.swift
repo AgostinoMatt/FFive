@@ -12,7 +12,7 @@ import SpriteKit
 class NexitScene: SKScene {
     
     
-// Variables
+    // Variables
     var charMain: Warrior!
     var charMage: Mage!
     var charHeavy: Heavy!
@@ -170,10 +170,9 @@ class NexitScene: SKScene {
     func lose() {
         sceneDone = true
         if let navController = self.view!.window!.rootViewController as? UINavigationController{
-            if let fightController = navController.presentedViewController as? FightSceneViewController{
-                fightController.leave()
-            }
+            navController.popViewController(animated: true)
         }
-        //(self.view!.window!.rootViewController!.presentedViewController as! FightSceneViewController).leave()
     }
+    //(self.view!.window!.rootViewController!.presentedViewController as! FightSceneViewController).leave()
 }
+
