@@ -146,12 +146,7 @@ class FightScene: SKScene {
         
         var selectedEnemy: Character!
         
-        if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
-            win()
-        }
-        else if charMain.health == 0 && charMage.health == 0 && charHeavy.health == 0 {
-            lose()
-        }
+        
         
         repeat {
             let attackNum = Int.random(1...4)
@@ -175,6 +170,12 @@ class FightScene: SKScene {
             selectedEnemy.health = 0
             if let enemy = selectedEnemy as? SKSpriteNode{
                 enemy.run(SKAction.hide())
+            }
+            if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
+                win()
+            }
+            else if charMain.health == 0 && charMage.health == 0 && charHeavy.health == 0 {
+                lose()
             }
         }
         print("zombie: \(enemy1.health)")
@@ -207,6 +208,12 @@ class FightScene: SKScene {
             selectedEnemy.health = 0
             if let enemy = selectedEnemy as? SKSpriteNode{
                 enemy.run(SKAction.hide())
+            }
+            if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
+                win()
+            }
+            else if charMain.health == 0 && charMage.health == 0 && charHeavy.health == 0 {
+                lose()
             }
         }
         
@@ -303,7 +310,7 @@ class FightScene: SKScene {
         else if playerNumber == 6 {
             
             if enemy3.health <= 0 {
-                playerNumber = 1
+                playerNumber = 0
             }
             else{
                 if !enemy3.hasActions(){

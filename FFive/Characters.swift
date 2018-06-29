@@ -135,7 +135,7 @@ class Heavy: SKSpriteNode, Character {
 class Zombie: SKSpriteNode, Character {
     var level: Int = 1
     var attack: Int = 5
-    var health: Int = 5
+    var health: Int = 50
     var maxHealth: Int = 50
     var magic: Int = 0
     var exp: Int = 30
@@ -160,7 +160,7 @@ class Zombie: SKSpriteNode, Character {
 class Headless: SKSpriteNode, Character {
     var level: Int = 1
     var attack: Int = 10
-    var health: Int = 4
+    var health: Int = 40
     var maxHealth: Int = 40
     var magic: Int = 0
     var exp: Int = 30
