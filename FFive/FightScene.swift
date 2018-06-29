@@ -128,6 +128,19 @@ class FightScene: SKScene {
         }
     }
     
+    func increment() {
+        print("before increment \(playerNumber)")
+        playerNumber += 1
+        if playerNumber <= 3 {
+            canAttack = true
+        }
+        
+        if playerNumber == 7 {
+            playerNumber = 0
+        }
+        print("incrementing playerNumber \(playerNumber)")
+    }
+    
     func attack() {
         
         var selectedEnemy: Character!
@@ -150,8 +163,11 @@ class FightScene: SKScene {
             selectedEnemy.health -= charHeavy.attack
         }
         
-        if selectedEnemy.health < 0{
+        if selectedEnemy.health <= 0{
             selectedEnemy.health = 0
+            if let enemy = selectedEnemy as? SKSpriteNode{
+                enemy.run(SKAction.hide())
+            }
         }
         print("zombie: \(enemy1.health)")
         print("Headless: \(enemy2.health)")
@@ -179,8 +195,11 @@ class FightScene: SKScene {
             selectedEnemy.health -= charHeavy.magic
         }
         
-        if selectedEnemy.health < 0{
+        if selectedEnemy.health <= 0{
             selectedEnemy.health = 0
+            if let enemy = selectedEnemy as? SKSpriteNode{
+                enemy.run(SKAction.hide())
+            }
         }
         
         print("zombie: \(enemy1.health)")
@@ -230,57 +249,55 @@ class FightScene: SKScene {
         //if statement to determine which enemy is attacking and if they have actions run those actions & animations
         if playerNumber == 4 {
             
-            if enemy1.health >= 0 {
-                
-                if !enemy1.hasActions(){
-                    enemy1.runAnimation()
-                    if attackNum == 1 {
-                        charMain.health = charMain.health - enemy1.attack
-                    }
-                    else if attackNum == 2 {
-                        charMage.health = charMage.health - enemy1.attack
-                    }
-                    else if attackNum == 3 {
-                        charHeavy.health = charHeavy.health - enemy1.attack
-                    }
-                    run(SKAction.afterDelay(3, runBlock: increment))
-                    
-                }
-            }
-            else{
-                enemy1.isHidden = true
+            if enemy1.health <= 0 {
                 playerNumber += 1
+            }
+            
+            if !enemy1.hasActions(){
+                enemy1.runAnimation()
+                if attackNum == 1 {
+                    charMain.health = charMain.health - enemy1.attack
+                }
+                else if attackNum == 2 {
+                    charMage.health = charMage.health - enemy1.attack
+                }
+                else if attackNum == 3 {
+                    charHeavy.health = charHeavy.health - enemy1.attack
+                }
+                run(SKAction.afterDelay(3, runBlock: increment))
+                
             }
         }
             //enemy2 actions & animations
         else if playerNumber == 5 {
             
-            if enemy2.health >= 0 {
-                
-                if !enemy2.hasActions(){
-                    enemy2.runAnimation()
-                    if attackNum == 1 {
-                        charMain.health = charMain.health - enemy1.attack
-                    }
-                    else if attackNum == 2 {
-                        charMage.health = charMage.health - enemy1.attack
-                    }
-                    else if attackNum == 3 {
-                        charHeavy.health = charHeavy.health - enemy1.attack
-                    }
-                    run(SKAction.afterDelay(3, runBlock: increment))
-                    
-                }
-            }
-            else{
-                enemy2.isHidden = true
+            if enemy2.health <= 0 {
                 playerNumber += 1
             }
-        }
-            //enemy3 actions & animations
-        else if playerNumber == 6 {
             
-            if enemy3.health >= 0 {
+            if !enemy2.hasActions(){
+                enemy2.runAnimation()
+                if attackNum == 1 {
+                    charMain.health = charMain.health - enemy1.attack
+                }
+                else if attackNum == 2 {
+                    charMage.health = charMage.health - enemy1.attack
+                }
+                else if attackNum == 3 {
+                    charHeavy.health = charHeavy.health - enemy1.attack
+                }
+                run(SKAction.afterDelay(3, runBlock: increment))
+                
+                
+                
+            }
+        }
+                //enemy3 actions & animations
+            else if playerNumber == 6 {
+                
+                if enemy3.health <= 0 {
+                    playerNumber = 1
+                }
                 if !enemy3.hasActions(){
                     enemy3.runAnimation()
                     if attackNum == 1 {
@@ -295,35 +312,20 @@ class FightScene: SKScene {
                     run(SKAction.afterDelay(3, runBlock: increment))
                     
                 }
+                
             }
-            else{
-                enemy3.isHidden = true
-                playerNumber = 1
-            }
-        }
     }
-    
-    func increment() {
-        print("before increment \(playerNumber)")
-        playerNumber += 1
-        if playerNumber <= 3 {
-            canAttack = true
+        
+        
+        
+        func win() {
+            
         }
         
-        if playerNumber == 7 {
-            playerNumber = 0
+        func lose() {
+            
         }
-        print("incrementing playerNumber \(playerNumber)")
-    }
-    
-    func win() {
         
-    }
-    
-    func lose() {
-        
-    }
-    
 }
 
 
