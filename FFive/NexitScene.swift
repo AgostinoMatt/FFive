@@ -40,7 +40,7 @@ class NexitScene: SKScene {
         print(playerNumber)
         playerNumber += 1
         if playerNumber == 5 {
-            playerNumber = 1
+            playerNumber = 0
         }
         print(playerNumber)
         print("incrementing playerNumber")

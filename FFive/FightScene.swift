@@ -36,7 +36,7 @@ class FightScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        //playBackgroundMusic(filename: "MortalKombat.mp3")
+                //playBackgroundMusic(filename: "MortalKombat.mp3")
         
         
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
@@ -211,6 +211,7 @@ class FightScene: SKScene {
             }
             if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
                 win()
+                print("win")
             }
             else if charMain.health == 0 && charMage.health == 0 && charHeavy.health == 0 {
                 lose()
@@ -265,7 +266,7 @@ class FightScene: SKScene {
         if playerNumber == 4 {
             
             if enemy1.health <= 0 {
-                playerNumber += 1
+                increment()
             }
             else{
                 if !enemy1.hasActions(){
@@ -287,7 +288,7 @@ class FightScene: SKScene {
         else if playerNumber == 5 {
             
             if enemy2.health <= 0 {
-                playerNumber += 1
+                increment()
             }
             else{
                 
@@ -310,7 +311,7 @@ class FightScene: SKScene {
         else if playerNumber == 6 {
             
             if enemy3.health <= 0 {
-                playerNumber = 0
+                increment()
             }
             else{
                 if !enemy3.hasActions(){
@@ -340,11 +341,23 @@ class FightScene: SKScene {
         print(" \(charMain.exp) ")
         sceneDone = true
         
+        if let navController = self.view!.window!.rootViewController as? UINavigationController{
+            if let fightController = navController.presentedViewController as? FightSceneViewController{
+                fightController.leave()
+            }
+        }
+        //(self.view!.window!.rootViewController!.presentedViewController as! FightSceneViewController).leave()
+
     }
     
     func lose() {
         sceneDone = true
-        
+        if let navController = self.view!.window!.rootViewController as? UINavigationController{
+            if let fightController = navController.presentedViewController as? FightSceneViewController{
+                fightController.leave()
+            }
+        }
+        //(self.view!.window!.rootViewController!.presentedViewController as! FightSceneViewController).leave()
     }
     
 }
