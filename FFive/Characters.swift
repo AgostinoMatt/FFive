@@ -66,10 +66,10 @@ class Mage : SKSpriteNode, Character {
     func levelUp() {
         if exp >= 200{
             level += 1
-            attack += (level * 2)
+            attack += (level * 1)
             health += (level * 5)
             maxHealth += (level * 5)
-            magic += (level * 2)
+            magic += (level * 3)
             exp -= 200
         }
     }
@@ -109,10 +109,10 @@ class Heavy: SKSpriteNode, Character {
     func levelUp() {
         if exp >= 200{
             level += 1
-            attack += (level * 2)
+            attack += (level * 3)
             health += (level * 5)
             maxHealth += (level * 5)
-            magic += (level * 2)
+            magic += (level * 1)
             exp -= 200
         }
     }
