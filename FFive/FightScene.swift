@@ -36,7 +36,7 @@ class FightScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-                //playBackgroundMusic(filename: "MortalKombat.mp3")
+        //playBackgroundMusic(filename: "MortalKombat.mp3")
         
         
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
@@ -57,8 +57,6 @@ class FightScene: SKScene {
         charMainLabel.fontSize = 20
         charMainLabel.zPosition = 100
         charMainLabel.position = CGPoint(x: 375, y: -100)
-        //healthLabel.horizontalAlignmentMode = .left
-        //healthLabel.verticalAlignmentMode = .bottom
         
         charMageLabel.text = "HP: "//\(charMage.maxHealth)/ \(charMage.health)"
         charMageLabel.fontColor = SKColor.black
@@ -113,7 +111,6 @@ class FightScene: SKScene {
         enemy1Label.text = "HP: \(enemy1.health) / \(enemy1.maxHealth)"
         enemy2Label.text = "HP: \(enemy2.health) / \(enemy2.maxHealth)"
         enemy3Label.text = "HP: \(enemy3.health) / \(enemy3.maxHealth)"
-        
     }
     
     func pickEnemy(_ enemy: Int) -> Character?{
@@ -176,9 +173,6 @@ class FightScene: SKScene {
                 lose()
             }
         }
-        print("zombie: \(enemy1.health)")
-        print("Headless: \(enemy2.health)")
-        print("Zombie: \(enemy3.health)")
     }
     
     func magic() {
@@ -215,10 +209,6 @@ class FightScene: SKScene {
                 lose()
             }
         }
-        
-        print("zombie: \(enemy1.health)")
-        print("Headless: \(enemy2.health)")
-        print("Zombie: \(enemy3.health)")
     }
     
     func playerFight(){
@@ -238,7 +228,6 @@ class FightScene: SKScene {
                 //print(playerNumber)
                 //  playerNumber += 1
                 run(SKAction.afterDelay(2, runBlock: increment))
-                
             }
         }
             //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
@@ -246,14 +235,10 @@ class FightScene: SKScene {
             if !charHeavy.hasActions(){
                 charHeavy.runAnimation()
                 run(SKAction.afterDelay(2, runBlock: increment))
-                
-                // print(playerNumber)
-                
-                // playerNumber += 1
             }
         }
         
-        print("players")
+        //print("players")
     }
     
     // enemyFight method to make enemies randomly attack the player's party members
@@ -324,7 +309,6 @@ class FightScene: SKScene {
                         charHeavy.health = charHeavy.health - enemy1.attack
                     }
                     run(SKAction.afterDelay(3, runBlock: increment))
-                    
                 }
             }
         }
@@ -336,28 +320,21 @@ class FightScene: SKScene {
         charMain.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
         charMage.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
         charHeavy.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
-        print(" \(charMain.exp) ")
+        print(" char exp \(charMain.exp) ")
         sceneDone = true
         
-        if let navController = self.view!.window!.rootViewController as? UINavigationController{
-            if let fightController = navController.presentedViewController as? FightSceneViewController{
-                fightController.leave()
-            }
+        if let navController = self.view!.window!.rootViewController as? UINavigationController {
+            navController.popViewController(animated: true)
+            print("leaving")
         }
-        //(self.view!.window!.rootViewController!.presentedViewController as! FightSceneViewController).leave()
-
     }
     
     func lose() {
         sceneDone = true
         if let navController = self.view!.window!.rootViewController as? UINavigationController{
-            if let fightController = navController.presentedViewController as? FightSceneViewController{
-                fightController.leave()
-            }
+            navController.popViewController(animated: true)
         }
-        //(self.view!.window!.rootViewController!.presentedViewController as! FightSceneViewController).leave()
     }
-    
 }
 
 
