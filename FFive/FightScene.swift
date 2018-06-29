@@ -106,13 +106,13 @@ class FightScene: SKScene {
             enemyFight()
         }
         
-            charMainLabel.text = "HP: \(charMain.health) / \(charMain.maxHealth)"
-            charMageLabel.text = "HP: \(charMage.health) / \(charMage.maxHealth)"
-            charHeavyLabel.text = "HP: \(charHeavy.health) / \(charHeavy.maxHealth)"
-         
-            enemy1Label.text = "HP: \(enemy1.health) / \(enemy1.maxHealth)"
-            enemy2Label.text = "HP: \(enemy2.health) / \(enemy2.maxHealth)"
-            enemy3Label.text = "HP: \(enemy3.health) / \(enemy3.maxHealth)"
+        charMainLabel.text = "HP: \(charMain.health) / \(charMain.maxHealth)"
+        charMageLabel.text = "HP: \(charMage.health) / \(charMage.maxHealth)"
+        charHeavyLabel.text = "HP: \(charHeavy.health) / \(charHeavy.maxHealth)"
+        
+        enemy1Label.text = "HP: \(enemy1.health) / \(enemy1.maxHealth)"
+        enemy2Label.text = "HP: \(enemy2.health) / \(enemy2.maxHealth)"
+        enemy3Label.text = "HP: \(enemy3.health) / \(enemy3.maxHealth)"
         
     }
     
@@ -232,61 +232,75 @@ class FightScene: SKScene {
         if playerNumber == 4 {
             
             if enemy1.health <= 0 {
+                
+                if !enemy1.hasActions(){
+                    enemy1.runAnimation()
+                    if attackNum == 1 {
+                        charMain.health = charMain.health - enemy1.attack
+                    }
+                    else if attackNum == 2 {
+                        charMage.health = charMage.health - enemy1.attack
+                    }
+                    else if attackNum == 3 {
+                        charHeavy.health = charHeavy.health - enemy1.attack
+                    }
+                    run(SKAction.afterDelay(3, runBlock: increment))
+                    
+                }
+            }
+            else{
+                enemy1.isHidden = true
                 playerNumber += 1
             }
-            
-            if !enemy1.hasActions(){
-                enemy1.runAnimation()
-                if attackNum == 1 {
-                    charMain.health = charMain.health - enemy1.attack
-                }
-                else if attackNum == 2 {
-                    charMage.health = charMage.health - enemy1.attack
-                }
-                else if attackNum == 3 {
-                    charHeavy.health = charHeavy.health - enemy1.attack
-                }
-                run(SKAction.afterDelay(3, runBlock: increment))            }
         }
             //enemy2 actions & animations
         else if playerNumber == 5 {
             
-            if enemy2.health <= 0 {
+            if enemy2.health >= 0 {
+                
+                if !enemy2.hasActions(){
+                    enemy2.runAnimation()
+                    if attackNum == 1 {
+                        charMain.health = charMain.health - enemy1.attack
+                    }
+                    else if attackNum == 2 {
+                        charMage.health = charMage.health - enemy1.attack
+                    }
+                    else if attackNum == 3 {
+                        charHeavy.health = charHeavy.health - enemy1.attack
+                    }
+                    run(SKAction.afterDelay(3, runBlock: increment))
+                    
+                }
+            }
+            else{
+                enemy2.isHidden = true
                 playerNumber += 1
             }
-            
-            if !enemy2.hasActions(){
-                enemy2.runAnimation()
-                if attackNum == 1 {
-                    charMain.health = charMain.health - enemy1.attack
-                }
-                else if attackNum == 2 {
-                    charMage.health = charMage.health - enemy1.attack
-                }
-                else if attackNum == 3 {
-                    charHeavy.health = charHeavy.health - enemy1.attack
-                }
-                run(SKAction.afterDelay(3, runBlock: increment))            }
         }
             //enemy3 actions & animations
         else if playerNumber == 6 {
             
-            if enemy3.health <= 0 {
+            if enemy3.health >= 0 {
+                if !enemy3.hasActions(){
+                    enemy3.runAnimation()
+                    if attackNum == 1 {
+                        charMain.health = charMain.health - enemy1.attack
+                    }
+                    else if attackNum == 2 {
+                        charMage.health = charMage.health - enemy1.attack
+                    }
+                    else if attackNum == 3 {
+                        charHeavy.health = charHeavy.health - enemy1.attack
+                    }
+                    run(SKAction.afterDelay(3, runBlock: increment))
+                    
+                }
+            }
+            else{
+                enemy3.isHidden = true
                 playerNumber = 1
             }
-            
-            if !enemy3.hasActions(){
-                enemy3.runAnimation()
-                if attackNum == 1 {
-                    charMain.health = charMain.health - enemy1.attack
-                }
-                else if attackNum == 2 {
-                    charMage.health = charMage.health - enemy1.attack
-                }
-                else if attackNum == 3 {
-                    charHeavy.health = charHeavy.health - enemy1.attack
-                }
-                run(SKAction.afterDelay(3, runBlock: increment))            }
         }
     }
     
@@ -308,7 +322,7 @@ class FightScene: SKScene {
     }
     
     func lose() {
-     
+        
     }
     
 }
