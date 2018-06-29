@@ -26,13 +26,12 @@ class FightScene: SKScene {
     var enemyAlive = true
     var playerNumber = 1
     
-    let charMainLabel = SKLabelNode(fontNamed: "Glimstick")
-    let charMageLabel = SKLabelNode(fontNamed: "Glimstick")
-    let charHeavyLabel = SKLabelNode(fontNamed: "Glimstick")
-    let enemy1Label = SKLabelNode(fontNamed: "Glimstick")
-    let enemy2Label = SKLabelNode(fontNamed: "Glimstick")
-    let enemy3Label = SKLabelNode(fontNamed: "Glimstick")
-    
+    let charMainLabel = SKLabelNode()
+    let charMageLabel = SKLabelNode()
+    let charHeavyLabel = SKLabelNode()
+    let enemy1Label = SKLabelNode()
+    let enemy2Label = SKLabelNode()
+    let enemy3Label = SKLabelNode()
     
     override func didMove(to view: SKView) {
         
@@ -106,13 +105,13 @@ class FightScene: SKScene {
             enemyFight()
         }
         
-            charMainLabel.text = "HP: \(charMain.health)/ \(charMain.maxHealth)"
-            charMageLabel.text = "HP: \(charMage.health)/ \(charMage.maxHealth)"
-            charHeavyLabel.text = "HP: \(charHeavy.health)/ \(charHeavy.maxHealth)"
+            charMainLabel.text = "HP: \(charMain.health) / \(charMain.maxHealth)"
+            charMageLabel.text = "HP: \(charMage.health) / \(charMage.maxHealth)"
+            charHeavyLabel.text = "HP: \(charHeavy.health) / \(charHeavy.maxHealth)"
          
-            enemy1Label.text = "HP: \(enemy1.health)/ \(enemy1.maxHealth)"
-            enemy2Label.text = "HP: \(enemy2.health)/ \(enemy2.maxHealth)"
-            enemy3Label.text = "HP: \(enemy3.health)/ \(enemy3.maxHealth)"
+            enemy1Label.text = "HP: \(enemy1.health) / \(enemy1.maxHealth)"
+            enemy2Label.text = "HP: \(enemy2.health) / \(enemy2.maxHealth)"
+            enemy3Label.text = "HP: \(enemy3.health) / \(enemy3.maxHealth)"
         
     }
     
