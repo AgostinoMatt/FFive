@@ -20,6 +20,12 @@ class NexitScene: SKScene {
     var enemyAlive = true
     var  playerNumber = 1
     var playerTurn: Bool = true
+    var sceneDone: Bool = false
+    
+    let charMainLabel = SKLabelNode()
+    let charMageLabel = SKLabelNode()
+    let charHeavyLabel = SKLabelNode()
+    let NexitLabel = SKLabelNode()
     
     override func didMove(to view: SKView) {
         
@@ -28,12 +34,48 @@ class NexitScene: SKScene {
         charHeavy = childNode(withName: "SecondPlayer//character") as! Heavy
         charNexit = childNode(withName: "Nexit//character") as! Nexit
         
+        charMainLabel.text = "HP: "//\(charMain.maxHealth)/ \(charMain.health)"
+        charMainLabel.fontColor = SKColor.black
+        charMainLabel.fontSize = 20
+        charMainLabel.zPosition = 100
+        charMainLabel.position = CGPoint(x: 375, y: -100)
+        //healthLabel.horizontalAlignmentMode = .left
+        //healthLabel.verticalAlignmentMode = .bottom
+        
+        charMageLabel.text = "HP: "//\(charMage.maxHealth)/ \(charMage.health)"
+        charMageLabel.fontColor = SKColor.black
+        charMageLabel.fontSize = 20
+        charMageLabel.zPosition = 100
+        charMageLabel.position = CGPoint(x: 375, y: 200)
+        
+        charHeavyLabel.text = "HP: "//\(charHeavy.maxHealth)/ \(charHeavy.health)"
+        charHeavyLabel.fontColor = SKColor.black
+        charHeavyLabel.fontSize = 20
+        charHeavyLabel.zPosition = 100
+        charHeavyLabel.position = CGPoint(x: 375, y: 50)
+        
+        NexitLabel.text = "HP: "//\(charMain.maxHealth)/ \(charMain.health)"
+        NexitLabel.fontColor = SKColor.black
+        NexitLabel.fontSize = 20
+        NexitLabel.zPosition = 100
+        NexitLabel.position = CGPoint(x: -400, y: 50)
+        
+        self.addChild(charMainLabel)
+        self.addChild(charMageLabel)
+        self.addChild(charHeavyLabel)
+        self.addChild(NexitLabel)
     }
     
     override func update(_ currentTime: TimeInterval) {
         if playerNumber <= 4{
             nexitFight()
         }
+        
+        charMainLabel.text = "HP: \(charMain.health) / \(charMain.maxHealth)"
+        charMageLabel.text = "HP: \(charMage.health) / \(charMage.maxHealth)"
+        charHeavyLabel.text = "HP: \(charHeavy.health) / \(charHeavy.maxHealth)"
+        
+        NexitLabel.text = "HP: \(charNexit.health) / \(charNexit.maxHealth)"
     }
     
     func increment() {
@@ -119,5 +161,19 @@ class NexitScene: SKScene {
                 //playerTurn = true
             }
         }
+    }
+    
+    func win() {
+        
+    }
+    
+    func lose() {
+        sceneDone = true
+        if let navController = self.view!.window!.rootViewController as? UINavigationController{
+            if let fightController = navController.presentedViewController as? FightSceneViewController{
+                fightController.leave()
+            }
+        }
+        //(self.view!.window!.rootViewController!.presentedViewController as! FightSceneViewController).leave()
     }
 }

@@ -146,8 +146,6 @@ class FightScene: SKScene {
         
         var selectedEnemy: Character!
         
-        
-        
         repeat {
             let attackNum = Int.random(1...4)
             selectedEnemy = pickEnemy(attackNum)
