@@ -26,15 +26,18 @@ class FightScene: SKScene {
     var enemyAlive = true
     var playerNumber = 1
     
+    let charMainLabel = SKLabelNode(fontNamed: "Glimstick")
+    let charMageLabel = SKLabelNode(fontNamed: "Glimstick")
+    let charHeavyLabel = SKLabelNode(fontNamed: "Glimstick")
+    let enemy1Label = SKLabelNode(fontNamed: "Glimstick")
+    let enemy2Label = SKLabelNode(fontNamed: "Glimstick")
+    let enemy3Label = SKLabelNode(fontNamed: "Glimstick")
+    
+    
     override func didMove(to view: SKView) {
         
         //playBackgroundMusic(filename: "MortalKombat.mp3")
-        let charMainLabel = SKLabelNode(fontNamed: "Glimstick")
-        let charMageLabel = SKLabelNode(fontNamed: "Glimstick")
-        let charHeavyLabel = SKLabelNode(fontNamed: "Glimstick")
-        let enemy1Label = SKLabelNode(fontNamed: "Glimstick")
-        let enemy2Label = SKLabelNode(fontNamed: "Glimstick")
-        let enemy3Label = SKLabelNode(fontNamed: "Glimstick")
+        
         
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
         charMage = childNode(withName: "Girl//character") as! Mage
@@ -49,7 +52,7 @@ class FightScene: SKScene {
             }
         }
         
-        charMainLabel.text = "HP: \(charMain.maxHealth)/ \(charMain.health)"
+        charMainLabel.text = "HP: "//\(charMain.maxHealth)/ \(charMain.health)"
         charMainLabel.fontColor = SKColor.black
         charMainLabel.fontSize = 20
         charMainLabel.zPosition = 100
@@ -57,31 +60,31 @@ class FightScene: SKScene {
         //healthLabel.horizontalAlignmentMode = .left
         //healthLabel.verticalAlignmentMode = .bottom
         
-        charMageLabel.text = "HP: \(charMage.maxHealth)/ \(charMage.health)"
+        charMageLabel.text = "HP: "//\(charMage.maxHealth)/ \(charMage.health)"
         charMageLabel.fontColor = SKColor.black
         charMageLabel.fontSize = 20
         charMageLabel.zPosition = 100
         charMageLabel.position = CGPoint(x: 375, y: 200)
         
-        charHeavyLabel.text = "HP: \(charHeavy.maxHealth)/ \(charHeavy.health)"
+        charHeavyLabel.text = "HP: "//\(charHeavy.maxHealth)/ \(charHeavy.health)"
         charHeavyLabel.fontColor = SKColor.black
         charHeavyLabel.fontSize = 20
         charHeavyLabel.zPosition = 100
         charHeavyLabel.position = CGPoint(x: 375, y: 50)
         
-        enemy1Label.text = "HP: \(enemy1.maxHealth)/ \(enemy1.health)"
+        enemy1Label.text = "HP: "//\(enemy1.maxHealth)/ \(enemy1.health)"
         enemy1Label.fontColor = SKColor.black
         enemy1Label.fontSize = 20
         enemy1Label.zPosition = 100
         enemy1Label.position = CGPoint(x: -400, y: -100)
         
-        enemy2Label.text = "HP: \(enemy2.maxHealth)/ \(enemy2.health)"
+        enemy2Label.text = "HP: "//\(enemy2.maxHealth)/ \(enemy2.health)"
         enemy2Label.fontColor = SKColor.black
         enemy2Label.fontSize = 20
         enemy2Label.zPosition = 100
         enemy2Label.position = CGPoint(x: -400, y: 50)
         
-        enemy3Label.text = "HP: \(enemy3.maxHealth)/ \(enemy3.health)"
+        enemy3Label.text = "HP: "//\(enemy3.maxHealth)/ \(enemy3.health)"
         enemy3Label.fontColor = SKColor.black
         enemy3Label.fontSize = 20
         enemy3Label.zPosition = 100
@@ -102,15 +105,15 @@ class FightScene: SKScene {
         else {
             enemyFight()
         }
-        /*
-            charMainLabel.text = "HP: \(charMain.maxHealth)/ \(charMain.health)"
-            charMageLabel.text = "HP: \(charMage.maxHealth)/ \(charMage.health)"
-            charHeavyLabel.text = "HP: \(charHeavy.maxHealth)/ \(charHeavy.health)"
+        
+            charMainLabel.text = "HP: \(charMain.health)/ \(charMain.maxHealth)"
+            charMageLabel.text = "HP: \(charMage.health)/ \(charMage.maxHealth)"
+            charHeavyLabel.text = "HP: \(charHeavy.health)/ \(charHeavy.maxHealth)"
          
-            enemy1Label.text = "HP: \(enemy1.maxHealth)/ \(enemy1.health)"
-            enemy2Label.text = "HP: \(enemy2.maxHealth)/ \(enemy2.health)"
-            enemy3Label.text = "HP: \(enemy3.maxHealth)/ \(enemy3.health)"
-         */
+            enemy1Label.text = "HP: \(enemy1.health)/ \(enemy1.maxHealth)"
+            enemy2Label.text = "HP: \(enemy2.health)/ \(enemy2.maxHealth)"
+            enemy3Label.text = "HP: \(enemy3.health)/ \(enemy3.maxHealth)"
+        
     }
     
     func pickEnemy(_ enemy: Int) -> Character?{
