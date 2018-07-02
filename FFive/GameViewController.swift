@@ -37,6 +37,11 @@ class GameViewController: UIViewController {
         self.navigationController?.pushViewController(fightScene, animated: true)
     }
     
+    @IBAction func StatsButton(_ sender: Any) {
+        let statsScene = storyboard?.instantiateViewController(withIdentifier: "StatsSceneViewController") as! StatsSceneViewController
+        
+        self.navigationController?.pushViewController(statsScene, animated: true)
+    }
     @IBAction func NexitScene(_ sender: Any) {
         let nexitScene = storyboard?.instantiateViewController(withIdentifier: "NexitSceneViewController") as! NexitSceneViewController
         
