@@ -10,7 +10,6 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    
     var characterOfMain: SKSpriteNode!
     let characterOfMainMovePointsPerSec: CGFloat = 400.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
@@ -76,7 +75,6 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
         
-        
         characterOfMain.position = CGPoint(x: 400, y: 400)
         addChild(characterOfMain)
         addChild(cameraNode)
@@ -93,8 +91,6 @@ class GameScene: SKScene {
         }
         lastUpdateTime = currentTime
         
-        
-        
         if let lastTouchLocation = lastTouchLocation {
             let diff = lastTouchLocation - characterOfMain.position
             if diff.length() < characterOfMainMovePointsPerSec * CGFloat(deltaTime) {
@@ -109,8 +105,6 @@ class GameScene: SKScene {
         
         cameraNode.position = characterOfMain.position
     }
-    
-    
     
     func moveCharacterOfMainToward(location: CGPoint) {
         let direction = CGPoint(x: location.x - characterOfMain.position.x, y: location.y - characterOfMain.position.y).normalized()
@@ -133,6 +127,21 @@ class GameScene: SKScene {
             }
         }
         startCharacterOfMainAnimation()
+        
+        let stepsTaken = Int.random(1...9)
+
+        print(stepsTaken)
+        
+        if stepsTaken >= 8 && stepsTaken <= 9 {
+            if let navController = self.view!.window!.rootViewController as? UINavigationController {
+            
+                let fightScene = navController.storyboard?.instantiateViewController(withIdentifier: "FightSceneViewController") as! FightSceneViewController
+                
+               // navigationController?.instantiateViewController(fightScene, animated: true)
+                navController.pushViewController(fightScene, animated: true)
+
+            }
+        }
     }
     
     func move(sprite: SKSpriteNode, velocity: CGPoint) {
