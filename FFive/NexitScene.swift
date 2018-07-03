@@ -71,9 +71,9 @@ class NexitScene: SKScene {
             nexitFight()
         }
         
-        charMainLabel.text = "HP: \(charMain.health) / \(charMain.maxHealth)"
-        charMageLabel.text = "HP: \(charMage.health) / \(charMage.maxHealth)"
-        charHeavyLabel.text = "HP: \(charHeavy.health) / \(charHeavy.maxHealth)"
+        charMainLabel.text = "HP: \(Warrior.shared.health) / \(Warrior.shared.maxHealth)"
+        charMageLabel.text = "HP: \(Mage.shared.health) / \(Mage.shared.maxHealth)"
+        charHeavyLabel.text = "HP: \(Heavy.shared.health) / \(Heavy.shared.maxHealth)"
         
         NexitLabel.text = "HP: \(charNexit.health) / \(charNexit.maxHealth)"
     }
@@ -89,26 +89,25 @@ class NexitScene: SKScene {
     }
     func attack() {
         if playerNumber == 1 {
-            charNexit.health = charNexit.health - charMain.attack
+            charNexit.health = charNexit.health - Warrior.shared.attack
         }
         else if playerNumber == 2 {
-            charNexit.health = charNexit.health - charMage.attack
+            charNexit.health = charNexit.health - Mage.shared.attack
         }
         else if playerNumber == 3 {
-            charNexit.health = charNexit.health - charHeavy.attack
+            charNexit.health = charNexit.health - Heavy.shared.attack
         }
     }
     
     func magic() {
         if playerNumber == 1 {
-            charNexit.health = charNexit.health - charMain.magic
+            charNexit.health = charNexit.health - Warrior.shared.magic
         }
         else if playerNumber == 2 {
-            charNexit.health = charNexit.health - charMage.magic
-            
+            charNexit.health = charNexit.health - Mage.shared.magic
         }
         else if playerNumber == 3 {
-            charNexit.health = charNexit.health - charHeavy.magic
+            charNexit.health = charNexit.health - Heavy.shared.magic
         }
     }
     
@@ -149,13 +148,13 @@ class NexitScene: SKScene {
             if !charNexit.hasActions(){
                 charNexit.runAnimation()
                 if attackNum == 1 {
-                    charMain.health = charMain.health - charNexit.attack
+                    Warrior.shared.health = Warrior.shared.health - charNexit.attack
                 }
                 else if attackNum == 2 {
-                    charMage.health = charMage.health - charNexit.attack
+                    Mage.shared.health = Mage.shared.health - charNexit.attack
                 }
                 else if attackNum == 3 {
-                    charHeavy.health = charHeavy.health - charNexit.attack
+                    Heavy.shared.health = Heavy.shared.health - charNexit.attack
                 }
                 run(SKAction.afterDelay(3, runBlock: increment))
                 //playerTurn = true
@@ -168,6 +167,18 @@ class NexitScene: SKScene {
     }
     
     func lose() {
+        if Warrior.shared.level != 1 {
+            Warrior.shared.level -= 1
+        }
+        Warrior.shared.health = Warrior.shared.maxHealth
+        if Mage.shared.level != 1 {
+            Mage.shared.level -= 1
+        }
+        Mage.shared.health = Mage.shared.maxHealth
+        if Heavy.shared.level != 1 {
+            Heavy.shared.level -= 1
+        }
+        Heavy.shared.health = Heavy.shared.maxHealth
         sceneDone = true
         if let navController = self.view!.window!.rootViewController as? UINavigationController{
             navController.popViewController(animated: true)
