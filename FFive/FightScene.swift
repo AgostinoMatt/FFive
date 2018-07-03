@@ -317,10 +317,13 @@ class FightScene: SKScene {
     
     
     func win() {
-        charMain.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
-        charMage.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
-        charHeavy.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
-        print(" char exp \(charMain.exp) ")
+        Warrior.shared.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
+        Mage.shared.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
+        Heavy.shared.exp += (enemy1.exp + enemy2.exp + enemy3.exp)
+        //print(" char exp \(charMain.exp) ")
+        Warrior.shared.levelUp()
+        Mage.shared.levelUp()
+        Heavy.shared.levelUp()
         sceneDone = true
         
         if let navController = self.view!.window!.rootViewController as? UINavigationController {

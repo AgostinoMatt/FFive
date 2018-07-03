@@ -20,12 +20,13 @@ protocol Character {
 
 
 class Warrior : SKSpriteNode, Character {
+    static let shared = Warrior()
     var level: Int = 1
     var attack: Int = 10
     var health: Int = 120
     var maxHealth: Int = 120
     var magic: Int = 10
-    var exp: Int = 0
+    var exp: Int = 150
     
     func levelUp() {
         if exp >= 200{
@@ -35,6 +36,9 @@ class Warrior : SKSpriteNode, Character {
             maxHealth += (level * 5)
             magic += (level * 2)
             exp -= 200
+            print(level)
+            print(attack)
+            
         }
     }
     
@@ -55,6 +59,7 @@ class Warrior : SKSpriteNode, Character {
 }
 
 class Mage : SKSpriteNode, Character {
+    static let shared = Mage()
     var level: Int = 1
     var attack: Int = 5
     var health: Int = 100
@@ -98,6 +103,7 @@ class Mage : SKSpriteNode, Character {
 }
 
 class Heavy: SKSpriteNode, Character {
+    static let shared = Heavy()
     var level: Int = 1
     var attack: Int = 15
     var health: Int = 110
