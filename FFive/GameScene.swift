@@ -10,7 +10,6 @@ import SpriteKit
 
 class GameScene: SKScene {
 
-
     var characterOfMain: SKSpriteNode!
     let characterOfMainMovePointsPerSec: CGFloat = 480.0
     let characterOfMainRotateRadiansPerSec: CGFloat = 4.0 * π // alt-p makes π
@@ -20,7 +19,46 @@ class GameScene: SKScene {
     var deltaTime: TimeInterval = 0
     var lastTouchLocation: CGPoint?
     var background: SKTileMapNode!
-
+    var obstaclesTileMap: SKTileMapNode?
+    
+    //Physics
+    func  setupWorldPhysics() {
+        background.physicsBody?.categoryBitMask = PhysicsCategory.Edge
+        physicsWorld.contactDelegate = self
+    }
+    
+    
+    
+    //Physics for Walls
+    func setupObstaclesPhysics() {
+        guard let obstaclesTileMap = obstaclesTileMap else { return }
+        //1
+        var physicsBodies = [SKPhysicsBody]()
+        //2
+       for row in 0..<obstaclesTileMap.numberOfRows {
+            for column in 0..<obstaclesTileMap.numberOfColumns {
+                guard let tile = tile(in: obstaclesTileMap, at: (column,row))
+                    else { continue }
+                //3
+                let center = obstaclesTileMap.centerOfTile(atColumn: column, row: row)
+                let body = SKPhysicsBody(rectangleof: tile.size, center: center)
+                physicsBodies.append(body)
+            }
+        }
+        //4
+        obstaclesTileMap.physicsBody = SKPhysicsBody(bodies: physicsBodies)
+        obstaclesTileMap.physicsBody?.isDynamic = false
+        obstaclesTileMap.physicsBody?.friction = 0
+    }
+        
+            
+        
+    
+   
+    
+    
+    
+    
     var playableRect: CGRect!
 
     let cameraNode = SKCameraNode()
@@ -36,6 +74,7 @@ class GameScene: SKScene {
     required init?(coder aDecoder: NSCoder){
         
         
+        
         super.init(coder: aDecoder)
        
         background = childNode(withName: "background") as? SKTileMapNode
@@ -46,6 +85,7 @@ class GameScene: SKScene {
         
         characterOfMain = SKSpriteNode(imageNamed: "hero8")
         
+        obstaclesTileMap = childNode(withName: "obstacles") as? SKTileMapNode
     }
     
     //show
@@ -53,6 +93,7 @@ class GameScene: SKScene {
 
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
+        setupObstaclesPhysics()
      
      
         characterOfMain.position = CGPoint(x: 400, y: 400)
@@ -111,5 +152,9 @@ class GameScene: SKScene {
             let touchLocation = touch.location(in: self)
             sceneTouched(touchLocation: touchLocation)
         }
+    
  
+}
+extension GameScene : SKPhysicsContactDelegate{
+    
 }

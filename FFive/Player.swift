@@ -21,5 +21,9 @@ class Player: SKSpriteNode {
                    size: texture.size())
         name = "Player"
         zPosition = 50
+        //Physics
+        physicsBody?.categoryBitMask = PhysicsCategory.Player
+        physicsBody?.contactTestBitMask = PhysicsCategory.All
+        
     }
 }
