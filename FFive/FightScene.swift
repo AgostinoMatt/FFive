@@ -104,9 +104,9 @@ class FightScene: SKScene {
             enemyFight()
         }
         
-        charMainLabel.text = "HP: \(charMain.health) / \(charMain.maxHealth)"
-        charMageLabel.text = "HP: \(charMage.health) / \(charMage.maxHealth)"
-        charHeavyLabel.text = "HP: \(charHeavy.health) / \(charHeavy.maxHealth)"
+        charMainLabel.text = "HP: \(Warrior.shared.health) / \(Warrior.shared.maxHealth)"
+        charMageLabel.text = "HP: \(Mage.shared.health) / \(Mage.shared.maxHealth)"
+        charHeavyLabel.text = "HP: \(Heavy.shared.health) / \(Heavy.shared.maxHealth)"
         
         enemy1Label.text = "HP: \(enemy1.health) / \(enemy1.maxHealth)"
         enemy2Label.text = "HP: \(enemy2.health) / \(enemy2.maxHealth)"
@@ -149,16 +149,16 @@ class FightScene: SKScene {
         }while(selectedEnemy!.health <= 0)
         
         if playerNumber == 1 {
-            selectedEnemy.health -= charMain.attack
+            selectedEnemy.health -= Warrior.shared.attack
         }
             
         else if playerNumber == 2 {
             
-            selectedEnemy.health -= charMage.attack
+            selectedEnemy.health -= Mage.shared.attack
         }
         else if playerNumber == 3 {
             
-            selectedEnemy.health -= charHeavy.attack
+            selectedEnemy.health -= Heavy.shared.attack
         }
         
         if selectedEnemy.health <= 0{
@@ -169,7 +169,7 @@ class FightScene: SKScene {
             if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
                 win()
             }
-            else if charMain.health == 0 && charMage.health == 0 && charHeavy.health == 0 {
+            else if Warrior.shared.health == 0 && Mage.shared.health == 0 && Heavy.shared.health == 0 {
                 lose()
             }
         }
@@ -184,16 +184,16 @@ class FightScene: SKScene {
         }while(selectedEnemy!.health <= 0)
         
         if playerNumber == 1 {
-            selectedEnemy.health -= charMain.magic
+            selectedEnemy.health -= Warrior.shared.magic
             
         }
         else if playerNumber == 2 {
             
-            selectedEnemy.health -= charMage.magic
+            selectedEnemy.health -= Mage.shared.magic
         }
         else if playerNumber == 3 {
             
-            selectedEnemy.health -= charHeavy.magic
+            selectedEnemy.health -= Heavy.shared.magic
         }
         
         if selectedEnemy.health <= 0{
@@ -205,7 +205,7 @@ class FightScene: SKScene {
                 win()
                 print("win")
             }
-            else if charMain.health == 0 && charMage.health == 0 && charHeavy.health == 0 {
+            else if Warrior.shared.health == 0 && Mage.shared.health == 0 && Heavy.shared.health == 0 {
                 lose()
             }
         }
@@ -255,13 +255,13 @@ class FightScene: SKScene {
                 if !enemy1.hasActions(){
                     enemy1.runAnimation()
                     if attackNum == 1 {
-                        charMain.health = charMain.health - enemy1.attack
+                        Warrior.shared.health = Warrior.shared.health - enemy1.attack
                     }
                     else if attackNum == 2 {
-                        charMage.health = charMage.health - enemy1.attack
+                        Mage.shared.health = Mage.shared.health - enemy1.attack
                     }
                     else if attackNum == 3 {
-                        charHeavy.health = charHeavy.health - enemy1.attack
+                        Heavy.shared.health = Heavy.shared.health - enemy1.attack
                     }
                     run(SKAction.afterDelay(3, runBlock: increment))
                 }
@@ -278,13 +278,13 @@ class FightScene: SKScene {
                 if !enemy2.hasActions(){
                     enemy2.runAnimation()
                     if attackNum == 1 {
-                        charMain.health = charMain.health - enemy1.attack
+                        Warrior.shared.health = Warrior.shared.health - enemy1.attack
                     }
                     else if attackNum == 2 {
-                        charMage.health = charMage.health - enemy1.attack
+                        Mage.shared.health = Mage.shared.health - enemy1.attack
                     }
                     else if attackNum == 3 {
-                        charHeavy.health = charHeavy.health - enemy1.attack
+                        Heavy.shared.health = Heavy.shared.health - enemy1.attack
                     }
                     run(SKAction.afterDelay(3, runBlock: increment))
                 }
@@ -300,13 +300,13 @@ class FightScene: SKScene {
                 if !enemy3.hasActions(){
                     enemy3.runAnimation()
                     if attackNum == 1 {
-                        charMain.health = charMain.health - enemy1.attack
+                        Warrior.shared.health = Warrior.shared.health - enemy1.attack
                     }
                     else if attackNum == 2 {
-                        charMage.health = charMage.health - enemy1.attack
+                        Mage.shared.health =  Mage.shared.health - enemy1.attack
                     }
                     else if attackNum == 3 {
-                        charHeavy.health = charHeavy.health - enemy1.attack
+                        Heavy.shared.health = Heavy.shared.health - enemy1.attack
                     }
                     run(SKAction.afterDelay(3, runBlock: increment))
                 }
@@ -324,6 +324,9 @@ class FightScene: SKScene {
         Warrior.shared.levelUp()
         Mage.shared.levelUp()
         Heavy.shared.levelUp()
+        Warrior.shared.health = Warrior.shared.maxHealth
+        Mage.shared.health = Mage.shared.maxHealth
+        Heavy.shared.health = Heavy.shared.maxHealth
         sceneDone = true
         
         if let navController = self.view!.window!.rootViewController as? UINavigationController {
