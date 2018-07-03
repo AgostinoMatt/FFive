@@ -30,6 +30,11 @@ class StatsScene: SKScene{
     let charHeavyEXP = SKLabelNode()
     
     override func didMove(to view: SKView) {
+        
+        charMain = childNode(withName: "Main") as! Warrior
+        charMage = childNode(withName: "Girl") as! Mage
+        charHeavy = childNode(withName: "Second") as! Heavy
+        
         charMainHP.text = "HP: \(charMain.maxHealth)"
         charMainHP.fontColor = SKColor.black
         charMainHP.fontSize = 30
@@ -46,5 +51,17 @@ class StatsScene: SKScene{
         charHeavyHP.fontColor = SKColor.black
         charHeavyHP.fontSize = 20
         charHeavyHP.zPosition = 100
-        charHeavyHP.position = CGPoint(x: 375, y: 200)    }
+        charHeavyHP.position = CGPoint(x: 375, y: 200)
+        
+        self.addChild(charMainHP)
+        self.addChild(charMageHP)
+        self.addChild(charHeavyHP)
+        
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        //charMainHP.text = "HP: \(charMain.maxHealth)"
+        //charMageHP.text = "HP: \(charMage.maxHealth)"
+        //charHeavyHP.text = "HP: \(charHeavy.maxHealth)"
+    }
 }
