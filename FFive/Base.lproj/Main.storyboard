@@ -13,7 +13,7 @@
         <!--Stats Scene View Controller-->
         <scene sceneID="2Hx-4U-o6a">
             <objects>
-                <viewController id="sJl-Cd-fQB" customClass="StatsSceneViewController" customModule="FFive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StatsSceneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sJl-Cd-fQB" customClass="StatsSceneViewController" customModule="FFive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SaS-Bi-QzP" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
         <!--Nexit Scene View Controller-->
         <scene sceneID="16C-dj-PGS">
             <objects>
-                <viewController storyboardIdentifier="NexitSceneViewController" id="QV3-o3-gMv" customClass="NexitSceneViewController" customModule="FFive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NexitSceneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QV3-o3-gMv" customClass="NexitSceneViewController" customModule="FFive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qYK-uO-LPQ" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
