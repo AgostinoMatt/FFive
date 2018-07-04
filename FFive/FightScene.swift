@@ -134,7 +134,7 @@ class FightScene: SKScene {
         }
         
         if playerNumber == 7 {
-            playerNumber = 0
+            playerNumber = 1
         }
         print("incrementing playerNumber \(playerNumber)")
     }
@@ -148,15 +148,15 @@ class FightScene: SKScene {
             selectedEnemy = pickEnemy(attackNum)
         }while(selectedEnemy!.health <= 0)
         
-        if playerNumber == 1 {
+        if playerNumber == 1 && Warrior.shared.health >= 0{
             selectedEnemy.health -= Warrior.shared.attack
         }
             
-        else if playerNumber == 2 {
+        else if playerNumber == 2 && Mage.shared.health >= 0{
             
             selectedEnemy.health -= Mage.shared.attack
         }
-        else if playerNumber == 3 {
+        else if playerNumber == 3 && Heavy.shared.health >= 0{
             
             selectedEnemy.health -= Heavy.shared.attack
         }
@@ -214,31 +214,33 @@ class FightScene: SKScene {
     func playerFight(){
         
         //if the playerNumber is equal to 1, run character Of Main actions & animations. Increase playerNumber by 1
-        if playerNumber == 1{
+        if playerNumber == 1 && Warrior.shared.health >= 0{
             if !charMain.hasActions() {
                 charMain.runAnimation()
                 run(SKAction.afterDelay(2, runBlock: increment))
+                print("main")
             }
         }
-            
+        
             //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
-        else if playerNumber == 2 {
+        else if playerNumber == 2 && Mage.shared.health >= 0{
             if !charMage.hasActions(){
                 charMage.runAnimation()
                 //print(playerNumber)
                 //  playerNumber += 1
                 run(SKAction.afterDelay(2, runBlock: increment))
-            }
-        }
-            //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
-        else if playerNumber == 3 {
-            if !charHeavy.hasActions(){
-                charHeavy.runAnimation()
-                run(SKAction.afterDelay(2, runBlock: increment))
+                print("mage")
             }
         }
         
-        //print("players")
+            //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
+        else if playerNumber == 3 && Heavy.shared.health >= 0{
+            if !charHeavy.hasActions(){
+                charHeavy.runAnimation()
+                run(SKAction.afterDelay(2, runBlock: increment))
+                print("heavy")
+            }
+        }
     }
     
     // enemyFight method to make enemies randomly attack the player's party members
@@ -263,7 +265,7 @@ class FightScene: SKScene {
                     else if attackNum == 3 {
                         Heavy.shared.health = Heavy.shared.health - enemy1.attack
                     }
-                    run(SKAction.afterDelay(3, runBlock: increment))
+                    run(SKAction.afterDelay(2, runBlock: increment))
                 }
             }
         }
@@ -286,7 +288,7 @@ class FightScene: SKScene {
                     else if attackNum == 3 {
                         Heavy.shared.health = Heavy.shared.health - enemy1.attack
                     }
-                    run(SKAction.afterDelay(3, runBlock: increment))
+                    run(SKAction.afterDelay(2, runBlock: increment))
                 }
             }
         }
@@ -308,7 +310,7 @@ class FightScene: SKScene {
                     else if attackNum == 3 {
                         Heavy.shared.health = Heavy.shared.health - enemy1.attack
                     }
-                    run(SKAction.afterDelay(3, runBlock: increment))
+                    run(SKAction.afterDelay(2, runBlock: increment))
                 }
             }
         }
