@@ -52,6 +52,9 @@ class FightSceneViewController: UIViewController{
     
     @IBAction func buttonRun(_ sender: UIButton) {
         //print("Run Away!")
+        Warrior.shared.health = Warrior.shared.maxHealth
+        Mage.shared.health = Mage.shared.maxHealth
+        Heavy.shared.health = Heavy.shared.maxHealth
         self.navigationController?.popViewController(animated: true)
     }
     

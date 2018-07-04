@@ -97,7 +97,7 @@ class NexitScene: SKScene {
                 playerNumber += 1
             }
             else{
-            charNexit.health = charNexit.health - Warrior.shared.attack
+                charNexit.health = charNexit.health - Warrior.shared.attack
             }
         }
         if playerNumber == 2 {
@@ -105,7 +105,7 @@ class NexitScene: SKScene {
                 playerNumber += 1
             }
             else{
-            charNexit.health = charNexit.health - Mage.shared.attack
+                charNexit.health = charNexit.health - Mage.shared.attack
             }
         }
         if playerNumber == 3 {
@@ -113,7 +113,7 @@ class NexitScene: SKScene {
                 playerNumber += 1
             }
             else{
-            charNexit.health = charNexit.health - Heavy.shared.attack
+                charNexit.health = charNexit.health - Heavy.shared.attack
             }
         }
         if charNexit.health <= 0{
@@ -128,7 +128,7 @@ class NexitScene: SKScene {
                 playerNumber += 1
             }
             else{
-            charNexit.health = charNexit.health - Warrior.shared.magic
+                charNexit.health = charNexit.health - Warrior.shared.magic
             }
         }
         if playerNumber == 2 {
@@ -136,7 +136,7 @@ class NexitScene: SKScene {
                 playerNumber += 1
             }
             else{
-            charNexit.health = charNexit.health - Mage.shared.magic
+                charNexit.health = charNexit.health - Mage.shared.magic
             }
         }
         if playerNumber == 3 {
@@ -144,7 +144,7 @@ class NexitScene: SKScene {
                 playerNumber += 1
             }
             else{
-            charNexit.health = charNexit.health - Heavy.shared.magic
+                charNexit.health = charNexit.health - Heavy.shared.magic
             }
         }
         if charNexit.health <= 0{
@@ -163,8 +163,8 @@ class NexitScene: SKScene {
                 run(SKAction.afterDelay(2, runBlock: increment))
             }
         }
-            
-            //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
+        
+        //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
         if playerNumber == 2 {
             if !charMage.hasActions(){
                 charMage.runAnimation()
@@ -172,7 +172,7 @@ class NexitScene: SKScene {
                 run(SKAction.afterDelay(2, runBlock: increment))
             }
         }
-            //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
+        //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
         if playerNumber == 3 {
             if !charHeavy.hasActions(){
                 charHeavy.runAnimation()

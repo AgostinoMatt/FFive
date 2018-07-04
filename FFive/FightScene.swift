@@ -134,7 +134,7 @@ class FightScene: SKScene {
         }
         
         if playerNumber == 7 {
-            playerNumber = 1
+            playerNumber = 0
         }
         print("incrementing playerNumber \(playerNumber)")
     }
@@ -148,17 +148,33 @@ class FightScene: SKScene {
             selectedEnemy = pickEnemy(attackNum)
         }while(selectedEnemy!.health <= 0)
         
-        if playerNumber == 1 && Warrior.shared.health >= 0{
-            selectedEnemy.health -= Warrior.shared.attack
+        if playerNumber == 1 {
+            print("inside")
+            if Warrior.shared.health <= 0 {
+                increment()
+                print("how")
+            }
+            else {
+                selectedEnemy.health -= Warrior.shared.attack
+                print("attack")
+            }
         }
-            
-        else if playerNumber == 2 && Mage.shared.health >= 0{
-            
-            selectedEnemy.health -= Mage.shared.attack
+        
+        if playerNumber == 2{
+            if Mage.shared.health <= 0 {
+                increment()
+            }
+            else {
+                selectedEnemy.health -= Mage.shared.attack
+            }
         }
-        else if playerNumber == 3 && Heavy.shared.health >= 0{
-            
-            selectedEnemy.health -= Heavy.shared.attack
+        if playerNumber == 3{
+            if Heavy.shared.health <= 0 {
+                increment()
+            }
+            else{
+                selectedEnemy.health -= Heavy.shared.attack
+            }
         }
         
         if selectedEnemy.health <= 0{
@@ -166,12 +182,10 @@ class FightScene: SKScene {
             if let enemy = selectedEnemy as? SKSpriteNode{
                 enemy.run(SKAction.hide())
             }
-            if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
-                win()
-            }
-            else if Warrior.shared.health == 0 && Mage.shared.health == 0 && Heavy.shared.health == 0 {
-                lose()
-            }
+            
+        }
+        if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
+            win()
         }
     }
     
@@ -184,16 +198,28 @@ class FightScene: SKScene {
         }while(selectedEnemy!.health <= 0)
         
         if playerNumber == 1 {
-            selectedEnemy.health -= Warrior.shared.magic
-            
+            if Warrior.shared.health <= 0 {
+                increment()
+            }
+            else {
+                selectedEnemy.health -= Warrior.shared.magic
+            }
         }
-        else if playerNumber == 2 {
-            
-            selectedEnemy.health -= Mage.shared.magic
+        if playerNumber == 2 {
+            if Mage.shared.health <= 0 {
+                increment()
+            }
+            else {
+                selectedEnemy.health -= Mage.shared.magic
+            }
         }
-        else if playerNumber == 3 {
-            
-            selectedEnemy.health -= Heavy.shared.magic
+        if playerNumber == 3 {
+            if Heavy.shared.health <= 0 {
+                increment()
+            }
+            else {
+                selectedEnemy.health -= Heavy.shared.magic
+            }
         }
         
         if selectedEnemy.health <= 0{
@@ -201,29 +227,26 @@ class FightScene: SKScene {
             if let enemy = selectedEnemy as? SKSpriteNode{
                 enemy.run(SKAction.hide())
             }
-            if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
-                win()
-                print("win")
-            }
-            else if Warrior.shared.health == 0 && Mage.shared.health == 0 && Heavy.shared.health == 0 {
-                lose()
-            }
+        }
+        if enemy1.health == 0 && enemy2.health == 0 && enemy3.health == 0 {
+            win()
+            print("win")
         }
     }
     
     func playerFight(){
         
         //if the playerNumber is equal to 1, run character Of Main actions & animations. Increase playerNumber by 1
-        if playerNumber == 1 && Warrior.shared.health >= 0{
+        if playerNumber == 1{
             if !charMain.hasActions() {
                 charMain.runAnimation()
                 run(SKAction.afterDelay(2, runBlock: increment))
                 print("main")
             }
         }
-        
+            
             //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
-        else if playerNumber == 2 && Mage.shared.health >= 0{
+        else if playerNumber == 2 {
             if !charMage.hasActions(){
                 charMage.runAnimation()
                 //print(playerNumber)
@@ -232,9 +255,9 @@ class FightScene: SKScene {
                 print("mage")
             }
         }
-        
+            
             //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
-        else if playerNumber == 3 && Heavy.shared.health >= 0{
+        else if playerNumber == 3 {
             if !charHeavy.hasActions(){
                 charHeavy.runAnimation()
                 run(SKAction.afterDelay(2, runBlock: increment))
@@ -245,8 +268,16 @@ class FightScene: SKScene {
     
     // enemyFight method to make enemies randomly attack the player's party members
     func enemyFight() {
-        let attackNum = Int.random(0...4) //attackNum set to a random integer
-        
+        var attackNum = Int.random(1...4) //attackNum set to a random integer
+        if attackNum == 1 && Warrior.shared.health <= 0 {
+            attackNum += 1
+        }
+        if attackNum == 2 && Mage.shared.health <= 0 {
+            attackNum += 1
+        }
+        if attackNum == 3 && Heavy.shared.health <= 0 {
+            attackNum = 1
+        }
         //if statement to determine which enemy is attacking and if they have actions run those actions & animations
         if playerNumber == 4 {
             
@@ -269,8 +300,8 @@ class FightScene: SKScene {
                 }
             }
         }
-            //enemy2 actions & animations
-        else if playerNumber == 5 {
+        //enemy2 actions & animations
+        if playerNumber == 5 {
             
             if enemy2.health <= 0 {
                 increment()
@@ -292,8 +323,8 @@ class FightScene: SKScene {
                 }
             }
         }
-            //enemy3 actions & animations
-        else if playerNumber == 6 {
+        //enemy3 actions & animations
+        if playerNumber == 6 {
             
             if enemy3.health <= 0 {
                 increment()
@@ -313,6 +344,18 @@ class FightScene: SKScene {
                     run(SKAction.afterDelay(2, runBlock: increment))
                 }
             }
+        }
+        if Warrior.shared.health < 0{
+            Warrior.shared.health = 0
+        }
+        if Mage.shared.health < 0 {
+            Mage.shared.health = 0
+        }
+        if Heavy.shared.health < 0 {
+            Heavy.shared.health = 0
+        }
+        if Warrior.shared.health == 0 && Mage.shared.health == 0 && Heavy.shared.health == 0 {
+            lose()
         }
     }
     
@@ -338,6 +381,9 @@ class FightScene: SKScene {
     }
     
     func lose() {
+        Warrior.shared.health = Warrior.shared.maxHealth
+        Mage.shared.health = Mage.shared.maxHealth
+        Heavy.shared.health = Heavy.shared.maxHealth
         sceneDone = true
         if let navController = self.view!.window!.rootViewController as? UINavigationController{
             navController.popViewController(animated: true)

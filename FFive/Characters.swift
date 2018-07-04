@@ -62,7 +62,7 @@ class Mage : SKSpriteNode, Character {
     static let shared = Mage()
     var level: Int = 1
     var attack: Int = 5
-    var health: Int = 100
+    var health: Int = 1
     var maxHealth: Int = 100
     var magic: Int = 15
     var exp: Int = 0
@@ -106,7 +106,7 @@ class Heavy: SKSpriteNode, Character {
     static let shared = Heavy()
     var level: Int = 1
     var attack: Int = 15
-    var health: Int = 110
+    var health: Int = 1
     var maxHealth: Int = 110
     var magic: Int = 5
     var exp: Int = 0
@@ -141,7 +141,7 @@ class Heavy: SKSpriteNode, Character {
 class Zombie: SKSpriteNode, Character {
     var level: Int = 1
     var attack: Int = 5
-    var health: Int = 1
+    var health: Int = 80
     var maxHealth: Int = 50
     var magic: Int = 0
     var exp: Int = 30
@@ -166,7 +166,7 @@ class Zombie: SKSpriteNode, Character {
 class Headless: SKSpriteNode, Character {
     var level: Int = 1
     var attack: Int = 10
-    var health: Int = 1
+    var health: Int = 80
     var maxHealth: Int = 40
     var magic: Int = 0
     var exp: Int = 30
