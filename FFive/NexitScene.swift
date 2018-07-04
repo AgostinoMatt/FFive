@@ -93,25 +93,63 @@ class NexitScene: SKScene {
     }
     func attack() {
         if playerNumber == 1 {
+            if Warrior.shared.health <= 0{
+                playerNumber += 1
+            }
+            else{
             charNexit.health = charNexit.health - Warrior.shared.attack
+            }
         }
-        else if playerNumber == 2 {
+        if playerNumber == 2 {
+            if Mage.shared.health <= 0{
+                playerNumber += 1
+            }
+            else{
             charNexit.health = charNexit.health - Mage.shared.attack
+            }
         }
-        else if playerNumber == 3 {
+        if playerNumber == 3 {
+            if Heavy.shared.health <= 0{
+                playerNumber += 1
+            }
+            else{
             charNexit.health = charNexit.health - Heavy.shared.attack
+            }
+        }
+        if charNexit.health <= 0{
+            charNexit.health = 0
+            win()
         }
     }
     
     func magic() {
         if playerNumber == 1 {
+            if Warrior.shared.health <= 0{
+                playerNumber += 1
+            }
+            else{
             charNexit.health = charNexit.health - Warrior.shared.magic
+            }
         }
-        else if playerNumber == 2 {
+        if playerNumber == 2 {
+            if Mage.shared.health <= 0{
+                playerNumber += 1
+            }
+            else{
             charNexit.health = charNexit.health - Mage.shared.magic
+            }
         }
-        else if playerNumber == 3 {
+        if playerNumber == 3 {
+            if Heavy.shared.health <= 0{
+                playerNumber += 1
+            }
+            else{
             charNexit.health = charNexit.health - Heavy.shared.magic
+            }
+        }
+        if charNexit.health <= 0{
+            charNexit.health = 0
+            win()
         }
     }
     
@@ -122,46 +160,74 @@ class NexitScene: SKScene {
             if !charMain.hasActions() {
                 charMain.runAnimation()
                 print(playerNumber)
-                run(SKAction.afterDelay(3, runBlock: increment))
+                run(SKAction.afterDelay(2, runBlock: increment))
             }
         }
             
             //if the playerNumber is equal to 2, run the Girl With Hair actions & animations. Increase playerNumber by 1
-        else if playerNumber == 2 {
+        if playerNumber == 2 {
             if !charMage.hasActions(){
                 charMage.runAnimation()
                 print(playerNumber)
-                run(SKAction.afterDelay(3, runBlock: increment))
+                run(SKAction.afterDelay(2, runBlock: increment))
             }
         }
             //if the playerNumber is equal to 3, run the Party Member # 2 actions & animations. Increase playerNumber by 1
-        else if playerNumber == 3 {
+        if playerNumber == 3 {
             if !charHeavy.hasActions(){
                 charHeavy.runAnimation()
                 print(playerNumber)
-                run(SKAction.afterDelay(3, runBlock: increment))
+                run(SKAction.afterDelay(2, runBlock: increment))
             }
         }
         print("players")
     }
     
     func nexitFight() {
-        let attackNum = Int.random(1...3) //attackNum set to a random integer
+        var attackNum = Int.random(1...3) //attackNum set to a random integer
+        
         
         if playerNumber == 4 {
             if !charNexit.hasActions(){
                 charNexit.runAnimation()
                 if attackNum == 1 {
-                    Warrior.shared.health = Warrior.shared.health - charNexit.attack
+                    if Warrior.shared.health <= 0 {
+                        attackNum = 2
+                    }
+                    else{
+                        Warrior.shared.health = Warrior.shared.health - charNexit.attack
+                        if Warrior.shared.health < 0 {
+                            Warrior.shared.health = 0
+                        }
+                    }
                 }
-                else if attackNum == 2 {
-                    Mage.shared.health = Mage.shared.health - charNexit.attack
+                if attackNum == 2 {
+                    if Mage.shared.health <= 0 {
+                        attackNum = 3
+                    }
+                    else{
+                        Mage.shared.health = Mage.shared.health - charNexit.attack
+                        if Mage.shared.health < 0 {
+                            Mage.shared.health = 0
+                        }
+                    }
                 }
-                else if attackNum == 3 {
-                    Heavy.shared.health = Heavy.shared.health - charNexit.attack
+                if attackNum == 3 {
+                    if Heavy.shared.health <= 0{
+                        attackNum = 1
+                    }
+                    else{
+                        Heavy.shared.health = Heavy.shared.health - charNexit.attack
+                        if Heavy.shared.health < 0 {
+                            Heavy.shared.health = 0
+                        }
+                    }
                 }
                 run(SKAction.afterDelay(3, runBlock: increment))
                 //playerTurn = true
+            }
+            if Warrior.shared.health <= 0 && Mage.shared.health <= 0 && Heavy.shared.health <= 0 {
+                lose()
             }
         }
     }
