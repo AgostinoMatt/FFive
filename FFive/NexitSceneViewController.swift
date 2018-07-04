@@ -32,12 +32,18 @@ class NexitSceneViewController: UIViewController{
     }
     
     @IBAction func attackButton(_ sender: Any) {
-        nexitScene.attack()
-        nexitScene.playerFight()
+        if nexitScene.canAttack{
+            nexitScene.attack()
+            nexitScene.playerFight()
+            nexitScene.canAttack = false
+        }
     }
     @IBAction func magicButton(_ sender: Any) {
-        nexitScene.magic()
-        nexitScene.playerFight()
+        if nexitScene.canAttack{
+            nexitScene.magic()
+            nexitScene.playerFight()
+            nexitScene.canAttack = false
+        }
     }
     override var prefersStatusBarHidden: Bool {
         return true

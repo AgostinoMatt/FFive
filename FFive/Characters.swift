@@ -172,7 +172,6 @@ class Headless: SKSpriteNode, Character {
     var exp: Int = 30
     
     var textures: [SKTexture] = []
-    //var textures2: [SKTexture] = []
     
     required init?(coder aDecoder: NSCoder) {
         
@@ -183,24 +182,14 @@ class Headless: SKSpriteNode, Character {
         }
         textures.append(textures[1])
         
-        /*for j in 5...7 {
-         textures2.append(SKTexture(imageNamed: "head\(j)"))
-         }
-         textures2.append(textures[1])*/
-        
     }
     
     func runAnimation() {
         let moveRight = SKAction.moveBy(x: 60, y: 0, duration: 1)
         let moveLeft = moveRight.reversed()
-        //let wait = SKAction.wait(forDuration: 0.3)
-        //let animateForward = SKAction.group([SKAction.animate(with: textures, timePerFrame: 0.5), moveRight])
-        //let animateBack = animateForward.reversed()
-        //let animateBack = SKAction.group([SKAction.animate(with: textures2, timePerFrame: 0.5), moveLeft])
         let done = SKAction.run() {
             self.removeAllActions()
         }
-        //run(SKAction.sequence(animateForward, animateBack ,done))
         run(SKAction.sequence([SKAction.group([SKAction.animate(with: textures, timePerFrame: 0.5),moveRight]),moveLeft,done]))
         isPaused = false
     }
@@ -217,6 +206,18 @@ class Nexit: SKSpriteNode, Character {
     
     func runAnimation() {
         let moveRight = SKAction.moveBy(x: 100, y: 0, duration: 1)
+        let moveLeft = moveRight.reversed()
+        let jumpUp = SKAction.moveBy(x: 0, y: 100, duration: 0.5)
+        let jumpDown = jumpUp.reversed()
+        let rotateDown = SKAction.rotate(byAngle: CGFloat(-90).degreesToRadians(), duration: 0.5)
+        let rotateBack = rotateDown.reversed()
+        let wait = SKAction.wait(forDuration: 0.5)
+        
+        run(SKAction.sequence([SKAction.group([moveRight,jumpUp]), jumpDown, moveLeft]))
+        if let item = childNode(withName: "item") as? SKSpriteNode {
+            item.run(SKAction.sequence([wait, rotateDown, wait, rotateBack]))
+        }
+        isPaused = false
     }
     
     

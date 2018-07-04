@@ -18,9 +18,10 @@ class NexitScene: SKScene {
     var charHeavy: Heavy!
     var charNexit: Nexit!
     var enemyAlive = true
-    var  playerNumber = 1
+    var playerNumber = 1
     var playerTurn: Bool = true
     var sceneDone: Bool = false
+    var canAttack: Bool = true
     
     let charMainLabel = SKLabelNode()
     let charMageLabel = SKLabelNode()
@@ -79,13 +80,16 @@ class NexitScene: SKScene {
     }
     
     func increment() {
-        print(playerNumber)
+        //print(playerNumber)
         playerNumber += 1
+        if playerNumber <= 3 {
+            canAttack = true
+        }
         if playerNumber == 5 {
             playerNumber = 0
         }
-        print(playerNumber)
-        print("incrementing playerNumber")
+        //print(playerNumber)
+        //print("incrementing playerNumber")
     }
     func attack() {
         if playerNumber == 1 {
