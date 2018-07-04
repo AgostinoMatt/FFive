@@ -131,7 +131,7 @@ class Heavy: SKSpriteNode, Character {
         }
         run(SKAction.sequence([moveLeft, wait, moveRight, done]))
         if let item = childNode(withName: "item") as? SKSpriteNode {
-            item.run(SKAction.rotate(byAngle: 720, duration: 1))
+            item.run(SKAction.rotate(byAngle: CGFloat(720).degreesToRadians(), duration: 1))
         }
         isPaused = false
     }
@@ -141,7 +141,7 @@ class Heavy: SKSpriteNode, Character {
 class Zombie: SKSpriteNode, Character {
     var level: Int = 1
     var attack: Int = 5
-    var health: Int = 80
+    var health: Int = 50
     var maxHealth: Int = 50
     var magic: Int = 0
     var exp: Int = 30
@@ -149,7 +149,7 @@ class Zombie: SKSpriteNode, Character {
     func runAnimation() {
         let moveRight = SKAction.moveBy(x: 30, y: 20, duration: 0.5)
         let moveLeft = moveRight.reversed()
-        let spin = SKAction.rotate(byAngle: 720, duration: 1)
+        let spin = SKAction.rotate(byAngle: CGFloat(720).degreesToRadians(), duration: 1)
         let spinBack = spin.reversed()
         let done = SKAction.run() {
             self.removeAllActions()
@@ -166,7 +166,7 @@ class Zombie: SKSpriteNode, Character {
 class Headless: SKSpriteNode, Character {
     var level: Int = 1
     var attack: Int = 10
-    var health: Int = 80
+    var health: Int = 40
     var maxHealth: Int = 40
     var magic: Int = 0
     var exp: Int = 30

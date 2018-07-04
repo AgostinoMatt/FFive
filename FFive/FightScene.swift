@@ -132,6 +132,15 @@ class FightScene: SKScene {
         if playerNumber <= 3 {
             canAttack = true
         }
+        if playerNumber == 1 && Warrior.shared.health <= 0 {
+            increment()
+        }
+        if playerNumber == 2 && Mage.shared.health <= 0 {
+            increment()
+        }
+        if playerNumber == 3 && Heavy.shared.health <= 0 {
+            increment()
+        }
         
         if playerNumber == 7 {
             playerNumber = 0
@@ -149,32 +158,30 @@ class FightScene: SKScene {
         }while(selectedEnemy!.health <= 0)
         
         if playerNumber == 1 {
-            print("inside")
-            if Warrior.shared.health <= 0 {
+            /*if Warrior.shared.health <= 0 {
                 increment()
-                print("how")
             }
-            else {
+            else {*/
                 selectedEnemy.health -= Warrior.shared.attack
                 print("attack")
-            }
+            //}
         }
         
         if playerNumber == 2{
-            if Mage.shared.health <= 0 {
+            /*if Mage.shared.health <= 0 {
                 increment()
             }
-            else {
+            else {*/
                 selectedEnemy.health -= Mage.shared.attack
-            }
+            //}
         }
         if playerNumber == 3{
-            if Heavy.shared.health <= 0 {
+            /*if Heavy.shared.health <= 0 {
                 increment()
             }
-            else{
+            else{*/
                 selectedEnemy.health -= Heavy.shared.attack
-            }
+            //}
         }
         
         if selectedEnemy.health <= 0{
@@ -198,28 +205,28 @@ class FightScene: SKScene {
         }while(selectedEnemy!.health <= 0)
         
         if playerNumber == 1 {
-            if Warrior.shared.health <= 0 {
+            /*if Warrior.shared.health <= 0 {
                 increment()
             }
-            else {
+            else {*/
                 selectedEnemy.health -= Warrior.shared.magic
-            }
+            //}
         }
         if playerNumber == 2 {
-            if Mage.shared.health <= 0 {
+            /*if Mage.shared.health <= 0 {
                 increment()
             }
-            else {
+            else {*/
                 selectedEnemy.health -= Mage.shared.magic
-            }
+            //}
         }
         if playerNumber == 3 {
-            if Heavy.shared.health <= 0 {
+            /*if Heavy.shared.health <= 0 {
                 increment()
             }
-            else {
+            else {*/
                 selectedEnemy.health -= Heavy.shared.magic
-            }
+            //}
         }
         
         if selectedEnemy.health <= 0{
@@ -240,7 +247,7 @@ class FightScene: SKScene {
         if playerNumber == 1{
             if !charMain.hasActions() {
                 charMain.runAnimation()
-                run(SKAction.afterDelay(2, runBlock: increment))
+                run(SKAction.afterDelay(3, runBlock: increment))
                 print("main")
             }
         }
@@ -249,9 +256,7 @@ class FightScene: SKScene {
         else if playerNumber == 2 {
             if !charMage.hasActions(){
                 charMage.runAnimation()
-                //print(playerNumber)
-                //  playerNumber += 1
-                run(SKAction.afterDelay(2, runBlock: increment))
+                run(SKAction.afterDelay(3, runBlock: increment))
                 print("mage")
             }
         }
@@ -260,7 +265,7 @@ class FightScene: SKScene {
         else if playerNumber == 3 {
             if !charHeavy.hasActions(){
                 charHeavy.runAnimation()
-                run(SKAction.afterDelay(2, runBlock: increment))
+                run(SKAction.afterDelay(3, runBlock: increment))
                 print("heavy")
             }
         }
@@ -296,7 +301,7 @@ class FightScene: SKScene {
                     else if attackNum == 3 {
                         Heavy.shared.health = Heavy.shared.health - enemy1.attack
                     }
-                    run(SKAction.afterDelay(2, runBlock: increment))
+                    run(SKAction.afterDelay(3, runBlock: increment))
                 }
             }
         }
@@ -319,7 +324,7 @@ class FightScene: SKScene {
                     else if attackNum == 3 {
                         Heavy.shared.health = Heavy.shared.health - enemy1.attack
                     }
-                    run(SKAction.afterDelay(2, runBlock: increment))
+                    run(SKAction.afterDelay(3, runBlock: increment))
                 }
             }
         }
@@ -341,7 +346,7 @@ class FightScene: SKScene {
                     else if attackNum == 3 {
                         Heavy.shared.health = Heavy.shared.health - enemy1.attack
                     }
-                    run(SKAction.afterDelay(2, runBlock: increment))
+                    run(SKAction.afterDelay(3, runBlock: increment))
                 }
             }
         }
@@ -355,7 +360,7 @@ class FightScene: SKScene {
             Heavy.shared.health = 0
         }
         if Warrior.shared.health == 0 && Mage.shared.health == 0 && Heavy.shared.health == 0 {
-            lose()
+            run(SKAction.afterDelay(4, runBlock: lose))
         }
     }
     

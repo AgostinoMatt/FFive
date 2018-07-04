@@ -34,8 +34,8 @@ class FightSceneViewController: UIViewController{
     
     @IBAction func buttonAttack(_ sender: UIButton) {
         if fightScene.canAttack == true {
-            fightScene.playerFight()
             fightScene.attack()
+            fightScene.playerFight()
             //print("Attack!")
             fightScene.canAttack = false
         }
@@ -43,8 +43,8 @@ class FightSceneViewController: UIViewController{
     
     @IBAction func buttonMagic(_ sender: UIButton) {
         if fightScene.canAttack == true {
-            fightScene.playerFight()
             fightScene.magic()
+            fightScene.playerFight()
             //print("Magic")
             fightScene.canAttack = false
         }
