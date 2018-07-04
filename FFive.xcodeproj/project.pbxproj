@@ -7,15 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		A317225120E471FA005E4728 /* MortalKombat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A317225020E471FA005E4728 /* MortalKombat.mp3 */; };
 		A33652EA20E5BB6000E6A862 /* GLIMSTIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = A33652E920E5BB5F00E6A862 /* GLIMSTIC.TTF */; };
 		A3462B0120E1BBAE00929414 /* OverWorld.sks in Resources */ = {isa = PBXBuildFile; fileRef = A3462B0020E1BBAE00929414 /* OverWorld.sks */; };
-=======
-		8D888FFC20EBAC83005EAFBA /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D888FFB20EBAC83005EAFBA /* Types.swift */; };
-		A3DF105C20D4430300852581 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DF105B20D4430300852581 /* Player.swift */; };
-		F71D91B220D3598E00A298B4 /* GirlWithHairFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B120D3598E00A298B4 /* GirlWithHairFight.sks */; };
->>>>>>> newMap
 		F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B320D35BC600A298B4 /* ZombieFight.sks */; };
 		F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B520D35CB200A298B4 /* HeadlessFight.sks */; };
 		F733994220D0A41E003074CE /* Player2Fight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733994120D0A41E003074CE /* Player2Fight.sks */; };
@@ -55,15 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
 		A317225020E471FA005E4728 /* MortalKombat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MortalKombat.mp3; sourceTree = "<group>"; };
 		A33652E920E5BB5F00E6A862 /* GLIMSTIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GLIMSTIC.TTF; sourceTree = "<group>"; };
 		A3462B0020E1BBAE00929414 /* OverWorld.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OverWorld.sks; sourceTree = "<group>"; };
-=======
-		8D888FFB20EBAC83005EAFBA /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		A3DF105B20D4430300852581 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		F71D91B120D3598E00A298B4 /* GirlWithHairFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GirlWithHairFight.sks; sourceTree = "<group>"; };
->>>>>>> newMap
 		F71D91B320D35BC600A298B4 /* ZombieFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ZombieFight.sks; sourceTree = "<group>"; };
 		F71D91B520D35CB200A298B4 /* HeadlessFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeadlessFight.sks; sourceTree = "<group>"; };
 		F733994120D0A41E003074CE /* Player2Fight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Player2Fight.sks; sourceTree = "<group>"; };
@@ -198,12 +186,6 @@
 				F772F64720C8BB2600039367 /* LaunchScreen.storyboard */,
 				F73D877720CF4BF600C5755A /* backgroundtile.sks */,
 				F772F64A20C8BB2600039367 /* Info.plist */,
-<<<<<<< HEAD
-=======
-				F752B2AC20D1B15F00CA7566 /* FightScene.swift */,
-				A3DF105B20D4430300852581 /* Player.swift */,
-				8D888FFB20EBAC83005EAFBA /* Types.swift */,
->>>>>>> newMap
 			);
 			path = FFive;
 			sourceTree = "<group>";
@@ -301,7 +283,6 @@
 				F76FDC9C20E0695E00392F27 /* FightScene.swift in Sources */,
 				F74E533720DAD82E006AD624 /* SKAction+Extensions.swift in Sources */,
 				F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
 				F7BCB34320EAAE7B000F0315 /* StatsScene.swift in Sources */,
 				F74E533420DAD82E006AD624 /* CGPoint+Extensions.swift in Sources */,
 				F74E533820DAD82E006AD624 /* SKAction+SpecialEffects.swift in Sources */,
@@ -316,12 +297,6 @@
 				F74E533E20DAD82E006AD624 /* Vector3.swift in Sources */,
 				F752B2AD20D1B15F00CA7566 /* FightSceneViewController.swift in Sources */,
 				F7BCB34520EAAEF0000F0315 /* StatsSceneViewController.swift in Sources */,
-=======
-				8D888FFC20EBAC83005EAFBA /* Types.swift in Sources */,
-				F73D877620CF4A1A00C5755A /* MyUtils.swift in Sources */,
-				A3DF105C20D4430300852581 /* Player.swift in Sources */,
-				F752B2AD20D1B15F00CA7566 /* FightScene.swift in Sources */,
->>>>>>> newMap
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
