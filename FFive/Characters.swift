@@ -15,6 +15,7 @@ protocol Character {
     var maxHealth: Int { get set }
     var magic: Int { get set }
     var exp: Int { get set }
+    func levelUp()
     func runAnimation()
 }
 
@@ -146,6 +147,15 @@ class Zombie: SKSpriteNode, Character {
     var magic: Int = 0
     var exp: Int = 30
     
+    func levelUp() {
+        if Warrior.shared.level != 1 {
+            level = Warrior.shared.level
+            attack = attack + (level * 3)
+            health = health + (level * 3)
+            maxHealth = maxHealth + (level * 3)
+        }
+    }
+    
     func runAnimation() {
         let moveRight = SKAction.moveBy(x: 30, y: 20, duration: 0.5)
         let moveLeft = moveRight.reversed()
@@ -172,6 +182,15 @@ class Headless: SKSpriteNode, Character {
     var exp: Int = 30
     
     var textures: [SKTexture] = []
+    
+    func levelUp() {
+        if Warrior.shared.level != 1 {
+            level = Warrior.shared.level
+            attack = attack + (level * 3)
+            health = health + (level * 3)
+            maxHealth = maxHealth + (level * 3)
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         
@@ -203,6 +222,10 @@ class Nexit: SKSpriteNode, Character {
     var maxHealth: Int = 400
     var magic: Int = 0
     var exp: Int = 1000
+    
+    func levelUp() {
+        //nothing
+    }
     
     func runAnimation() {
         let moveRight = SKAction.moveBy(x: 100, y: 0, duration: 1)
