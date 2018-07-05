@@ -80,6 +80,8 @@ class GameScene: SKScene {
         addChild(cameraNode)
         camera = cameraNode
         cameraNode.position = CGPoint(x: size.width / 1.5, y: size.height / 1.5)
+        
+        addChild(worldMap())
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -178,9 +180,9 @@ class GameScene: SKScene {
     }
     
     func boundsCheckCharacter() {
-        let cameraSpace = cameraRect
-        let bottomLeft = CGPoint(x: cameraSpace.minX, y: cameraSpace.minY)
-        let topRight = CGPoint(x: cameraSpace.maxX, y: cameraSpace.maxY)
+       // let cameraSpace = cameraRect
+        let bottomLeft = CGPoint(x: worldMap().position.x, y: worldMap().position.y)
+        let topRight = CGPoint(x: background.mapSize.width, y: background.mapSize.height)
         
         if characterOfMain.position.x <= bottomLeft.x {
             characterOfMain.position.x = bottomLeft.x
@@ -198,6 +200,13 @@ class GameScene: SKScene {
             characterOfMain.position.y = topRight.y
             velocity.y = -velocity.y
         }
+    }
+    
+    func worldMap() -> SKTileMapNode {
+        let worldMap = SKTileMapNode()
+        worldMap.anchorPoint = CGPoint.zero
+        
+        return worldMap
     }
     
     func checkCollisions() {
