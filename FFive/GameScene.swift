@@ -178,9 +178,9 @@ class GameScene: SKScene {
     }
     
     func boundsCheckCharacter() {
-        let cameraSpace = cameraRect
-        let bottomLeft = CGPoint(x: cameraSpace.minX, y: cameraSpace.minY)
-        let topRight = CGPoint(x: cameraSpace.maxX, y: cameraSpace.maxY)
+        //let cameraSpace = cameraRect
+        let bottomLeft = CGPoint(x: background.position.x, y: background.position.y)
+        let topRight = CGPoint(x: background.mapSize.width, y: background.mapSize.height)
         
         if characterOfMain.position.x <= bottomLeft.x {
             characterOfMain.position.x = bottomLeft.x
