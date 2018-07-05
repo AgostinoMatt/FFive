@@ -177,4 +177,32 @@ class GameScene: SKScene {
         characterOfMain.removeAction(forKey: "animation")
     }
     
+    func boundsCheckCharacter() {
+        let cameraSpace = cameraRect
+        let bottomLeft = CGPoint(x: cameraSpace.minX, y: cameraSpace.minY)
+        let topRight = CGPoint(x: cameraSpace.maxX, y: cameraSpace.maxY)
+        
+        if characterOfMain.position.x <= bottomLeft.x {
+            characterOfMain.position.x = bottomLeft.x
+            velocity.x = -velocity.x
+        }
+        if characterOfMain.position.x >= topRight.x {
+            characterOfMain.position.x = topRight.x
+            velocity.x = -velocity.x
+        }
+        if characterOfMain.position.y <= bottomLeft.y {
+            characterOfMain.position.y = bottomLeft.y
+            velocity.y = -velocity.y
+        }
+        if characterOfMain.position.y >= topRight.y {
+            characterOfMain.position.y = topRight.y
+            velocity.y = -velocity.y
+        }
+    }
+    
+    func checkCollisions() {
+       
+        
+    }
+   
 }
