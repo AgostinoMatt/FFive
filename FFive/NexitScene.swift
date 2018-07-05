@@ -149,7 +149,7 @@ class NexitScene: SKScene {
         }
         if charNexit.health <= 0{
             charNexit.health = 0
-            win()
+            run(SKAction.afterDelay(4, runBlock: win))
         }
     }
     
@@ -227,7 +227,7 @@ class NexitScene: SKScene {
                 //playerTurn = true
             }
             if Warrior.shared.health <= 0 && Mage.shared.health <= 0 && Heavy.shared.health <= 0 {
-                lose()
+                run(SKAction.afterDelay(4, runBlock: lose))
             }
         }
     }
