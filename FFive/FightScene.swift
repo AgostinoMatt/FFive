@@ -14,11 +14,13 @@ class FightScene: SKScene {
     var charMain: Warrior!
     var charMage: Mage!
     var charHeavy: Heavy!
-    var enemy1: Zombie!
-    var enemy2: Headless!
-    var enemy3: Zombie!
-    var secondCharacter: SKReferenceNode!
-    var girl: SKReferenceNode!
+    var enemy1: Zombie!//SKReferenceNode!
+    var enemy2: Headless!//SKReferenceNode!
+    var enemy3: Zombie!//SKReferenceNode!
+    var zombie: Zombie!
+    var headless: Headless!
+    //var secondCharacter: SKReferenceNode!
+    //var girl: SKReferenceNode!
     
     var enemies: [SKReferenceNode] = []
     var playerTurn: Bool = true
@@ -42,9 +44,10 @@ class FightScene: SKScene {
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
         charMage = childNode(withName: "Girl//character") as! Mage
         charHeavy = childNode(withName: "SecondPlayer//character") as! Heavy
-        enemy1 = childNode(withName: "Enemy1//character") as! Zombie
-        enemy2 = childNode(withName: "Enemy2//character") as! Headless
-        enemy3 = childNode(withName: "Enemy3//character") as! Zombie
+        enemy1 = childNode(withName: "Enemy1//character") as! Zombie//SKReferenceNode
+        enemy2 = childNode(withName: "Enemy2//character") as! Headless//SKReferenceNode
+        enemy3 = childNode(withName: "Enemy3//character") as! Zombie//SKReferenceNode
+        
         
         enumerateChildNodes(withName: "//Enemy*") { node, _ in
             if let enemy = node as? SKReferenceNode {
