@@ -55,6 +55,10 @@ class FightScene: SKScene {
             }
         }
         
+        enemy1.levelUp()
+        enemy2.levelUp()
+        enemy3.levelUp()
+        
         charMainLabel.text = "HP: "//\(charMain.maxHealth)/ \(charMain.health)"
         charMainLabel.fontColor = SKColor.black
         charMainLabel.fontSize = 20
