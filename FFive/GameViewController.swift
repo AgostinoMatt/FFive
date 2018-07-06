@@ -30,12 +30,6 @@ class GameViewController: UIViewController {
             }
         }
     }
-
-    @IBAction func buttonClick(_ sender: Any) {
-        let fightScene = storyboard?.instantiateViewController(withIdentifier: "FightSceneViewController") as! FightSceneViewController
-        
-        self.navigationController?.pushViewController(fightScene, animated: true)
-    }
     
     @IBAction func StatsButton(_ sender: Any) {
         let statsScene = storyboard?.instantiateViewController(withIdentifier: "StatsSceneViewController") as! StatsSceneViewController
@@ -52,3 +46,13 @@ class GameViewController: UIViewController {
         return true
     }
 }
+
+/*
+ @IBAction func buttonClick(_ sender: Any) {
+ let fightScene = storyboard?.instantiateViewController(withIdentifier: "FightSceneViewController") as! FightSceneViewController
+ 
+ self.navigationController?.pushViewController(fightScene, animated: true)
+ }
+ */
+
+
