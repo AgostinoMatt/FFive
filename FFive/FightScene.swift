@@ -56,6 +56,14 @@ class FightScene: SKScene {
         enemySprite2 = childNode(withName: "Enemy2//character") as! SKSpriteNode
         enemySprite3 = childNode(withName: "Enemy3//character") as! SKSpriteNode
         
+        e1 = enemySprite1 as! Character
+        e2 = enemySprite2 as! Character
+        e3 = enemySprite3 as! Character
+        
+        e1.levelUp()
+        e2.levelUp()
+        e3.levelUp()
+        
         enumerateChildNodes(withName: "//Enemy*") { node, _ in
             if let enemy = node as? SKReferenceNode {
                 self.enemies.append(enemy)
@@ -156,14 +164,6 @@ class FightScene: SKScene {
             enemy3 = SKReferenceNode(fileNamed: "HeadlessFight")
         }
         enemy3.name = "Enemy3"
-        
-        e1 = enemySprite1 as! Character
-        e2 = enemySprite2 as! Character
-        e3 = enemySprite3 as! Character
-        
-        e1.levelUp()
-        e2.levelUp()
-        e3.levelUp()
         
         addChild(enemy1)
         addChild(enemy2)
