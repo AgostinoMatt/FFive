@@ -27,7 +27,7 @@ class Warrior : SKSpriteNode, Character {
     var health: Int = 120
     var maxHealth: Int = 120
     var magic: Int = 10
-    var exp: Int = 150
+    var exp: Int = 0
     
     func levelUp() {
         if exp >= 200{
@@ -214,6 +214,99 @@ class Headless: SKSpriteNode, Character {
     }
 }
 
+class Slugman: SKSpriteNode, Character{
+    var level: Int = 1
+    var attack: Int = 15
+    var health: Int = 60
+    var maxHealth: Int = 60
+    var magic: Int = 0
+    var exp: Int = 35
+    
+    func levelUp() {
+        if Warrior.shared.level != 1 {
+            level = Warrior.shared.level
+            attack = attack + (level * 3)
+            health = health + (level * 3)
+            maxHealth = maxHealth + (level * 3)
+        }
+    }
+    
+    func runAnimation() {
+        let moveRight = SKAction.moveBy(x: 100, y: 0, duration: 0.5)
+        let moveLeft = moveRight.reversed()
+        let wait = SKAction.wait(forDuration: 0.2)
+        let rotate = SKAction.rotate(byAngle: CGFloat(180).degreesToRadians(), duration: 0.3)
+        let done = SKAction.run() {
+            self.removeAllActions()
+        }
+        run(SKAction.sequence([moveRight,SKAction.group([wait, rotate]), moveLeft, SKAction.group([wait, rotate]), done]))
+        isPaused = false
+    }
+}
+
+class Frogman: SKSpriteNode, Character{
+    var level: Int = 1
+    var attack: Int = 10
+    var health: Int = 80
+    var maxHealth: Int = 80
+    var magic: Int = 0
+    var exp: Int = 40
+    
+    func levelUp() {
+        if Warrior.shared.level != 1 {
+            level = Warrior.shared.level
+            attack = attack + (level * 3)
+            health = health + (level * 3)
+            maxHealth = maxHealth + (level * 3)
+        }
+    }
+    
+    func runAnimation() {
+        let moveRight = SKAction.moveBy(x: 50, y: 50, duration: 0.25)
+        let moveRightDown = SKAction.moveBy(x: 50, y: -50, duration: 0.25)
+        //let hop = SKAction.sequence([moveRight, moveRightDown])
+        let moveBack = moveRight.reversed()
+        let moveBackDown = moveRightDown.reversed()
+        //let hopBack = hop.reversed()
+        let done = SKAction.run() {
+            self.removeAllActions()
+        }
+        run(SKAction.sequence([moveRight, moveRightDown, moveRight, moveRightDown, moveBack, moveBackDown, moveBack, moveBackDown,done]))
+        isPaused = false
+    }
+}
+
+class Magic: SKSpriteNode, Character{
+    var level: Int = 1
+    var attack: Int = 20
+    var health: Int = 40
+    var maxHealth: Int = 40
+    var magic: Int = 0
+    var exp: Int = 45
+    
+    func levelUp() {
+        if Warrior.shared.level != 1 {
+            level = Warrior.shared.level
+            attack = attack + (level * 3)
+            health = health + (level * 3)
+            maxHealth = maxHealth + (level * 3)
+        }
+    }
+    
+    func runAnimation() {
+        let moveRight = SKAction.moveBy(x: 50, y: 20, duration: 0.25)
+        let moveRightDown = SKAction.moveBy(x: 50, y: -20, duration: 0.25)
+        //let moveForward = SKAction.sequence([moveRight, moveRightDown])
+        let moveBackDown = SKAction.moveBy(x: -50, y: -20, duration: 0.25)
+        let moveBack = SKAction.moveBy(x: -50, y: 20, duration: 0.25)
+        //let moveBackwards = SKAction.sequence([moveBackDown, moveBack])
+        let done = SKAction.run() {
+            self.removeAllActions()
+        }
+        run(SKAction.sequence([moveRight,moveRightDown, moveBackDown, moveBack, moveRight,moveRightDown, moveBackDown, moveBack, done]))
+        isPaused = false
+    }
+}
 
 class Nexit: SKSpriteNode, Character {
     var level: Int = 1

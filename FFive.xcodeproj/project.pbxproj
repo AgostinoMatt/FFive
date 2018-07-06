@@ -12,6 +12,9 @@
 		A3462B0120E1BBAE00929414 /* OverWorld.sks in Resources */ = {isa = PBXBuildFile; fileRef = A3462B0020E1BBAE00929414 /* OverWorld.sks */; };
 		F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B320D35BC600A298B4 /* ZombieFight.sks */; };
 		F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B520D35CB200A298B4 /* HeadlessFight.sks */; };
+		F728CB1220EEF11300EF06A9 /* Slugman.sks in Resources */ = {isa = PBXBuildFile; fileRef = F728CB1120EEF11200EF06A9 /* Slugman.sks */; };
+		F728CB1420EEF8EE00EF06A9 /* Frogman.sks in Resources */ = {isa = PBXBuildFile; fileRef = F728CB1320EEF8EE00EF06A9 /* Frogman.sks */; };
+		F728CB1620EEF93900EF06A9 /* Magic.sks in Resources */ = {isa = PBXBuildFile; fileRef = F728CB1520EEF93900EF06A9 /* Magic.sks */; };
 		F733994220D0A41E003074CE /* Player2Fight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F733994120D0A41E003074CE /* Player2Fight.sks */; };
 		F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */ = {isa = PBXBuildFile; fileRef = F73D877720CF4BF600C5755A /* backgroundtile.sks */; };
 		F74E533320DAD82E006AD624 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74E532720DAD82D006AD624 /* CGFloat+Extensions.swift */; };
@@ -54,6 +57,9 @@
 		A3462B0020E1BBAE00929414 /* OverWorld.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OverWorld.sks; sourceTree = "<group>"; };
 		F71D91B320D35BC600A298B4 /* ZombieFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ZombieFight.sks; sourceTree = "<group>"; };
 		F71D91B520D35CB200A298B4 /* HeadlessFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeadlessFight.sks; sourceTree = "<group>"; };
+		F728CB1120EEF11200EF06A9 /* Slugman.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Slugman.sks; sourceTree = "<group>"; };
+		F728CB1320EEF8EE00EF06A9 /* Frogman.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Frogman.sks; sourceTree = "<group>"; };
+		F728CB1520EEF93900EF06A9 /* Magic.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Magic.sks; sourceTree = "<group>"; };
 		F733994120D0A41E003074CE /* Player2Fight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Player2Fight.sks; sourceTree = "<group>"; };
 		F73D877720CF4BF600C5755A /* backgroundtile.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = backgroundtile.sks; sourceTree = "<group>"; };
 		F74E532720DAD82D006AD624 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
@@ -125,6 +131,9 @@
 				F75EFC1220E45366002C4A3E /* NexitScene.sks */,
 				F76FDC9920E0691B00392F27 /* Warrior.sks */,
 				F71D91B320D35BC600A298B4 /* ZombieFight.sks */,
+				F728CB1120EEF11200EF06A9 /* Slugman.sks */,
+				F728CB1320EEF8EE00EF06A9 /* Frogman.sks */,
+				F728CB1520EEF93900EF06A9 /* Magic.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -251,11 +260,13 @@
 				F733994220D0A41E003074CE /* Player2Fight.sks in Resources */,
 				F75EFC1320E45366002C4A3E /* NexitScene.sks in Resources */,
 				F7BCB34120EAADCE000F0315 /* StatsScene.sks in Resources */,
+				F728CB1220EEF11300EF06A9 /* Slugman.sks in Resources */,
 				F772F64420C8BB2200039367 /* Main.storyboard in Resources */,
 				F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */,
 				A33652EA20E5BB6000E6A862 /* GLIMSTIC.TTF in Resources */,
 				F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */,
 				F772F63B20C8BB2200039367 /* GameScene.sks in Resources */,
+				F728CB1420EEF8EE00EF06A9 /* Frogman.sks in Resources */,
 				F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */,
 				F76FDC9A20E0691B00392F27 /* Warrior.sks in Resources */,
 				F76FDCA220E069CF00392F27 /* Mage.sks in Resources */,
@@ -263,6 +274,7 @@
 				F772F64620C8BB2600039367 /* Assets.xcassets in Resources */,
 				A317225120E471FA005E4728 /* MortalKombat.mp3 in Resources */,
 				A3462B0120E1BBAE00929414 /* OverWorld.sks in Resources */,
+				F728CB1620EEF93900EF06A9 /* Magic.sks in Resources */,
 				F75EFC1120E4508D002C4A3E /* NexitFight.sks in Resources */,
 				F772F64920C8BB2600039367 /* LaunchScreen.storyboard in Resources */,
 			);

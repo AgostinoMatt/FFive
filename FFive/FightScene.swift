@@ -94,17 +94,26 @@ class FightScene: SKScene {
         enemy1Label.zPosition = 100
         enemy1Label.position = CGPoint(x: -400, y: -100)
         
+        enemySprite1.position.x = -charMain.position.x
+        enemySprite1.position.y = charMain.position.y
+        
         enemy2Label.text = "HP: "//\(enemy2.maxHealth)/ \(enemy2.health)"
         enemy2Label.fontColor = SKColor.black
         enemy2Label.fontSize = 20
         enemy2Label.zPosition = 100
         enemy2Label.position = CGPoint(x: -400, y: 50)
         
+        enemySprite2.position.x = -charHeavy.position.x
+        enemySprite2.position.y = charHeavy.position.y
+        
         enemy3Label.text = "HP: "//\(enemy3.maxHealth)/ \(enemy3.health)"
         enemy3Label.fontColor = SKColor.black
         enemy3Label.fontSize = 20
         enemy3Label.zPosition = 100
         enemy3Label.position = CGPoint(x: -400, y: 200)
+        
+        enemySprite3.position.x = -charMage.position.x
+        enemySprite3.position.y = charMage.position.y
         
         self.addChild(charMainLabel)
         self.addChild(charMageLabel)
@@ -132,13 +141,22 @@ class FightScene: SKScene {
     }
     
     func randomEnemy(){
-        var randEnemy = Int.random(1...3)
+        var randEnemy = Int.random(1...6)
         var enemy1: SKReferenceNode
         var enemy2: SKReferenceNode
         var enemy3: SKReferenceNode
         
         if randEnemy == 1 {
             enemy1 = SKReferenceNode(fileNamed: "ZombieFight")
+        }
+        else if randEnemy == 2 {
+            enemy1 = SKReferenceNode(fileNamed: "Frogman")
+        }
+        else if randEnemy == 3 {
+            enemy1 = SKReferenceNode(fileNamed: "Slugman")
+        }
+        else if randEnemy == 4 {
+            enemy1 = SKReferenceNode(fileNamed: "Magic")
         }
         else {
             enemy1 = SKReferenceNode(fileNamed: "HeadlessFight")
@@ -148,7 +166,15 @@ class FightScene: SKScene {
         randEnemy = Int.random(1...3)
         if randEnemy == 1 {
             enemy2 = SKReferenceNode(fileNamed: "ZombieFight")
-            
+        }
+        else if randEnemy == 2 {
+            enemy2 = SKReferenceNode(fileNamed: "Frogman")
+        }
+        else if randEnemy == 3 {
+            enemy2 = SKReferenceNode(fileNamed: "Slugman")
+        }
+        else if randEnemy == 4 {
+            enemy2 = SKReferenceNode(fileNamed: "Magic")
         }
         else {
             enemy2 = SKReferenceNode(fileNamed: "HeadlessFight")
@@ -159,6 +185,15 @@ class FightScene: SKScene {
         randEnemy = Int.random(1...3)
         if randEnemy == 1 {
             enemy3 = SKReferenceNode(fileNamed: "ZombieFight")
+        }
+        else if randEnemy == 2 {
+            enemy3 = SKReferenceNode(fileNamed: "Frogman")
+        }
+        else if randEnemy == 3 {
+            enemy3 = SKReferenceNode(fileNamed: "Slugman")
+        }
+        else if randEnemy == 4 {
+            enemy3 = SKReferenceNode(fileNamed: "Magic")
         }
         else {
             enemy3 = SKReferenceNode(fileNamed: "HeadlessFight")
