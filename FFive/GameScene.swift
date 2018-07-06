@@ -184,20 +184,20 @@ class GameScene: SKScene {
         let bottomLeft = CGPoint(x: background.position.x, y: background.position.y)
         let topRight = CGPoint(x: background.mapSize.width, y: background.mapSize.height)
         
-        if cameraNode.position.x <= bottomLeft.x {
-            cameraNode.position.x = bottomLeft.x
+        if characterOfMain.position.x <= bottomLeft.x {
+            characterOfMain.position.x = bottomLeft.x
             velocity.x = -velocity.x
         }
-        if cameraNode.position.x >= topRight.x {
-            cameraNode.position.x = topRight.x
+        if characterOfMain.position.x >= topRight.x {
+            characterOfMain.position.x = topRight.x
             velocity.x = -velocity.x
         }
-        if cameraNode.position.y <= bottomLeft.y {
-            cameraNode.position.y = bottomLeft.y
+        if characterOfMain.position.y <= bottomLeft.y {
+            characterOfMain.position.y = bottomLeft.y
             velocity.y = -velocity.y
         }
-        if cameraNode.position.y >= topRight.y {
-            cameraNode.position.y = topRight.y
+        if characterOfMain.position.y >= topRight.y {
+            characterOfMain.position.y = topRight.y
             velocity.y = -velocity.y
         }
     }
