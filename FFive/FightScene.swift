@@ -94,8 +94,8 @@ class FightScene: SKScene {
         enemy1Label.zPosition = 100
         enemy1Label.position = CGPoint(x: -400, y: -100)
         
-        enemySprite1.position.x = -charMain.position.x
-        enemySprite1.position.y = charMain.position.y
+        enemySprite1.position.x = -185
+        enemySprite1.position.y = -100
         
         enemy2Label.text = "HP: "//\(enemy2.maxHealth)/ \(enemy2.health)"
         enemy2Label.fontColor = SKColor.black
@@ -103,8 +103,8 @@ class FightScene: SKScene {
         enemy2Label.zPosition = 100
         enemy2Label.position = CGPoint(x: -400, y: 50)
         
-        enemySprite2.position.x = -charHeavy.position.x
-        enemySprite2.position.y = charHeavy.position.y
+        enemySprite2.position.x = -275
+        enemySprite2.position.y = 40
         
         enemy3Label.text = "HP: "//\(enemy3.maxHealth)/ \(enemy3.health)"
         enemy3Label.fontColor = SKColor.black
@@ -112,8 +112,8 @@ class FightScene: SKScene {
         enemy3Label.zPosition = 100
         enemy3Label.position = CGPoint(x: -400, y: 200)
         
-        enemySprite3.position.x = -charMage.position.x
-        enemySprite3.position.y = charMage.position.y
+        enemySprite3.position.x = -210
+        enemySprite3.position.y = 175
         
         self.addChild(charMainLabel)
         self.addChild(charMageLabel)

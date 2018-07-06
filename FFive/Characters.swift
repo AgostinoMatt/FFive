@@ -271,7 +271,7 @@ class Frogman: SKSpriteNode, Character{
         let done = SKAction.run() {
             self.removeAllActions()
         }
-        run(SKAction.sequence([moveRight, moveRightDown, moveRight, moveRightDown, moveBack, moveBackDown, moveBack, moveBackDown,done]))
+        run(SKAction.sequence([moveRight, moveRightDown, moveRight, moveRightDown, moveBackDown, moveBack, moveBackDown, moveBack,done]))
         isPaused = false
     }
 }
