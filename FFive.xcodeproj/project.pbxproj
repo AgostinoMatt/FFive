@@ -41,7 +41,13 @@
 		F76FDCA020E0699F00392F27 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76FDC9F20E0699F00392F27 /* GameScene.swift */; };
 		F76FDCA220E069CF00392F27 /* Mage.sks in Resources */ = {isa = PBXBuildFile; fileRef = F76FDCA120E069CF00392F27 /* Mage.sks */; };
 		F772F63920C8BB2200039367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F63820C8BB2200039367 /* AppDelegate.swift */; };
+<<<<<<< HEAD
 		F772F63B20C8BB2200039367 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F772F63A20C8BB2200039367 /* GameScene.sks */; };
+=======
+		F772F63B20C8BB2200039367 /* mapScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F772F63A20C8BB2200039367 /* mapScene.sks */; };
+		F772F63D20C8BB2200039367 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F772F63C20C8BB2200039367 /* Actions.sks */; };
+		F772F63F20C8BB2200039367 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F63E20C8BB2200039367 /* GameScene.swift */; };
+>>>>>>> newMap
 		F772F64120C8BB2200039367 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772F64020C8BB2200039367 /* GameViewController.swift */; };
 		F772F64420C8BB2200039367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F772F64220C8BB2200039367 /* Main.storyboard */; };
 		F772F64620C8BB2600039367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F772F64520C8BB2600039367 /* Assets.xcassets */; };
@@ -87,7 +93,13 @@
 		F76FDCA120E069CF00392F27 /* Mage.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Mage.sks; sourceTree = "<group>"; };
 		F772F63520C8BB2200039367 /* FFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F772F63820C8BB2200039367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		F772F63A20C8BB2200039367 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+=======
+		F772F63A20C8BB2200039367 /* mapScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = mapScene.sks; sourceTree = "<group>"; };
+		F772F63C20C8BB2200039367 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		F772F63E20C8BB2200039367 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+>>>>>>> newMap
 		F772F64020C8BB2200039367 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F772F64320C8BB2200039367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F772F64520C8BB2600039367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,9 +132,16 @@
 		F733993C20D090C1003074CE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				F772F63A20C8BB2200039367 /* GameScene.sks */,
 				F76FDC9D20E0697C00392F27 /* FightScene.sks */,
 				F7BCB34020EAADCE000F0315 /* StatsScene.sks */,
+=======
+				F772F63A20C8BB2200039367 /* mapScene.sks */,
+				F772F63C20C8BB2200039367 /* Actions.sks */,
+				F733993D20D09136003074CE /* FightScene.sks */,
+				F733993F20D098C7003074CE /* MainCharFight.sks */,
+>>>>>>> newMap
 				F733994120D0A41E003074CE /* Player2Fight.sks */,
 				F76FDCA120E069CF00392F27 /* Mage.sks */,
 				F71D91B520D35CB200A298B4 /* HeadlessFight.sks */,
@@ -265,8 +284,13 @@
 				F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */,
 				A33652EA20E5BB6000E6A862 /* GLIMSTIC.TTF in Resources */,
 				F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */,
+<<<<<<< HEAD
 				F772F63B20C8BB2200039367 /* GameScene.sks in Resources */,
 				F728CB1420EEF8EE00EF06A9 /* Frogman.sks in Resources */,
+=======
+				F71D91B220D3598E00A298B4 /* GirlWithHairFight.sks in Resources */,
+				F772F63B20C8BB2200039367 /* mapScene.sks in Resources */,
+>>>>>>> newMap
 				F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */,
 				F76FDC9A20E0691B00392F27 /* Warrior.sks in Resources */,
 				F76FDCA220E069CF00392F27 /* Mage.sks in Resources */,
