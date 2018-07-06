@@ -180,8 +180,13 @@ class GameScene: SKScene {
     }
     
     func boundsCheckCharacter() {
+<<<<<<< HEAD
        // let cameraSpace = cameraRect
         let bottomLeft = CGPoint(x: worldMap().position.x, y: worldMap().position.y)
+=======
+        //let cameraSpace = cameraRect
+        let bottomLeft = CGPoint(x: background.position.x, y: background.position.y)
+>>>>>>> randoms
         let topRight = CGPoint(x: background.mapSize.width, y: background.mapSize.height)
         
         if characterOfMain.position.x <= bottomLeft.x {
