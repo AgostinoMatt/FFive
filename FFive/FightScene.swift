@@ -43,9 +43,6 @@ class FightScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        //playBackgroundMusic(filename: "MortalKombat.mp3")
-        
-        
         charMain = childNode(withName: "MainCharacter//character") as! Warrior
         charMage = childNode(withName: "Girl//character") as! Mage
         charHeavy = childNode(withName: "SecondPlayer//character") as! Heavy

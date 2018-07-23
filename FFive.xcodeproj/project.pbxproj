@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A317225120E471FA005E4728 /* MortalKombat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A317225020E471FA005E4728 /* MortalKombat.mp3 */; };
-		A33652EA20E5BB6000E6A862 /* GLIMSTIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = A33652E920E5BB5F00E6A862 /* GLIMSTIC.TTF */; };
 		A3462B0120E1BBAE00929414 /* OverWorld.sks in Resources */ = {isa = PBXBuildFile; fileRef = A3462B0020E1BBAE00929414 /* OverWorld.sks */; };
 		F71D91B420D35BC600A298B4 /* ZombieFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B320D35BC600A298B4 /* ZombieFight.sks */; };
 		F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */ = {isa = PBXBuildFile; fileRef = F71D91B520D35CB200A298B4 /* HeadlessFight.sks */; };
@@ -52,8 +50,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A317225020E471FA005E4728 /* MortalKombat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MortalKombat.mp3; sourceTree = "<group>"; };
-		A33652E920E5BB5F00E6A862 /* GLIMSTIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GLIMSTIC.TTF; sourceTree = "<group>"; };
 		A3462B0020E1BBAE00929414 /* OverWorld.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OverWorld.sks; sourceTree = "<group>"; };
 		F71D91B320D35BC600A298B4 /* ZombieFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ZombieFight.sks; sourceTree = "<group>"; };
 		F71D91B520D35CB200A298B4 /* HeadlessFight.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HeadlessFight.sks; sourceTree = "<group>"; };
@@ -112,7 +108,6 @@
 		A317224F20E471DB005E4728 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				A317225020E471FA005E4728 /* MortalKombat.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -177,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				F772F64520C8BB2600039367 /* Assets.xcassets */,
-				A33652E920E5BB5F00E6A862 /* GLIMSTIC.TTF */,
 				A317224F20E471DB005E4728 /* Sounds */,
 				F74E532620DAD82D006AD624 /* SKTUtils */,
 				F733993C20D090C1003074CE /* Scenes */,
@@ -263,7 +257,6 @@
 				F728CB1220EEF11300EF06A9 /* Slugman.sks in Resources */,
 				F772F64420C8BB2200039367 /* Main.storyboard in Resources */,
 				F73D877820CF4BF600C5755A /* backgroundtile.sks in Resources */,
-				A33652EA20E5BB6000E6A862 /* GLIMSTIC.TTF in Resources */,
 				F71D91B620D35CB200A298B4 /* HeadlessFight.sks in Resources */,
 				F772F63B20C8BB2200039367 /* GameScene.sks in Resources */,
 				F728CB1420EEF8EE00EF06A9 /* Frogman.sks in Resources */,
@@ -272,7 +265,6 @@
 				F76FDCA220E069CF00392F27 /* Mage.sks in Resources */,
 				F76FDC9E20E0697C00392F27 /* FightScene.sks in Resources */,
 				F772F64620C8BB2600039367 /* Assets.xcassets in Resources */,
-				A317225120E471FA005E4728 /* MortalKombat.mp3 in Resources */,
 				A3462B0120E1BBAE00929414 /* OverWorld.sks in Resources */,
 				F728CB1620EEF93900EF06A9 /* Magic.sks in Resources */,
 				F75EFC1120E4508D002C4A3E /* NexitFight.sks in Resources */,
